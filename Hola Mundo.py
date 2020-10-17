@@ -1,2 +1,6 @@
 hola_mundo = "hola mundo"
-print(hola_mundo)
+
+def HolaMundo():
+    print(hola_mundo)
+
+HolaMundo()
