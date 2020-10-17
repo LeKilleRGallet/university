@@ -1,6 +1,7 @@
-hola_mundo = "hola mundo"
 
-def HolaMundo():
+
+def HolaMundo(nombre, emocion):
+    hola_mundo = f"hola {nombre} estoy {emocion}"
     print(hola_mundo)
 
-HolaMundo()
+HolaMundo("mundo", "feliz")
