@@ -15,5 +15,5 @@ if not 2 in valor: #si no se encuentra el valor "2" en la lista, se devuelve un 
 elif 1 in valor: #si en la lista se encuentra el valor "2" y el valor "1" se eliminara el segundo valor de la lista
     valor.pop(1)
 print(valor)
-hola_mundo = HolaMundo("mundo", "feliz", valor[0], valor[2])
+hola_mundo = HolaMundo(input("cual es tu nombre?: \r\n"), "feliz", valor[0], valor[2])
 print(hola_mundo.upper())
