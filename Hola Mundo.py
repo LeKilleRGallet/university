@@ -1,12 +1,14 @@
 def HolaMundo(nombre, emocion = "sin emocion", V1 = 0, V2 = 0):
     return f"hola {nombre} estoy {emocion} porque se que la operacion {V1}+{V2} es igual a {V1+V2}"
-valor = [0, 1, 2 , 3, 4, 5, 6, 7, 8, 9]
+valor = [0, 1, 2 , 3, 4, 5, 6, 7, 8, input("ingresa un numero: \r\n")]
+valor[9] = int(valor[9])
 print(valor)
-valor.pop(5) #elimina valor con la quinta posicion de la lista, dandole ahora a el Valor 4 la tercera posicion
+valor.pop(5) #elimina valor con la sexta posicion de la lista
 print(valor)
 valor.remove(0) #Busca el Valor "0" dentro de la lista y lo elimina de ella
 print(valor)
-if valor[0] == 1: #si el valor con la primera posicion es "1" entonces se eliminara el valor con la cuarta posicion de la lista
+if valor[7] % 2 == 0: #si el valor ingresado es par se eliminara el valor con la cuarta posicion
+    print(f"{valor[7]} es par se procede a eliminar el cuarto valor de la lista")
     valor.pop(3)
 print(valor)
 if not 2 in valor: #si no se encuentra el valor "2" en la lista, se devuelve un true
