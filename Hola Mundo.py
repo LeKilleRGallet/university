@@ -1,3 +1,5 @@
+#estoy mprubando git
+
 def HolaMundo(nombre, emocion = "sin emocion", V1 = 0, V2 = 0):
     return f"hola {nombre} estoy {emocion} porque se que la operacion {V1}+{V2} es igual a {V1+V2}"
 valor = [0, 1, 2 , 3, 4, 5, 6, 7, 8, input("ingresa un numero: \r\n")]
