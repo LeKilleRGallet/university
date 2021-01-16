@@ -1,3 +1,11 @@
+def conversion(moneda, tasa):
+  pesos = float(input(f'que cantidad de {moneda} quieres convertir?: '))
+  cambio_dolar = tasa
+  USD = str(round(pesos / cambio_dolar, 2))
+  pesos = str(pesos)
+  print (pesos + ' pesos es igual a ' + USD + ' dolares')
+
+
 menu = """
 Bienvenido a mi conversor de monedas, que moneda quieres convertir a dolar ?
 
@@ -10,23 +18,11 @@ digita un numero:
 opcion = int(input(menu))
 
 if opcion == 1:
-  COP = float(input('que cantidad de pesos quieres convertir?: '))
-  USDCOP = 3462.11
-  USD = str(round(COP / USDCOP, 2))
-  COP = str(COP)
-  print (COP + ' pesos es igual a ' + USD + ' dolares')
+  conversion('Pesos Colombianos', 3462.11)
 elif opcion == 2:
-  MXN = float(input('que cantidad de pesos quieres convertir?: '))
-  USDMXN = 19.81
-  USD = str(round(MXN / USDMXN, 2))
-  MXN = str(MXN)
-  print (MXN + ' pesos es igual a ' + USD + ' dolares')
+  conversion('Pesos Mexicanos', 19.81)
 elif opcion == 3:
-  ARS = float(input('que cantidad de pesos quieres convertir?: '))
-  USDARS = 85.73
-  USD = str(round(ARS / USDARS, 2))
-  ARS = str(ARS)
-  print (ARS + ' pesos es igual a ' + USD + ' dolares')
+  conversion('Pesos Mexicanos', 85.73)
 else:
   print ('opcion incorrecta, por favor ingresa una opcion correcta')
 
