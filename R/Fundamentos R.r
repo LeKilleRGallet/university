@@ -6,7 +6,18 @@ View(orangeec)
 
 str(orangeec)
 
-class(orangeec$Country)
+class(orangeec$GDP.PC)
 
 summary(orangeec)
+
+library("plyr")
+
+orangeec[orangeec$'GDP PC'>=15000,]
+
+orangeec[orangeec$'Creat Ind % GDP'<=2,]
+
+neworangeec <- subset(orangeec, 'Internet penetration % population' > 80 
+& 'Education invest % GDP' >= 4.5, select = 'Creat Ind % GDP')
+
+neworangeec
 
