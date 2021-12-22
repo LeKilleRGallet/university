@@ -21,3 +21,4 @@ neworangeec <- subset(orangeec, 'Internet penetration % population' > 80
 
 neworangeec
 
+rename(orangeec, c('Creat Ind % GDP' = 'Creative Industry % GDP') )
