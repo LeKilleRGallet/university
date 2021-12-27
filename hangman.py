@@ -1,18 +1,17 @@
 import random
+import os
 
-
-
+def clear():
+    if os.name == "posix":
+        os.system ("clear")
+    elif os.name == ("ce", "nt", "dos"):
+        os.system ("cls")
 
 def read():
     words = []
     with open("files/wordlist.txt", 'r', encoding='utf-8') as f:
-        # words = f.readlines()
         for word in f:
             words.append(word.strip())
-        #print(words)
-        #print(len(words))
-        #print(words[0])
-        #print(words[len(words)-1])
         return words
 
 def selector(words):
@@ -20,26 +19,45 @@ def selector(words):
     docstring
     """
     index = random.randint(0, len(words)-1)
-    #print(words[index])
-    #print(len(words[index]))
     return words[index]
 
-def visualization(wlen):
+def visualization(word,ans):
     """
     docstring
     """
-    print('-'*wlen)
+    while True:
+        if word == ans:
+            break
+        clear()
+        print(' '.join(ans).capitalize())
+        print('- '*len(word))
 
+        letter = input('inset a letter: ')
+        ans = comparator(letter, word, ans)
+    
+    win(ans)
 
+def comparator(letter, word, ans):
+    """
+    docstring
+    """
+    for i in range(len(word)):
+        if letter == word[i]:
+            ans[i] = letter
+    
+    return ans
 
+def win(ans):
+    clear()
+    print(f"Congrats, you won! \n word was: {''.join(ans).capitalize()}")
 
 def run():
     """
     docstring
     """
-    word = selector(read())
-    print(f"{word}\n {len(word)}")
-    print(list(word))
+    word = list(selector(read()))
+    ans = [' ' for i in range(len(word))]
+    visualization(word,ans)
     
 
 
