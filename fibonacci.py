@@ -1,5 +1,17 @@
 import time
 
+def prime(n):
+    #validate if a number is prime
+    if n<=1:
+        return True
+    elif n==2:
+        return False
+    else:
+        for i in range(2,int(n**0.5)+1):
+            # print(i)
+            if n%i==0:
+                return True
+
 class FiboIter():
 
     def __init__(self,min=None, max=None):
@@ -42,25 +54,53 @@ class FiboIter():
                 raise StopIteration
 
 def run():
-    try:
-        range_min = int(input('insert floor'))
-    except ValueError:
-        range_min = None
+    while True:
+        try:
+            range_min = input('insert floor: ')
+            if range_min == '':
+                range_min = None
+                break
+            else:
+                range_min = int(range_min)
+                break
+        except ValueError:
+            print("Invalid input, just integers or empty, please try again")
 
-    try:
-        range_max = int(input('insert ceil'))
-    except ValueError:
-        range_max = None
+    while True:
+        try:
+            range_max = input('insert ceil: ')
+            if range_max == '':
+                range_max = None
+                break
+            else:
+                range_max = int(range_max)
+                break
+        except ValueError:
+            print("Invalid input, just integers or empty, please try again")
     
     if range_min is not None and range_max is not None and range_min >= range_max:
         raise SystemExit('Floor should be greater than or equal to ceil')
-
+    
+    fprime = input('do u wanna see only prime numbers? (y/n): ')
+    while True:
+        if fprime == 'y':
+            fprime = True
+            break
+        elif fprime == 'n':
+            fprime = False
+            break
+        else:
+            fprime = input('Invalid input, just y or n, please try again: ')
 
     fibonacci = FiboIter(min=range_min, max=range_max)
     for element in fibonacci:
         if element != None:
-            print(element)
-            time.sleep(0.05)
+            if fprime:
+                if prime(element) != True:
+                    print(f'{element: < {len(str(range_max))}} is a fibonacci prime [index: {fibonacci.counter}]')
+            else:
+                    print(element)
+        time.sleep(0.05)
 
 if __name__ == "__main__":
     run()
