@@ -1,4 +1,3 @@
-import time
 from datetime import datetime
 import os
 
@@ -7,6 +6,13 @@ def clear():
         os.system ("clear")
     elif os.name == ("ce", "nt", "dos"):
         os.system ("cls")
+
+def fiboiter(r_min=None, r_max=None):
+    n1, n2 = 0,1
+    while r_max == None or n1 <= r_max:
+        if r_min == None or n1 >= r_min:
+            yield n1
+        n1, n2 = n2, n1 + n2
 
 def prime_validator(n, primes):
     if n<=1:
@@ -50,47 +56,8 @@ def prime(element, primes):
             elif element == 2:
                 primes.append(element)
                 return False
-
-class FiboIter():
-
-    def __init__(self,min=None, max=None):
-        self.min = min
-        self.max = max
-
-
-    def __iter__(self):
-        self.n1 = 0
-        self.n2 = 1
-        self.counter = 0
-        return self
-
-    def __next__(self):
-        
-        if self.counter == 0:
-            if self.max is None or self.n1 <= self.max:
-                self.counter += 1
-                if self.min is None or self.n1 >= self.min:
-                    return self.n1
-            else:
-                raise StopIteration
-        elif self.counter == 1:
-            if self.max is None or self.n2 <= self.max:
-                self.counter += 1
-                if self.min is None or self.n2 >= self.min:
-                    return self.n2
-            else:
-                raise StopIteration
-        else:
-            self.aux = self.n1 + self.n2
-            if self.max is None or self.aux <= self.max:
-                # self.n1 = self.n2
-                # self.n2 = self.aux
-                self.n1, self.n2 = self.n2, self.aux
-                self.counter += 1
-                if self.min is None or self.aux >= self.min:
-                    return self.aux
-            else:
-                raise StopIteration
+            elif element > 2:
+                primes.append(2)
 
 def run():
     clear()
@@ -121,7 +88,7 @@ def run():
     
     if range_min is not None and range_max is not None and range_min >= range_max:
         raise SystemExit('Floor should be greater than or equal to ceil')
-    
+
     fprime = input('do u wanna see only prime numbers? (y/n): ')
     while True:
         if fprime == 'y':
@@ -133,15 +100,16 @@ def run():
         else:
             fprime = input('Invalid input, just y or n, please try again: ')
 
-    fibonacci = FiboIter(min=range_min, max=range_max)
+    fibonacci = fiboiter(r_min=range_min, r_max=range_max)
 
-    c = 1
+    index = 1
+    counter = 1
     lrange_max = 0
-
-    if fprime and range_min != None:
-        for i in range((range_min**0.5)+1):
-            if prime_validator(i, primes) != True:
-                primes.append(i)
+    
+    if range_min is not None:
+        for i in fiboiter(r_max=range_min-1):
+            index += 1
+    
 
     if fprime and range_max != None:
         lrange_max = len(str(range_max))
@@ -153,12 +121,13 @@ def run():
         if element != None:
             if fprime:
                 if prime(element, primes) != True:
-                    print(f'{str(c)+")":>3}{element: > {lrange_max}} is a fibonacci prime [index: {fibonacci.counter:>3}] Execution time: {str((datetime.now() - time_0).total_seconds()):>8} seconds')
-                    c += 1
+                    print(f'{str(counter)+")":>3}{element: > {lrange_max}} is a fibonacci prime [index: {index:>3}] Execution time: {str((datetime.now() - time_0).total_seconds()):>8} seconds')
+                    counter += 1
                     time_0 = datetime.now()
             else:
                     print(element)
-        time.sleep(0.05)
+        index += 1
+        # time.sleep(0.05)
 
 if __name__ == "__main__":
     run()
