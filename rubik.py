@@ -1,7 +1,15 @@
 import random
 
+def clear():
+    if os.name == "posix":
+        os.system("clear")
+    elif os.name == ("ce", "nt", "dos"):
+        os.system("cls")
 
 def print_cube(top, mid1, mid2, mid3, mid4, bottom):
+
+    print()
+
     mid_face=[mid1,mid2,mid3,mid4]
 
     for i in range(3):
@@ -30,6 +38,116 @@ def print_cube(top, mid1, mid2, mid3, mid4, bottom):
         for j in range(3):
             print(bottom[i][j],end=" ")
         print()
+
+def mov_face_right(face):
+    for _ in range(2):
+        temp2=face[0][0]
+
+        temp1=temp2
+        temp2=face[1][0]
+        face[1][0]=temp1
+
+        temp1=temp2
+        temp2=face[2][0]
+        face[2][0]=temp1
+
+        temp1=temp2
+        temp2=face[2][1]
+        face[2][1]=temp1
+
+        temp1=temp2
+        temp2=face[2][2]
+        face[2][2]=temp1
+
+        temp1=temp2
+        temp2=face[1][2]
+        face[1][2]=temp1
+
+        temp1=temp2
+        temp2=face[0][2]
+        face[0][2]=temp1
+
+        temp1=temp2
+        temp2=face[0][1]
+        face[0][1]=temp1
+
+        temp1=temp2
+        temp2=face[0][0]
+        face[0][0]=temp1
+
+def move_face_left(face):
+    for _ in range(2):
+        temp2=face[0][0]
+
+        temp1=temp2
+        temp2=face[0][1]
+        face[0][1]=temp1
+
+        temp1=temp2
+        temp2=face[0][2]
+        face[0][2]=temp1
+
+        temp1=temp2
+        temp2=face[1][2]
+        face[1][2]=temp1
+
+        temp1=temp2
+        temp2=face[2][2]
+        face[2][2]=temp1
+
+        temp1=temp2
+        temp2=face[2][1]
+        face[2][1]=temp1
+
+        temp1=temp2
+        temp2=face[2][0]
+        face[2][0]=temp1
+
+        temp1=temp2
+        temp2=face[1][0]
+        face[1][0]=temp1
+
+        temp1=temp2
+        temp2=face[0][0]
+        face[0][0]=temp1
+
+def move_row_right(mid1,mid2,mid3,mid4,row):
+    temp2=mid1[row]
+
+    temp1=temp2
+    temp2=mid2[row]
+    mid2[row]=temp1
+
+    temp1=temp2
+    temp2=mid3[row]
+    mid3[row]=temp1
+
+    temp1=temp2
+    temp2=mid4[row]
+    mid4[row]=temp1
+
+    temp1=temp2
+    temp2=mid1[row]
+    mid1[row]=temp1
+
+def move_row_left(mid1,mid2,mid3,mid4,row):
+    temp2=mid1[row]
+
+    temp1=temp2
+    temp2=mid4[row]
+    mid4[row]=temp1
+
+    temp1=temp2
+    temp2=mid3[row]
+    mid3[row]=temp1
+
+    temp1=temp2
+    temp2=mid2[row]
+    mid2[row]=temp1
+
+    temp1=temp2
+    temp2=mid1[row]
+    mid1[row]=temp1
 
 def run():
     top_face=[[0,0,0],[0,0,0],[0,0,0]]
