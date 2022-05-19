@@ -1,0 +1,63 @@
+
+Sexo = P6020
+
+Años de estudio = ESC
+
+Tiempo en la empresa = P6426
+
+tipo de contrato = P6450 //
+
+termino del contrato = P6460 //
+
+tiene contrato = P6440
+
+horas semanales de trabajo = P6850
+
+segundo empleo = P7040
+
+horas segundo empleo = P7045
+
+ingresos segundo empleo = P7070
+
+autodeterminacion de los pueblos = P6080
+
+analfabeta = P6160
+
+autopercepcion de pobreza = P3246
+
+desea cambiar de trabajo = P7130
+
+esta sindicado = P7180
+
+ingresos laborales = INGLABO (comparar)
+
+horas extras= P6640S1
+
+------ Sumar todos estos valores -------
+
+horas semanales de trabajo = P6850
+
+horas segundo empleo = P7045
+
+horas extras= P6640S1
+
+---------------------------------------
+
+------ Sumar todos estos valores -------
+
+horas de oficios en su hogar = P7480S3A1
+
+horas autoconstruccion de vivienda = P7480S9A1
+
+horas elaborar ropa = P7480S7A1
+
+horas cuidadndo qchos = P7480S6A1
+
+horas cuidando pelaos = P7480S5A1
+
+horas oficio en otros lugares = P7480S4A1
+
+horas cria de animales = P7480S1A1
+
+-----------------------------------------
+
