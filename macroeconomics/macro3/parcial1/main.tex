@@ -1,8 +1,11 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[letter,12pt]{article}
+
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{cancel}
+
 
 \title{\textbf{Parcial 1 Macroeconomia III}}
 \author{Augusto Rico}
@@ -14,23 +17,156 @@
     \textbf{\\Tomado:} #2%
   }%
 
-
 \begin{document}
 \maketitle
-
-\section{Ley de Say vs demanda efectiva}
+\section{Ley de Say vs. Demanda efectiva}
 \begin{flushleft}
-    Say (1803) plantea que en el agregado de la economia la oferta es lo que determina la demanda, esto que puede ser valido en una economia real, 
-    segun Keynes (1936) esto es algo que no se puede afirmar para una economia monetaria donde el dinero no es neutral, ya que no se demanda unicamente para realizar otros intercambios.\\
+    Para la Ortodoxia existe una ley general en el mercado y esta es la expuesta por Say (1803) en la que se plantea que en el agregado las fuerzas del mercado se equilibran entre la oferta y la demanda, y esto debido a que en este concepto el nivel de oferta determina la demanda, este análisis se enmarca en una economía real donde existe el dinero no obstante este es neutral para los consumidores y únicamente tiene la capacidad de intermediar los intercambios para solucionar los problemas de no coincidencia de preferencias en los intercambios, por lo que en esta teoría se plantea que los agentes al obtener dinero y este no generarles ninguna utilidad desean desesperadamente gastar todo su dinero por bienes reales.\\
     ~\\
-    La principal diferencia entre estas teorias no es mas que la concepcion del dinero, para Say el dinero no es mas que un medio de intercambio, 
-    por lo que los agentes no lo demandan por si mismo y al poseerlo desean desesperadamente gastarlo. Por otro lado, Keynes considera que esta neutralidad del dinero no concuerda con la realidad, 
-    ya que segun Keynes(1936) los agentes tienen una prefrencia por la liquidez por lo que no se demanda totalmente la produccion debido a que parte del ingreso es finalmente destinado a la demanda del dinero, porque este es util para los individuos mas alla de un metodo de intercambio, como podria ser un costo de oportunidad.\\
+    No obstante, también existe otra corriente liderada principalmente por Keynes (1936) en la que se expone el principio de la demanda efectiva, la cual contradice la anteriormente expuesta \textit{Ley de Say}, esta diferencia tiene un pilar fundamental que es la concepción del dinero en la economía. Para Keynes en una economía capitalista como la existente, el dinero no se puede concebir únicamente como un método de intercambio, sino, por el contrario, como el sistema tiene una naturaleza monetaria en sus relaciones, los agentes tienen una preferencia por la liquidez, por lo que no se demanda totalmente la producción, como expone Say, debido a que parte del ingreso es finalmente destinado a la demanda del propio dinero debido a que este es útil para los individuos más allá de un método de intercambio, como podría ser un costo de oportunidad y/o incertidumbre.\\
     ~\\
+    Esta concepción de no neutralidad del dinero fue anteriormente explicada por Marx (1867) quien expone dos tipos de circulaciones, los ciclos M-D-M\footnote{Mercancía-Dinero-Mercancía; planteamiento de la ley de Say, el dinero es un medio para lograr el fin de comprar Mercancías que puedan proveer un valor de uso para el comprador.} y D-M-D\footnote{Dinero-Mercancía-Dinero; planteamiento del principio de demanda efectiva, el dinero es un fin en sí mismo, comprendiendo que debe existir una diferencia cuantitativa entre la cantidad inicial y final del dinero; $D^f = D^i+\Delta D$; por lo que el proceso no es comprar para vender, sino comprar para vender más caro. Para Marx esta mercancía debe ser la fuerza de trabajo mediante un proceso de plusvalía, ya que esta es una generadora de valor superior al propio valor intrínseco.}, quien aunque reconoce la existencia del primer ciclo, afirma que el segundo es el que responde a los lineamientos de una economía capitalista, puesto que con las diferencias en los tiempos de producción de mercancías ocasiona que quien participe en la circulación se endeude, ocasionando que el dinero se convierta en un fin deseable en sí mismo ya sea para adeudar o debitar; de la misma forma el productor puede preferir mantener su mercancía con un valor de cambio inalterable en el tiempo, queriendo huir de la depreciación natural de los bienes, por lo que el dinero puede lograr esto actuando como método de acumulación de riqueza.\\
+    ~\\
+    Por su parte, Keynes (1936) genera dos grandes críticas a la \textit{Ley de Say}: El pleno empleo y la identidad Ahorro-Inversión.\\
+    Para explicar el primer caso, Keynes plantea dos ecuaciones $\mathcal{Z}=\phi(N)\footnote{Función de oferta global; Relación entre precio de producción global y número de trabajadores}$ y $\mathcal{D}=f(N)\footnote{Función de demanda global; Relación entre producto global esperado por los empresarios y número de trabajadores}$. Con esto y asumiendo la validez de la \textit{Ley de Say} y teniendo una cantidad dada de $N$ donde $\mathcal{D} > \mathcal{Z}$ los empresarios estarían incentivados a aumentar el nivel de ocupación hasta que $\mathcal{D} = \mathcal{Z}$ por lo que siempre se tendría pleno empleo para cualquier valor de $N$, ya que al aumentar oferta global aumenta la demanda global\footnote{"(\dots)\textit{“la oferta crea su propia demanda”} debe querer decir que $f(N)$ y $\phi(N)$   son iguales para todos los valores de N, es decir, para cualquier volumen de producción y ocupación; y que cuando hay un aumento en $\mathcal{Z}=\phi(N)$ correspondiente a otro en $N$, $\mathcal{D}=f(N)$ crece necesariamente en la misma cantidad que Z."(Keynes: 1936, 34)} algo que es evidentemente falso\\
+    ~\\
+    Debido a la neutralidad del dinero, la Ley de Say tiene como teorema que debe existir una identidad entre el Ahorro y la Inversión\footnote{dado que la \textit{Ley de Say} asume una economía real todo lo que no sea gastado (ahorro) en aumentar la utilidad del individuo (consumo) se debe utilizar en comprar bienes de capital (inversión)}; sin embargo, para Keynes (1936) esto no es más que una ilusión óptica, ya que se hace que dos actos distintos sean paralelos, debido a para Keynes mientras la inversión depende de los retornos futuros esperados el ahorro, en cambio, depende del ingreso. Así mismo niega la definición neoclásica de tasa de interés\footnote{"En tiempos recientes muchos economistas sostenían que la tasa de ahorro corriente determinaba la oferta de capital disponible, que la tasa de inversión actual determinaba la demanda de este último, y que la tasa de interés era, por así decirlo, el precio-factor equilibrante determinado por el punto de intersección de la curva de oferta de los ahorros y la curva de demanda de la inversión."(Keynes: 1936, 24)}, debido a que para Keynes la tasa de interés es el punto de convergencia entre la oferta y demanda de dinero, haciendo así de la tasa de interés una variable monetaria que representa el retorno por privarse de liquidez durante un periodo de tiempo, por lo que de esta forma se puede entender el ahorro como una disminución de la demanda efectiva hoy, por esto Keynes afirma que la inversión está ligada a la oferta monetaria y depende de las expectativas de los individuos, por lo que las crisis bajo estos supuestos se enmarcan en choques endógenos que disminuyen la demanda efectiva.
+    \newpage
     
-
+    
 \end{flushleft}
-    
 
+
+
+\section{Regla de Oro de Solow}
+\begin{flushleft}
+
+Asumiendo una economía cerrada tendremos que $Y=C+I+G$, y debido al equilibrio presupuestal donde $G=T$ tendríamos que $Y=C+I+T$.\\
+
+se despeja $I$ obteniendo
+
+\begin{equation*}
+    I=Y-C-T
+\end{equation*}
+
+Sabiendo que $C=(1-s)(Y-T)$, se remplaza en la ecuación anterior obteniendo
+
+\begin{equation*}
+    I=\cancel{Y-T-Y+T}+sY-sT
+\end{equation*}
+
+obtenemos que $I =sY-sT$, lo cual se divide por $L$ para obtener el resultado per cápita $i=sy-st$, al igual que las identidades de Impuestos e Ingresos, teniendo respectivamente que $t=T_Ww+T_Bb$ y $y=w+b$.\\
+~\\
+se despeja $w$ en la última ecuación para remplazarla en la anterior a esta obteniendo que
+
+\begin{equation*}
+    t=T_W(y-b)+T_Bb
+\end{equation*}
+
+dado que tenemos una función de producción Cobb-Douglas sabemos que los factores de distribución están dados por los exponentes por lo que $b=\alpha y$ y $w = (1-\alpha)y$\\
+se remplaza $b$ en la identidad obteniendo
+
+\begin{equation*}
+    t=T_W(y-\alpha y)+T_B\alpha y
+\end{equation*}
+~\\
+se resuelve y remplaza $t$ en $i$ obteniendo
+
+\begin{equation*}
+    i=sy-s(T_Wy-T_W\alpha y+T_B\alpha y)
+\end{equation*}
+
+\begin{equation*}
+    i=sy(1-T_W-T_W\alpha +T_B\alpha)
+\end{equation*}
+~\\
+
+Como sabemos que la población créese a una tasa exógena y constante \textit{n} sabemos que $\.{k}=i-(\delta+n)k$, ecuación en la que remplazamos $i$ obteniendo
+~\\
+\begin{equation*}
+    \.{k}=sy(1-T_W-T_W\alpha +T_B\alpha)-(\delta+n)k
+\end{equation*}
+~\\
+Ecuación en la que buscamos el estado estacionario tal que $\.{k}=0$ y despejando $s$
+~\\
+\begin{align*}
+    & sy(1-T_W-T_W\alpha +T_B\alpha)-(\delta+n)k=0\\
+    & sy(1-T_W-T_W\alpha +T_B\alpha)=(\delta+n)k\\
+    & s=\frac{(\delta+n)k^*}{y(1-T_W-T_W\alpha +T_B\alpha)}
+\end{align*}
+~\\
+dado que $\frac{Y}{L}=\left(\frac{K}{L}\right)^\alpha\left(\frac{L}{L}\right)^{1-\alpha}$ es igual a $y=k^\alpha$ podemos remplazar $y$ en la ecuación obteniendo
+~\\
+\begin{equation*}
+    s=\frac{(\delta+n)k^{1-\alpha}}{(1-T_W-T_W\alpha +T_B\alpha)}
+\end{equation*}
+~\\
+volviendo a la identidad inicial $Y=C+I+G$, pero esta vez en valores per cápita, podemos reagrupar y remplazar de tal manera que obtengamos $\frac{C}{L}=y-sy-t$ y posteriormente remplazando estas variables por las obtenidas durante el desarrollo, obteniendo entonces.
+~\\
+\begin{equation*}
+    \frac{C}{L}=k^\alpha-\cancel{k^\alpha}*\frac{(\delta+n)k^{1\cancel{-\alpha}}}{(1-T_W-T_W\alpha +T_B\alpha)}-(T_Ww+T_Bb)
+\end{equation*}
+~\\
+maximizamos el consumo per cápita respecto a $k$ para obtener $k_{oro}$
+
+\begin{align*}
+    \max_k c \to \frac{\partial c}{\partial k} \to \alpha k^{\alpha-1}-\frac{(\delta+n)}{(1-T_W-T_W\alpha +T_B\alpha)} = 0\\
+    ~\\
+     \alpha k^{\alpha-1} = \frac{(\delta+n)}{(1-T_W-T_W\alpha +T_B\alpha)} \\
+     ~\\
+     k_{oro} = \left[ \frac{(\delta+n)}{\alpha(1-T_W-T_W\alpha +T_B\alpha)} \right]^{\frac{1}{\alpha-1}}
+\end{align*}
+
+
+
+\newpage
+\end{flushleft}
+
+\section{Modelo Divergente}
+\begin{flushleft}
+El supuesto neoclásico que genera una convergencia es el de los rendimientos decrecientes, por lo que cualquier modelo que sea divergente debe obligatoriamente violar este supuesto, los modelos de crecimiento endógeno en particular son un tipo de modelos de crecimiento con los que se intenta explicar los fenómenos de crecimiento divergente, ya que intentan explicar el crecimiento económico de largo plazo, por lo que se va a utilizar para este desarrollo el modelo de Romer(1986) con el criterio de Lucas, puesto que corrige efectos a escala.\\
+
+en este modelo a la función de Sollow-Swan se le agrega la externalidad $k^\eta$\footnote{$k$ representa el capital per cápita, $k=\frac{K}{L}$; $\eta$ representa la importancia de la externalidad} por lo que tendríamos $Y=AK^\alpha L^{1-\alpha} k^\eta $\\
+\begin{align*}
+   & \text{remplazamos }k \\
+    & Y=AK^\alpha L^{1-\alpha}  \left( \frac{K}{L}\right)^\eta \\
+    &Y=AK^{\alpha+\eta}L^{1-\alpha-\eta} \\
+    &~\\
+    &\text{Pasamos a la forma per cápita } \\ &\frac{Y}{L}=A\left(\frac{K}{L}\right)^{\alpha+\eta}\left(\cancel{\frac{L}{L}}  \right)^{1-\alpha-\eta} \\
+    & y=Ak^{\alpha+\eta} \\
+    &~\\
+   & \text{obtenemos la ecuación fundamental }\\ &\.{k}=sAk^{\alpha+\eta}-(\delta-n)k\\
+   &~\\
+    & \text{obtenemos la tasa de crecimiento del capital }\\  & \frac{\.{k}}{k}=\frac{sAk^{\alpha+\eta}-(\delta-n)k}{k} \\
+    & \gamma_k=sAk^{\alpha+\eta-1}-(\delta-n)
+\end{align*}
+~\\
+obtenida la tasa de crecimiento del capital, se pueden notar tres casos posibles, los cuales son
+
+\begin{align*}
+    \alpha+\eta \begin{cases} 
+    < 1\\
+    = 1\\
+    > 1
+    \end{cases}
+\end{align*}
+
+El primer caso en el que $\alpha+\eta<1$ no es de nuestro interés, ya que en este caso la función será idéntica a una función neoclásica, por lo que se va a cumplir el supuesto de rendimientos decrecientes y por esto debe existir un punto de convergencia.\\
+~\\
+En el segundo caso, donde tenemos que $\alpha+\eta=1$ como no se cumple en este caso el supuesto de rendimientos decrecientes, sino, por el contrario, se tiene rendimientos constantes, se va a tener que el crecimiento del capital per cápita será constante lo que genera que al no existir relación entre el crecimiento y los niveles de producción o capital per cápita no se obtenga convergencia. Adicionalmente en este caso la función no cumple con las propiedades de Inada y PMK aunque si cumple con la propiedad de homogeneidad de las funciones neoclásicas.\\
+~\\
+El último caso, tenemos que $\alpha+\eta>1$, que es el caso más interesante, para este caso se tendrá rendimientos crecientes, lo que ocasionará que aunque si se tenga un valor $k^*$ el crecimiento no converge hacia este punto, sino, por el contrario, este valor determina la divergencia del crecimiento, dado que tengamos $k'<k^*$ vamos a tener que el capital per cápita tendera a cero, mientras que si $k'>k^*$ se obtendrá que el capital per cápita tendera a infinito, por lo que se encuentra una divergencia en el modelo en lugar de una convergencia. 
+
+\newpage
+\end{flushleft}
+
+\section{Bibliografia}
+
+\begin{flushleft}
+    Keynes, J. M. Teoría general de la ocupación, el interés y el dinero. Fondo de cultura económica.\\
+    Marx, Karl. El capital: crítica de la economía política, tomo I, libro I: el proceso de producción del capital. Fondo de cultura Económica\\
+    Say, J. B. A treatise on political economy: or the production, distribution, and consumption of wealth. Grigg & Elliot.
+    
+\end{flushleft}
 
 \end{document}
