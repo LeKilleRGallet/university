@@ -8,7 +8,7 @@
 \title{¿Pueden los mecanismos \textit{neoclásicos} de mercado  ayudarnos a lograr una redistribución justa de la tierra?
 }
 
-\author{Augusto Rico\\
+\author{Augusto Rico\thanks{Estudiante de pregrado en economia: Universidad Nacional de Colombia, Sede Bogota}\\
     \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
     }
 
@@ -28,8 +28,8 @@ Eleccion Social; Reforma Agraria; Externalidades.} \\ %% <-- Keywords HERE!
 \textit{\textbf{JEL Classification: }%
 D62	; D70; D30.}\\ %% <-- JEL code HERE!
 \noindent
-\textit{\textbf{Temas: }%
-Asignación Justa; Maximización de bienestar social; Segundo Teorema del Bienestar; Reforma Agraria en Colombia.} \\ %% <-- Keywords HERE!
+% \textit{\textbf{Temas: }%
+% Asignación Justa; Maximización de bienestar social; Segundo Teorema del Bienestar; Reforma Agraria en Colombia.}
 
 
 \end{abstract}
@@ -157,15 +157,16 @@ Asignación Justa; Maximización de bienestar social; Segundo Teorema del Bienes
 
      Mediante el cual, si obtenemos que $N^\rho(RA,NRA)>N^\rho(NRA,RA)$ entonces tendremos que $RA \succ^\varphi NRA$ y se procederá a hacer una reforma agraria
      con la cual se reasignaran las dotaciones de forma justa logrando el máximo bienestar social, caso contrario se mantendrán las asignaciones dadas por el mercado.
-     \\~\\~\\
-     Sin olvidar que las elecciones son hechas posteriores al intercambio, vamos a tener un nuevo problema y es que en el momento anterior a la elección 
-     los agentes caracterizados porque $NRA \succsim_i RA$ prevendrán una perdida de utilidad por la reforma agraria y con ello van a tener nuevos incentivos, por ende podrían tomar la decisión de donar algo de su tierra para evitar la reforma enmarcada en la siguiente maximización:
+     \\~\\
+     Sin olvidar que las elecciones son hechas posteriores al intercambio, vamos a tener un nuevo problema y es que en el momento anterior a la elección, en el que 
+     los agentes caracterizados por $NRA \succsim_i RA$ gracias a su perfecta racionalidad prevendrán una perdida de utilidad por la reforma agraria y con ello van
+     a tener nuevos incentivos, por ende podrían tomar la decisión de donar algo de su tierra para evitar la reforma enmarcada en la siguiente maximización\footnote{maximizacion basada en el famoso problema de algoritmica de la mochila.}:
      
     \begin{center}
         \begin{align*}
-            & \boldsymbol{\max_{U_i} ~ U_i \left(x^*_L-\varepsilon,x^*_B\right)}\\
+            & \boldsymbol{\max_{U_i} ~ U_i \left(L_i^*-\varepsilon,B_i^*\right)}\\
             \text{S.A.} \\ &~ \boldsymbol{N^\rho(NRA,RA)>N^\rho(RA,NRA)}\\
-            & \boldsymbol{U_i \left(x^*_L-\varepsilon,x^*_B\right) > U_i \left(x^j_L,x^j_B\right)}\\
+            & \boldsymbol{U_i \left(L_i^*-\varepsilon,B_i^*\right) > U_i \left(L^j,B^j\right)}\\
             & \boldsymbol{\varepsilon \ge} 0
         \end{align*}
     \end{center}
