@@ -20,16 +20,16 @@ def least_squares(x,y):
     print(f'\ny={round(slope,2)}x+{round(intercept,2)}')
     return y_pred
 
-def scatter_trys(n,trys1,trys2=None):
-    plt.scatter(n,trys1,label='custom',color='red')
-    if trys2!=None:
-        plt.scatter(n,trys2,label='swaping',color='blue')
+def scatter_tries(n,tries1,tries2=None):
+    plt.scatter(n,tries1,label='custom',color='red')
+    if tries2!=None:
+        plt.scatter(n,tries2,label='swaping',color='blue')
 
     
-    y_pred1=least_squares(n,trys1)
+    y_pred1=least_squares(n,tries1)
     plt.plot(n,y_pred1,label='custom',color='yellow')
-    if trys2!=None:
-        y_pred2=least_squares(n,trys2)
+    if tries2!=None:
+        y_pred2=least_squares(n,tries2)
         plt.plot(n,y_pred2,label='swaping',color='green')
     
 
@@ -38,17 +38,17 @@ def scatter_trys(n,trys1,trys2=None):
 
 
     plt.xlabel('n')
-    plt.ylabel('trys')
-    plt.title(f'Scatter plot of trys{ " vs " if trys2!=None else ""}')
+    plt.ylabel('tries')
+    plt.title(f'Scatter plot of tries{ " vs " if tries2!=None else ""}')
     plt.show()
 
 def burble_sort(list):
 
-    trys=0
+    tries=0
 
     for i in range(len(list)):
         
-        trys += 1
+        tries += 1
 
         n_0=list[0]
         n_1=list[int((len(list)-1-i)*(1/4))]
@@ -64,15 +64,15 @@ def burble_sort(list):
         if n_0==list[0] and n_1==list[int((len(list)-1-i)*(1/4))] and n_2==list[int((len(list)-1-i)*(2/4))] and n_3==list[int((len(list)-1-i)*(3/4))] and n_4==list[(len(list)-1-i)]:
             break
 
-    return (list, trys)
+    return (list, tries)
 
-def burble_sort_swaping(list, total_trys_custom):
+def burble_sort_swaping(list, total_tries_custom):
 
-    trys=0
+    tries=0
 
     for i in range(len(list)):
         
-        trys += 1
+        tries += 1
         swaping=False
 
         for j in range(len(list)-1-i):
@@ -81,17 +81,17 @@ def burble_sort_swaping(list, total_trys_custom):
                 list[j], list[j+1] = list[j+1], list[j]
                 
 
-        if trys==(total_trys_custom-2):
+        if tries==(total_tries_custom-2):
             a=1
 
         if swaping==False:
             break
 
-    return (list, trys)
+    return (list, tries)
 
 def run():
-    trys_custom=[]
-    trys_swaping=[]
+    tries_custom=[]
+    tries_swaping=[]
     x=[]
     mx=1000
     for i in range(mx):
@@ -99,8 +99,8 @@ def run():
         list_size=random.randint(1,1000)
         list=[random.randint(1,random.randint(1,mx**2)) for _ in range(list_size)]
         # print(f'The list is: {list}')
-        list_sorted, total_trys_custom=burble_sort(list[:])
-        list_sorted_swaping, total_trys_swaping=burble_sort_swaping(list[:], total_trys_custom)
+        list_sorted, total_tries_custom=burble_sort(list[:])
+        list_sorted_swaping, total_tries_swaping=burble_sort_swaping(list[:], total_tries_custom)
         list.sort()
         if list_sorted!=list and list_sorted_swaping!=list:
             print('The list is not sorted')
@@ -110,10 +110,10 @@ def run():
             raise SystemExit
         else:
             x.append(list_size)
-            trys_custom.append(total_trys_custom)
-            trys_swaping.append(total_trys_swaping)
+            tries_custom.append(total_tries_custom)
+            tries_swaping.append(total_tries_swaping)
 
-    scatter_trys(x,trys_custom,trys_swaping)
+    scatter_tries(x,tries_custom,tries_swaping)
     print('all is ok\n')
 
 if __name__ == "__main__":

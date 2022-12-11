@@ -23,19 +23,19 @@ def throw_neddle(needles):
         
     return (4 * needles_in) / needles
 
-def estimation(needles,trys):
+def estimation(needles,tries):
 
     results = []
-    for _ in range(trys):
+    for _ in range(tries):
         results.append(throw_neddle(needles))
 
-    print(f'with {needles} needles and {trys} trys, we get pi = {round(mean(results),5)} with a std of {round(std(results),5)}')
+    print(f'with {needles} needles and {tries} tries, we get pi = {round(mean(results),5)} with a std of {round(std(results),5)}')
     return mean(results), std(results)
     
-def pi_estimation(needles,trys, precision=0.01):
+def pi_estimation(needles,tries, precision=0.01):
 
     while True:
-        mean, std = estimation(needles, trys)
+        mean, std = estimation(needles, tries)
         
         if std < (precision/1.96):
             break
@@ -46,8 +46,8 @@ def pi_estimation(needles,trys, precision=0.01):
 
 def run():
     needles = int(input("How many needles do you want to throw? "))
-    trys = int(input("How many trys do you want to do? "))
-    pi_estimation(needles, trys)
+    tries = int(input("How many tries do you want to do? "))
+    pi_estimation(needles, tries)
     
 
 

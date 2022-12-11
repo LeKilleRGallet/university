@@ -69,12 +69,12 @@ def walk(step, drunk, campus):
 
     return begin.dist(campus.get_locations(drunk))
 
-def simulate(step, trys, drunk_type):
+def simulate(step, tries, drunk_type):
     drunk = drunk_type(name='Joe Doe')
     origin = Coordinate(0, 0)
     distances =[]
 
-    for _ in range(trys):
+    for _ in range(tries):
         campus = Campus()
         campus.add_drunk(drunk, origin)
         simulation = walk(step, drunk, campus)
@@ -88,10 +88,10 @@ def graph(x, y):
     graphic.line(x, y)
     show(graphic)
 
-def main(distance, trys, drunk_type):
+def main(distance, tries, drunk_type):
     means = []
     for step in distance:
-        distances = simulate(step, trys, drunk_type)
+        distances = simulate(step, tries, drunk_type)
 
         mean_dist = round( sum(distances) / len(distances), 2)
         max_dist = round( max(distances), 2)
@@ -113,9 +113,9 @@ def run():
 
 
     distance = [*range(0, 10000, 100)]
-    trys = 100
+    tries = 100
 
-    main(distance, trys, StandardDrunk)
+    main(distance, tries, StandardDrunk)
 
 
 

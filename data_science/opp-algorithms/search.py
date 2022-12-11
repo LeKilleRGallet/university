@@ -14,10 +14,10 @@ def binary_search(list, item):
     low=0
     high=len(list)-1
 
-    trys=0
+    tries=0
 
     while low <= high:
-        trys += 1
+        tries += 1
         # print(f'searching between {list[low]} and {list[high]}')
         # time.sleep(1)
 
@@ -25,7 +25,7 @@ def binary_search(list, item):
         guess=list[mid]
         # print(f'guess is {guess}')
         if guess == item:
-            print(f'trys: {trys}')
+            print(f'tries: {tries}')
             return True
         if guess > item:
             # print(f'{guess} is greater than {item}')
@@ -35,7 +35,7 @@ def binary_search(list, item):
             low=mid+1
         
         
-    print(f'trys: {trys}')
+    print(f'tries: {tries}')
     return False
 
 def run():

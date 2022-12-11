@@ -22,7 +22,7 @@ def get_hand(deck, num_cards):
 
 def run():
 
-    trys = int(input('how many times? '))
+    tries = int(input('how many times? '))
 
     deck = create_deck()
 
@@ -37,9 +37,9 @@ def run():
     straight_flush = 0
     royal_flush = 0
 
-    for _ in range(trys):
+    for _ in range(tries):
 
-        print(f'{_}/{trys} \t {round((_/trys)*100,2)}%' , end='\r')
+        print(f'{_}/{tries} \t {round((_/tries)*100,2)}%' , end='\r')
 
         hand = get_hand(deck, 5)
         values = []
@@ -118,16 +118,16 @@ def run():
             
 
         
-    print(f'the probability of getting high card is {(high/trys)*100}%')
-    print(f'the probability of getting one pair is {(one_pair/trys)*100}%')
-    print(f'the probability of getting two pair is {(two_pair/trys)*100}%')
-    print(f'the probability of getting three of a kind is {(three_of_a_kind/trys)*100}%')
-    print(f'the probability of getting straight is {(straight/trys)*100}%')
-    print(f'the probability of getting flush is {(flush/trys)*100}%')
-    print(f'the probability of getting full house is {(full_house/trys)*100}%')
-    print(f'the probability of getting four of a kind is {(four_of_a_kind/trys)*100}%')
-    print(f'the probability of getting straight flush is {(straight_flush/trys)*100}%')
-    print(f'the probability of getting royal flush is {(royal_flush/trys)*100}%')
+    print(f'the probability of getting high card is {(high/tries)*100}%')
+    print(f'the probability of getting one pair is {(one_pair/tries)*100}%')
+    print(f'the probability of getting two pair is {(two_pair/tries)*100}%')
+    print(f'the probability of getting three of a kind is {(three_of_a_kind/tries)*100}%')
+    print(f'the probability of getting straight is {(straight/tries)*100}%')
+    print(f'the probability of getting flush is {(flush/tries)*100}%')
+    print(f'the probability of getting full house is {(full_house/tries)*100}%')
+    print(f'the probability of getting four of a kind is {(four_of_a_kind/tries)*100}%')
+    print(f'the probability of getting straight flush is {(straight_flush/tries)*100}%')
+    print(f'the probability of getting royal flush is {(royal_flush/tries)*100}%')
     
 
 

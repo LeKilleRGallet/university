@@ -4,23 +4,23 @@ import matplotlib.pyplot as plt
 
 def sequential_search(list, item):
     #O(n)
-    trys=0
+    tries=0
     for element in list:
-        trys += 1
+        tries += 1
         if element == item:
             break
             
-    return trys
+    return tries
 
 def binary_search(list, item):
     #O(log n)
     low=0
     high=len(list)-1
 
-    trys=0
+    tries=0
 
     while low <= high:
-        trys += 1
+        tries += 1
 
         mid=(low+high)//2
         guess=list[mid]
@@ -31,17 +31,17 @@ def binary_search(list, item):
         else:
             low=mid+1
 
-    return trys
+    return tries
 
-def scatter_trys(n,trys):
-    plt.scatter(n,trys)
+def scatter_tries(n,tries):
+    plt.scatter(n,tries)
     plt.xlabel('n')
     plt.ylabel('difference in tries (seq-bin)')
     plt.title('Scatter plot of difference in tries (seq-bin)')
     plt.show()
 
 def run():
-    diff_trys=[]
+    diff_tries=[]
     n=[]
     last=100
     mx=random.randint(1,last)
@@ -57,11 +57,11 @@ def run():
         bin_try=binary_search(list, item)
         seq_try=sequential_search(list, item)
         print(f"'bin: '{bin_try}', seq: '{seq_try}", end = '\t')
-        diff_trys.append(seq_try-bin_try)
+        diff_tries.append(seq_try-bin_try)
         print(f'diff: {seq_try-bin_try}')
 
-    print(f'total diff is: {sum(diff_trys)}')
-    scatter_trys(n,diff_trys)
+    print(f'total diff is: {sum(diff_tries)}')
+    scatter_tries(n,diff_tries)
 
 
 
