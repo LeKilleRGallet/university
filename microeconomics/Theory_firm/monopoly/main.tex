@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\usepackage{lipsum}
+\onehalfspacing
+
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{Monopolio multiproducto
+}
+
+\author{Augusto Rico\\
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+
+{\setstretch{.8} %% Don't touch
+\maketitle
+}
+
+
+% --------------------
+\section{El problema del monopolista multiproducto}
+% --------------------
+
+\begin{flushleft}
+    en el siguiente demostraremos que la expresion matematica asociada con la estrategia de pricing del monopolista multiproducto se deriva de las condiciones de primer orden de maximizacion del beneficio.
+\end{flushleft}
+
+
+\begin{flushleft}
+    iniciamos planteando la ecuacion de beneficio del monopolista multiproducto.
+
+    \begin{equation*}
+        \max \pi(p_1,p_2) = p_1q_1(p_1,p_2) + p_2q_2(p_1,p_2)-c_1[q_1(p_1,p_2)]-c_2[q_2(p_1,p_2)]
+    \end{equation*}
+\end{flushleft}
+
+\begin{flushleft}
+    derivamos e igualamos a cero para obtener las condiciones de primer orden.\\
+    por facilidad $q_i(p_1,p_2) = q_i$
+    \begin{align*}
+        \frac{\partial \pi(p_1,p_2)}{\partial p_1} &= q_1 + p_1\frac{\partial q_1}{\partial p_1}+p_2\frac{\partial q_2}{\partial p_1} - c_1'\frac{\partial q_1}{\partial p_1} - c_2'\frac{\partial q_2}{\partial p_1} = 0\\
+        ~\\
+        \frac{\partial \pi(p_1,p_2)}{\partial p_2} &= q_2 + p_1\frac{\partial q_1}{\partial p_2}+p_2\frac{\partial q_2}{\partial p_2} - c_1'\frac{\partial q_1}{\partial p_2} - c_2'\frac{\partial q_2}{\partial p_2} = 0\\
+    \end{align*}
+    multiplicamos por $1$ la primera ecuacion
+    \begin{align*}
+        q_1 + p_1\frac{\partial q_1}{\partial p_1} \cdot \frac{q_1}{q_1} + p_2\frac{\partial q_2}{\partial p_1} \cdot \frac{q_2}{q_2} \cdot \frac{p_1}{p_1} - c_1'\frac{\partial q_1}{\partial p_1} \cdot \frac{q_1}{q_1} \cdot \frac{p_1}{p_1} - c_2'\frac{\partial q_2}{\partial p_1} \cdot \frac{q_2}{q_2} \cdot \frac{p_1}{p_1} = 0\\
+    \end{align*}
+    reorganizamos los terminos para dejarlo en terminos de elasticidad.
+    \begin{align*}
+        q_1 + q_1 \underbrace{\frac{p_1}{q_1} \frac{\partial q_1}{\partial p_1}}_{-\eta_{11}} + q_2 \frac{p_2}{p_1} \underbrace{\frac{\partial q_2}{\partial p_1} \frac{p_1}{q_2}}_{-\eta_{12}} - c_1' \frac{q_1}{p_1} \underbrace{\frac{p_1}{q_1} \frac{\partial q_1}{\partial p_1}}_{-\eta_{11}} - c_2' \frac{q_2}{p_1} \underbrace{\frac{p_1}{q_2} \frac{\partial q_2}{\partial p_1}}_{-\eta_{12}} = 0\\
+    \end{align*}
+    remplazamos y reorganizamos finalmente, obteniendo:
+    \begin{align*}
+        q_1 - q_1 \eta_{11} -  q_2 \eta_{12} \frac{p_2}{p_1} = - c_1' \eta_{11} \frac{q_1}{p_1} - c_2' \eta_{12} \frac{q_2}{p_1}\\
+    \end{align*}
+    multiplicamos la ecuacion por $p_1/q_1$ y simplificamos.
+    \begin{align*}
+        \cancel{q_1} \frac{p_1}{\cancel{q_1}}- \cancel{q_1} \eta_{11} \frac{p_1}{\cancel{q_1}}-  q_2 \eta_{12} \frac{p_2}{\cancel{p_1}} \frac{\cancel{p_1}}{q_1}= - c_1' \eta_{11} \xcancel{\frac{q_1}{p_1} \frac{p_1}{q_1}}- c_2' \eta_{12} \frac{q_2}{\cancel{p_1}} \frac{\cancel{p_1}}{q_1}\\
+        p_1 - p_1 \eta_{11} -  p_2 \eta_{12} \frac{q_2}{q_1} = - c_1' \eta_{11} - c_2' \eta_{12} \frac{q_2}{q_1}\\
+    \end{align*}
+    manipulamos la ecuacion algebraicamente:
+\end{flushleft}
+\begin{align*}
+    \begin{WithArrows}[format=l, jot=4pt]
+        -\eta_{11}(p_1 - c_1') = \eta_{12}\frac{q_2}{q_1}(p_2 - c_2')-p_1 \Arrow[]{$\div \eta_{11}$} \\
+        p_1 - c_1' = \frac{p_1}{\eta_{11}}-\frac{\eta_{12}}{\eta_{11}}\frac{q_2}{q_1}(p_2 - c_2')  \Arrow[]{$\div p_1$} \\
+        \frac{p_1 - c_1'}{p_1} = \frac{1}{\eta_{11}}-\frac{\eta_{12}q_2(p_2-c_2')}{\eta_{11} q_1 p_1} \Arrow[]{$\times \frac{p_2}{p_2}$} \\
+        \frac{p_1 - c_1'}{p_1} = \frac{1}{\eta_{11}}-\frac{\eta_{12}q_2(p_2-c_2')}{\eta_{11} q_1 p_1} \cdot \frac{p_2}{p_2}
+    \end{WithArrows}
+\end{align*}
+\begin{flushleft}
+    reorganizamos para obtener los indices de Lerner
+    \begin{align*}
+        \underbrace{\frac{p_1 - c_1'}{p_1}}_{L_1} = \frac{1}{\eta_{11}} - \frac{\eta_{12}q_2p_2}{\eta_{11} q_1 p_1} \cdot \underbrace{\frac{(p_2-c_2')}{p_2}}_{L_2}
+    \end{align*}
+    finalmente tenemos la ecuacion, evidenciando que la estrategia de pricing del monopolista multiproducto se deriva de las condiciones de primer orden para maximizar el beneficio.
+    \begin{align*}
+        L_1 = \frac{1}{\eta_{11}} - L_2 \frac{\eta_{12}q_2p_2}{\eta_{11} q_1 p_1}
+    \end{align*}
+\end{flushleft}
+\end{document}
