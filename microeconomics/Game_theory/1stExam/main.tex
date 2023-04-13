@@ -1,0 +1,591 @@
+\documentclass[12pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{Parcial 1
+}
+
+% AUTHORS:
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}} %% Email author 1 
+% \and Second Author\\% Name author
+%     \href{mailto:secondauthor@email.com}{\texttt{secondauthor@email.com}} %% Email author 2
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ejercicios de las diapositivas}
+\subsection{Primer grupo de ejercicios para el Parcial \#1 (p54) }
+\subsubsection{¿La teoría de juegos está enmarcada por la teoría neoclásica?}
+
+\begin{flushleft}
+    Aunque la teoría neoclásica ha logrado importantes desarrollos dentro de la teoría de juegos y podría considerarse una de las escuelas del conocimiento que más contribuciones ha hecho en este campo, esta teoría no está limitada únicamente a las interacciones económicas ni se limita exclusivamente a la teoría neoclásica, ya que sus orígenes provienen de otros campos del conocimiento como las matemáticas. La teoría neoclásica ha podido aprovechar la teoría de juegos debido a que ambas comparten un eslabón esencial que es la racionalidad. Sin embargo, también existe teoría de juegos donde la racionalidad no es un supuesto y es poco aplicable a la teoría neoclásica.
+\end{flushleft}
+
+\subsubsection{En los siguientes casos, resuelva por dominancia iterada, por equilibrios de Nash puros y por dinámica de mejor-respuesta. Compare las soluciones.}
+\begin{enumerate}
+    \item Juego de tirar la moneda
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$CARA$}  & \multicolumn{1}{c}{$SELLO$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR $1$}  & $CARA$ & $1,-1$ & $-1,1$ \\\cline{3-4}
+            & $SELLO$ & $-1,1$ & $1,-1$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia iterada
+        \begin{flushleft}
+            Dado que no existe $u_i(C_{ij},C_{ji})>u_i(C_{ij}^\prime,C_{ji})$ para ninguno de los jugadores, no se puede eliminar ninguna estrategia y, por ende, no se puede aplicar la dominancia iterada para resolver este juego.
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{flushleft}
+            Intentamos resolver el juego mediante equilibrio de Nash puro, marcando con una $X$ la estrategia de mayor pago para cada jugador, dada una estrategia del jugador contrario. El resultado se muestra en la siguiente tabla:
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{cc|c|c|}
+                    & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                    & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$CARA$}  & \multicolumn{1}{c}{$SELLO$} \\\cline{3-4}
+                    \multirow{2}*{JUGADOR $1$}  & $CARA$ & $X~1,-1$ & $-1,1~X$ \\\cline{3-4}
+                    & $SELLO$ & $-1,1~X$ & $X~1,-1$ \\\cline{3-4}
+                \end{tabular}
+            \end{center}
+            Dado que no existe una estrategia que ambos jugadores prefieran en conjunto, este juego no puede ser resuelto mediante el método de equilibrio de Nash puro.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{flushleft}
+           En la siguiente bimatriz de pago con las decisiones de mejor respuesta, utilizaremos el símbolo $*$ cuando la mejor respuesta para un jugador sea mantenerse en una estrategia y una flecha direccional ($\Downarrow$ y $\Uparrow$ para el Jugador 1, y $\Leftarrow$ y $\Rightarrow$ para el Jugador 2) cuando la mejor estrategia sea cambiar de estrategia.
+        \end{flushleft}
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$CARA$}  & \multicolumn{1}{c}{$SELLO$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR $1$}  & $CARA$ & $*,\Rightarrow$ & $\Downarrow,*$ \\\cline{3-4}
+                & $SELLO$ & $\Uparrow,*$ & $*,\Leftarrow$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Dado que la dinámica de mejor respuesta no converge a una estrategia única, sino que ante cada estrategia hay una estrategia de respuesta por parte del otro jugador, no se puede determinar el equilibrio de Nash mediante este método.
+        \end{flushleft}
+        \item conclusiones
+        \begin{flushleft}
+            Ninguno de los métodos utilizados ha funcionado para obtener los equilibrios de Nash puros, por lo que a priori se puede afirmar que este juego al menos no tiene una solución de equilibrio de Nash puro.
+        \end{flushleft}
+    \end{alphalist}
+    \item Juego de Coordinación
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$DER$}  & \multicolumn{1}{c}{$IZQ$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR $1$}  & $DER$ & $10,10$ & $0,0$ \\\cline{3-4}
+            & $IZQ$ & $0,0$ & $1,1$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia iterada
+        \begin{flushleft}
+           Aunque $10>0$, no es cierto que $0>1$, por lo que no se puede eliminar ninguna estrategia y, por ende, no se puede aplicar la dominancia iterada para resolver este juego.
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$DER$}  & \multicolumn{1}{c}{$IZQ$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR $1$}  & $DER$ & $X~10,10~X$ & $0,0$ \\\cline{3-4}
+                & $IZQ$ & $0,0$ & $X~1,1~X$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Como se puede observar en la tabla, se obtienen dos estrategias donde ambos jugadores prefieren jugar estas estrategias y, de forma individual, no preferirán jugar ninguna otra estrategia. Por lo tanto, estas dos combinaciones de estrategias son los equilibrios de Nash.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$DER$}  & \multicolumn{1}{c}{$IZQ$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR $1$}  & $DER$ & $*,*$ & $\Downarrow,\Leftarrow$ \\\cline{3-4}
+                & $IZQ$ & $\Uparrow,\Rightarrow$ & $*,*$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Como se puede notar, las dinámicas nos llevan a las dos respuestas de coordinación, donde ambos jugadores tienen la misma estrategia. En caso de estar en una situación de no coordinación, el jugador preferirá cambiar su decisión por la decisión del otro agente, coordinándose y mejorando su utilidad. Mientras tanto, si ya están coordinados de forma individual, ninguno cambiará su estrategia, lo que resulta en dos equilibrios de Nash.
+        \end{flushleft}
+        \item conclusiones
+        \begin{flushleft}
+            El método de resolución mediante dominancia iterada no fue útil para obtener los equilibrios de Nash, ya que aunque una estrategia coordinada, como la de izquierda, daba una mayor utilidad a la estrategia coordinada de derecha, no era cierto que los jugadores prefirieran estar descoordinados a coordinarse jugando a la izquierda. Este aspecto no era capturado por este método, mientras que los métodos de Equilibrio de Nash puro y dinámica de mejor respuesta sí lograban capturar de forma eficiente los equilibrios de Nash.
+        \end{flushleft}
+    \end{alphalist}
+    \item Batalla de los Sexos
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Mujer}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$FUTBOL$}  & \multicolumn{1}{c}{$TEATRO$} \\\cline{3-4}
+            \multirow{2}*{Hombre}  & $FUTBOL$ & $2,1$ & $0,0$ \\\cline{3-4}
+            & $TEATRO$ & $0,0$ & $1,2$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia iterada
+        \begin{flushleft}
+            Aunque $2 > 0$, no es cierto que $0 > 1$, por lo que no se puede eliminar ninguna estrategia y, por ende, no se puede aplicar la dominancia iterada para resolver este juego.
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Mujer}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$FUTBOL$}  & \multicolumn{1}{c}{$TEATRO$} \\\cline{3-4}
+                \multirow{2}*{Hombre}  & $FUTBOL$ & $X~2,1~X$ & $0,0$ \\\cline{3-4}
+                & $TEATRO$ & $0,0$ & $X~1,2~X$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Como se puede observar en la tabla, obtenemos dos estrategias en las que ambos jugadores prefieren jugar, y de forma individual no preferirán jugar ninguna otra estrategia. Por lo tanto, estas dos combinaciones de estrategias son los equilibrios de Nash.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Mujer}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$FUTBOL$}  & \multicolumn{1}{c}{$TEATRO$} \\\cline{3-4}
+                \multirow{2}*{Hombre}  & $FUTBOL$ & $*,*$ & $\Downarrow,\Leftarrow$ \\\cline{3-4}
+                & $TEATRO$ & $\Uparrow,\Rightarrow$ & $*,*$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Como se puede observar, las dinámicas del juego nos llevan a dos respuestas de coordinación, donde ambos jugadores eligen la misma estrategia. En caso de encontrarse en una situación de no coordinación, los jugadores preferirán cambiar su decisión por la decisión del otro jugador para coordinarse y mejorar su utilidad. Mientras tanto, si ya están coordinados de forma individual, ninguno de ellos cambiará su estrategia, lo que resulta en dos equilibrios de Nash.
+        \end{flushleft}
+        \item conclusiones
+        \begin{flushleft}
+            Al ser este otro juego de coordinación con la ligera diferencia que en este caso, cada jugador tiene unas ligeras preferencias por una actividad en particular, no obstante siempre van a preferir estar juntos (coordinados) a no estarlo, tal como en el juego anterior.
+
+        \end{flushleft}
+    \end{alphalist}
+    \item El juego de la Mano Invisible
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$MAIZ$}  & \multicolumn{1}{c}{$TOMATE$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR 1}  & $MAIZ$ & $2,4$ & $4,3$ \\\cline{3-4}
+            & $TOMATE$ & $5,5$ & $3,2$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia iterada
+        \begin{flushleft}
+            Dado que para el $JUGADOR 2$ $4>3$ y $5>2$ se concluye que la estrategia $TOMATE$ es dominada por la de $MAIZ$,
+            por lo tanto no es racional pensar que este jugador este dispuesto a jugar la estrategia de $TOMATE$, por lo que
+            puede ser eliminada, obteniendo:
+        \end{flushleft}
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$MAIZ$}  & \multicolumn{1}{c}{} \\\cline{3-3}
+                \multirow{2}*{JUGADOR 1}  & $MAIZ$ & $2,4$ & \\\cline{3-3}
+                & $TOMATE$ & $5,5$ & \\\cline{3-3}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Ahora, para el $JUGADOR 1$, tenemos que $5>2$, por lo que para este jugador la estrategia $TOMATE$ domina a la estrategia $MAIZ$. Por lo tanto, no es lógico para el $JUGADOR 1$ jugar la estrategia $MAIZ$. Podemos eliminarla y obtener que el juego se reduce a:
+        \end{flushleft}
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$MAIZ$}  & \multicolumn{1}{c}{} \\\cline{3-3}
+                {JUGADOR 1} & $TOMATE$ & $5,5$ & \\\cline{3-3}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+           Obteniendo asi, el equilibrio de Nash se obtiene cuando el $JUGADOR 1$ juega $TOMATE$ y el $JUGADOR 2$ juega $MAIZ$.
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$MAIZ$}  & \multicolumn{1}{c}{$TOMATE$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR 1}  & $MAIZ$ & $2,4~X$ & $X~4,3$ \\\cline{3-4}
+                & $TOMATE$ & $X~5,5~X$ & $3,2$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Tal como se aprecia en la tabla, existe un único equilibrio de Nash puro, que esta dado cuando el $JUGADOR 1$ juega $TOMATE$ y el $JUGADOR 2$ juega $MAIZ$.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{center}
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$MAIZ$}  & \multicolumn{1}{c}{$TOMATE$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR 1}  & $MAIZ$ & $\Downarrow,*$ & $*,\Leftarrow$ \\\cline{3-4}
+                & $TOMATE$ & $*,*$ & $\Uparrow,\Leftarrow$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Como se nota en la tabla, la dinamica de mejor respuesta siempre va a converger a la solucion donde el $JUGADOR 1$ juega $TOMATE$ y el $JUGADOR 2$ juega $MAIZ$, obteniendo el equilibrio de Nash
+        \end{flushleft}
+        \item conclusiones
+        \begin{flushleft}
+            Para este juego, se puede obtener el equilibrio de Nash mediante cualquiera de los métodos disponibles. Además, se obtendrá el mismo resultado independientemente del método utilizado, ya que este es un juego de tipo neoclásico en el que se busca una solución única.
+        \end{flushleft}
+    \end{alphalist}
+\end{enumerate}
+\subsection{Segundo grupo de ejercicios para el Parcial \#1 (p82)}
+\subsubsection{Informe de lectura \citet{palacios-huerta_2023}: \textit{'Maradona plays Minimax'}}
+\begin{flushleft}
+    En el paper se expone mediante datos empíricos cómo una leyenda del fútbol como Maradona concuerda en el lanzamiento de penales, que es un gran ejemplo de un juego de suma cero, con las predicciones del equilibrio de Nash mixto. Esto significa que el jugador, al patear penales, está optimizando inconscientemente para tener la mayor probabilidad de anotar un gol.\\~\\
+    Para llegar a esto, el autor utiliza el histórico de penales lanzados por Maradona y recopila el lado para el cual patea Maradona y el lado para el cual se lanza el arquero para intentar detener el penal. Con esta información, se crea una matriz de pago cero donde se registra la probabilidad de que Maradona anote un gol dado ambas decisiones, teniendo en cuenta que, dado el distanciamiento temporal entre penales, se pueden considerar los eventos como independientes entre sí.\\~\\
+    Teniendo las probabilidades de que Maradona anote un gol dado cierta respuesta del arquero, y utilizando matemáticas altamente refinadas y complejas, el autor obtiene las probabilidades de Nash de cada una de las acciones tanto de Maradona como de los arqueros, evidenciando que estas probabilidades son sumamente cercanas a las probabilidades empíricas registradas. Esto demuestra que el juego de Maradona es consistente con el teorema MiniMax de von Neumann.\\~\\
+    Algo realmente destacable es cómo las probabilidades de decisión se concentran alrededor de 0.5, lo que evidencia la amenaza que Maradona representa para el arquero, quien intenta que sea lo más imprevisible posible limitando la cantidad de información que brinda. De esta manera, el arquero no puede tomar una decisión ex-ante, como moverse hacia un lado del arco. Por la falta de información, el arquero no puede estar seguro de cuál será la mejor respuesta y, por ende, debe mantenerse atento e incluso adivinar hacia qué lado lanzarse para intentar evitar el gol.
+\end{flushleft}
+\subsubsection{Teorema de la “Condición necesaria para ser un equilibrio mixto”.}
+\begin{flushleft}
+    \textbf{Teorema (Condición necesaria para ser equilibrio mixto): Si un jugador utiliza una estrategia mixta no-degenerada (es decir, que asigna una probabilidad positiva a más de una estrategia pura) en un equilibrio de Nash mixto, entonces es indiferente entre todas las estrategias puras a las cuales les ha asignado probabilidad positiva. Sin embargo, la afirmación recíproca no es cierta.}
+\end{flushleft}
+\begin{flushleft}
+    Para que exista un equilibrio mixto, el jugador debe ser capaz de asignar un peso porcentual a cada una de las estrategias puras posibles. No es necesario que todas las estrategias tengan el mismo peso, ya que el jugador dará más peso a las estrategias que le proporcionen un mayor valor esperado. En otras palabras, si:
+    $E(\varepsilon_i)>E(\varepsilon_j) \implies P(\varepsilon_i) > P(\varepsilon_j)$ y dado que
+    $P(\varepsilon_\_) > 0$, el jugador puede elegir cualquiera de las estrategias indiferente de la probabilidad, obteniendo así la posibilidad de equilibrio mixto.
+
+    Es importante tener en cuenta que aunque la no existencia de estrategias mixtas implica la no existencia de equilibrios mixtos, la no existencia de estas estrategias no es suficiente para garantizar equilibrios mixtos. Tal es el caso del siguiente juego:
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$D$}  & \multicolumn{1}{c}{$I$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR $1$}  & $D$ & $3,4$ & $2,2$ \\\cline{3-4}
+            & $I$ & $1,1$ & $2,1$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    Donde calculando las probabilidades tendremos que;
+    \begin{align*}
+        U_1 = 3p_1+\cancel{2(1-p_1)}=1q+\cancel{2(1-p_1)}\\
+        U_1 = 3p_1-p_1=0 \to 2p_1=0\to p_1=0\\
+        U_2 = 4p_2+\cancel{1(1-p_2)}=2p_2+\cancel{1(1-p_2)}\\
+        U_2 = 4p_2-p_2=0 \to 2p_2=0\to p_2=0\\
+    \end{align*}
+    Con lo que se evidencia que incluso con la existencia de estrategias mixtas, no es posible garantizar la existencia de equilibrios mixtos.
+\end{flushleft}
+\subsubsection{Resuelva los siguientes juegos mediante dominancia estricta iterada en estrategias puras, equilibrios de Nash (puros y mixtos) y dinámica de mejor respuesta en estrategias puras.}
+\begin{enumerate}
+    \item Halcon y Paloma
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$Paloma$}  & \multicolumn{1}{c}{$Halcon$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR $1$}  & $Paloma$ & $3,3$ & $1,4$ \\\cline{3-4}
+            & $Halcon$ & $4,1$ & $0,0$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia estricta
+        \begin{flushleft}
+         Aunque es cierto que $4 > 3$, no se puede concluir que $0 > 1$. Por lo tanto, no se puede eliminar ninguna estrategia y, en consecuencia, no se puede aplicar la dominancia iterada para resolver este juego.
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$Paloma$}  & \multicolumn{1}{c}{$Halcon$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR $1$}  & $Paloma$ & $3,3$ & $X~1,4~X$ \\\cline{3-4}
+                & $Halcon$ & $X~4,1~X$ & $0,0$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+           Tal como se muestra en la tabla, en este caso los equilibrios de Nash puros están caracterizados por estrategias de anticordinación, es decir, cuando el jugador $1$ elige la estrategia $Halcon$, el jugador $2$ elige la estrategia $Paloma$, y viceversa.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$Paloma$}  & \multicolumn{1}{c}{$Halcon$} \\\cline{3-4}
+                \multirow{2}*{JUGADOR $1$}  & $Paloma$ & $\Downarrow,\Rightarrow$ & $*,*$ \\\cline{3-4}
+                & $Halcon$ & $*,*$ & $\Uparrow,\Leftarrow$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Tal como se observa en la tabla, las dinámicas de mejor respuesta convergen a estrategias de anticordinación, que a su vez son los equilibrios de Nash puros de este juego.
+        \end{flushleft}
+        \item Equilibrio de Nash mixto
+        \begin{align*}
+            U_1 = 3p_1+4(1-p_1)=1p_1+0(1-p_1)\\
+            U_1 = 3p - 4p_1 - 4 = p_1\\
+            U_1 = -p_1-p_1 = 4 \to p_1 = 1/2
+        \end{align*}
+        \begin{flushleft}
+            Por simetría, se cumple que $p_2 = p_1$, lo que implica que $p_2 = 1/2$. Podemos concluir entonces que además de los dos equilibrios puros, existe un equilibrio mixto en $(1/2,1/2)$.
+        \end{flushleft}
+    \end{alphalist}
+    \item Juego 3x3 sin nombre
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$L$}  & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-5}
+            & $T$ & $1,0$ & $3,0$ & $2,1$ \\\cline{3-5}
+            {JUGADOR $1$} & $H$ & $2,1$ & $1,6$ & $0,2$ \\\cline{3-5}
+            & $B$ & $3,1$ & $0,1$ & $1,2$ \\\cline{3-5}
+        \end{tabular}
+    \end{center}
+    \begin{alphalist}
+        \item Dominancia iterada
+        \begin{flushleft}
+            Aunque no es posible realizar un proceso de dominancia iterada estricta en este caso, sí es posible realizar un proceso de dominancia iterada débil. Por lo tanto, procederemos a hacerlo para ver los resultados.
+
+            Dado que la estrategia $M$ domina débilmente a la estrategia $L$, podemos eliminar esta última estrategia, obteniendo:
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{cc|c|c|}
+                    & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                    & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-4}
+                    & $T$ & $3,0$ & $2,1$ \\\cline{3-4}
+                    {JUGADOR $1$} & $H$ & $1,6$ & $0,2$ \\\cline{3-4}
+                    & $B$ & $0,1$ & $1,2$ \\\cline{3-4}
+                \end{tabular}
+            \end{center}
+            La estrategia $T$ domina estrictamente las estrategias $H$ y $B$ por lo que podemos eliminarlas obteniendo:
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{cc|c|c|}
+                    & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                    & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-4}
+                    {JUGADOR $1$} & $T$ & $3,0$ & $2,1$ \\\cline{3-4}
+                \end{tabular}
+            \end{center}
+            La estrategia $R$ domina estrictamente a la estrategia $M$, por lo que podemos eliminarla obteniendo que el equilibrio de Nash en este caso sera;
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{cc|c|c}
+                    & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR 2}\\
+                    & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$R$}  & \multicolumn{1}{c}{} \\\cline{3-3}
+                    {JUGADOR 1} & $T$ & $2,1$ & \\\cline{3-3}
+                \end{tabular}
+            \end{center}
+        \end{flushleft}
+        \item Equilibrio de Nash puro
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$L$}  & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-5}
+                & $T$ & $1,0$ & $X~3,0$ & $X~2,1~X$ \\\cline{3-5}
+                {JUGADOR $1$} & $H$ & $2,1$ & $1,6~X$ & $0,2$ \\\cline{3-5}
+                & $B$ & $X~3,1$ & $0,1$ & $1,2~X$ \\\cline{3-5}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Obteniendo casuamente como equilibrio, el mismo que el proceso de dominancia debil.
+        \end{flushleft}
+        \item Dinamica de mejor respuesta
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$L$}  & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-5}
+                & $T$ & $\Downarrow,\Rightarrow$ & $*,\Rightarrow$ & $*,*$ \\\cline{3-5}
+                {JUGADOR $1$} & $H$ & $\Downarrow,\Rightarrow$ & $\Uparrow,*$ & $\Uparrow,\Leftarrow$ \\\cline{3-5}
+                & $B$ & $*,\Rightarrow$ & $\Uparrow,\Rightarrow$ & $\Uparrow,*$ \\\cline{3-5}
+            \end{tabular}
+        \end{center}
+        \begin{flushleft}
+            Obteniendo como equilibrio el mismo que mediante el proceso de dominancia debil y el equilibrio de Nash puro.
+        \end{flushleft}
+        \item Equilibrio de Nash mixto
+        \begin{flushleft}
+            Dado que existe un único equilibrio de Nash puro, no podrá existir un equilibrio de Nash mixto, ya que los jugadores siempre jugarán para alcanzar ese único equilibrio de Nash puro y no tendría sentido amenazar con jugar otra estrategia.
+        \end{flushleft}
+    \end{alphalist}
+\end{enumerate}
+\subsubsection{Pruebe que el único equilibrio de Nash del juego (Myerson (1991))}
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$L$}  & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$R$} \\\cline{3-5}
+            & $T$ & $7,2$ & $2,7$ & $3,6$ \\\cline{3-5}
+            {JUGADOR $1$} & $B$ & $2,7$ & $7,2$ & $4,5$ \\\cline{3-5}
+        \end{tabular}
+    \end{center}
+        \begin{flushleft}
+            Para demostrar que la estrategia mixta $1/6L,5/6R$, domina estrictamente la estrategia $M$,
+            tenemos que mostrar que:
+            \begin{align*}
+                (1/6)(2p+7(1-p))+(5/6)(6p+5(1-p))>7p+2(1-p)\\
+                (1/6)(2p+7-7p)+(5/6)(6p+5-5p)>7p+2-2p\\
+                (1/6)(-5p+7)+(5/6)(p+5)>5p+2\\
+                -(5/6)p+7/6+(5/6)p+(25/6)>5p+2\\
+                7/6+25/6>5p+2\\
+                32/6>5p+2\\
+                32>30p+12\\
+                32-12>30p\\
+                20/30>p\\
+                p<2/3\\
+            \end{align*}
+            Con lo que tenemos, para poder eliminar la estrategia $M$, debemos tener $p<2/3$. Después de eliminar la estrategia $M$, procedemos a calcular el equilibrio mixto.
+            \begin{align*}
+                U_1 = 7p + 2(1-p) = 3p + 4(1-p)\\
+                U_1 = 7p + 2 - 2p = 3p + 4 - 4p\\
+                U_1 = 5p + p = 4 - 2\\
+                U_1 = 6p = 2 \to p = 1/3<2/3\\
+            \end{align*}
+            \begin{align*}
+                U_2 = 2p + 6(1-p) = 7p + 5(1-p)\\
+                U_2 = 2p + 6 - 6p = 7p + 5 - 5p\\
+                U_2 = -4p-2p = 5-6\\
+                U_2 = -6p = -1 \to p = 1/6\\
+            \end{align*}
+            Con lo que obtenemos, el equilibrio mixto de este juego es $((1/3)T + (2/3)B, (1/6)L+ (5/6)R)$, y dado que este juego no tiene equilibrios puros, este es el único equilibrio.
+        \end{flushleft}
+\subsubsection{Juego del avión}
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{defensor}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$D_1$}  & \multicolumn{1}{c}{$D_2$} & \multicolumn{1}{c}{$D_3$} \\\cline{3-5}
+            & $A_1$ & $0$ & $v_1$ & $v_1$ \\\cline{3-5}
+            {Atacante} & $A_2$ & $v_2$ & $0$ & $v_2$ \\\cline{3-5}
+            & $A_3$ & $v_3$ & $v_3$ & $0$ \\\cline{3-5}
+        \end{tabular}
+    \end{center}
+    \begin{flushleft}
+        Ya que la armada busca maximizar y sabemos que $v_1>v_2>v_3$, entonces se puede evaluar la opción de eliminar la posibilidad de atacar al tercer objetivo, ya que es más rentable atacar los dos primeros objetivos. Podemos evaluar si esto es viable.
+    
+        \begin{align*}
+            1/2A_1+1/2A_2>A_3\\
+            1/2(0p_1+v_1p_2+v_1p_3)+1/2(v_2p_1+0p_2+v_2p_3)>v_3p_1+v_3p_2\\
+            v_1p_2+v_1p_3+v_2p_1+v_2p_3>2v_3p_1+2v_3p_2\\
+        \end{align*}
+        Dado que $v_1>v_2>v_3$ podemos reemplazar $v_1$ y $v_2$, por $v_3$ y obtener que;
+        \begin{align*}
+            v_1p_2+v_1p_3+v_2p_1+v_2p_3>v_3p_2+v_3p_3+v_3p_1+v_3p_3>2v_3p_1+2v_3p_2\\
+            v_3p_2+2v_3p_3+v_3p_1>2v_3p_1+2v_3p_2\\
+        \end{align*}
+        Aquí, es posible reemplazar $p_3=1-p_1-p_2$ y obtener que;
+        \begin{align*}
+            v_3p_2+2v_3(1-p_1-p_2)+v_3p_1>2v_3p_1+2v_3p_2\\
+            \cancel{v_3p_2}+2v_3-\cancel{2}v_3p_1-\cancel{2}v_3p_2+\cancel{v_3p_1}>2v_3p_1+2v_3p_2\\
+            2v_3-v_3p_1-v_3p_2>2v_3p_1+2v_3p_2\\
+            2v_3>3v_3p_1+3v_3p_2\\
+            2v_3-3v_3p_1-3v_3p_2>0\\
+            v_3(2-3p_1-3p_2)>0\\
+            v_3>0\\
+        \end{align*}
+        Obteniendo así que, siempre que $v_1 > v_2 > v_3 > 0$, no es inteligente atacar el tercer objetivo. Este hecho es cierto, por lo que es imperante eliminar la opción de atacar el tercer objetivo. Dado que el defensor también es capaz de saber esto, no tendrá ningún incentivo para defender el tercer objetivo. Por lo tanto, el juego se reduce a:
+    \end{flushleft}
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{defensor}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$D_1$}  & \multicolumn{1}{c}{$D_2$}\\\cline{3-4}
+            \multirow{2}*{Atacante} & $A_1$ & $0$ & $v_1$ \\\cline{3-4}
+            & $A_2$ & $v_2$ & $0$\\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \begin{flushleft}
+        Nos disponemos a obtener las estrategias mixtas del atacante y del defensor.
+    \end{flushleft}
+    \begin{align*}
+        U_1 = 0p + v_1(1-p) = v_2p + 0(1-p)\\
+        v_1 - v_1p = v_2p\\
+        v_1 = v_1p + v_2p\\
+        v_1 = p(v_1+v_2)\\
+        p = \frac{v_1}{v_1+v_2}\\
+    \end{align*}
+    \begin{align*}
+        U_2 = 0q - v_2(1-q) = -v_1q + 0(1-q)\\
+        v_2 + v_2q = -v_1q\\
+        v_2 = v_2q + v_1q\\
+        v_2 = q(v_1+v_2)\\
+        q = \frac{v_2}{v_1+v_2}\\
+    \end{align*}
+    \begin{flushleft}
+        Por lo tanto, el equilibrio mixto estará caracterizado por; $\left(\left(\frac{v_1}{v_1+v_2}\right)A_1+\left(1-\frac{v_1}{v_1+v_2}\right)A_2,\left(\frac{v_2}{v_1+v_2}\right)D_1+\left(1-\frac{v_2}{v_1+v_2}\right)D_2   \right)$
+    \end{flushleft}
+\subsubsection{Concurso de TV}
+\begin{center}    
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular}{cc|c|c|}
+        & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+        & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$DEME$}  & \multicolumn{1}{c}{$DELE$} \\\cline{3-4}
+        \multirow{2}*{JUGADOR $1$}  & $DEME$ & $1,1$ & $5,0$ \\\cline{3-4}
+        & $DELE$ & $0,5$ & $4,4$ \\\cline{3-4}
+    \end{tabular}
+\end{center}
+\begin{flushleft}
+    Este juego no es más que un dilema del prisionero con un enunciado distinto. Por lo tanto, el equilibrio de Nash será la situación en la que ambos jugadores eligen la opción $DEME$, aunque coordinándose podrían obtener un mejor resultado. Sin embargo, la imposibilidad de comunicarse, la falta de confianza entre ellos y la racionalidad los obligará a decidir la peor opción para ambos.
+\end{flushleft}
+
+
+
+\section{Juego evolutivo: Coordinacion.}
+\begin{flushleft}
+    La simulación se realizó del juego de coordinación 100 veces, con 10 mil ciclos por interacción y 200 agentes, utilizando la siguiente matriz de pagos.
+\end{flushleft}
+\begin{center}    
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular}{cc|c|c|}
+        & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+        & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$DER$}  & \multicolumn{1}{c}{$IZQ$} \\\cline{3-4}
+        \multirow{2}*{JUGADOR $1$}  & $DER$ & $10,10$ & $0,0$ \\\cline{3-4}
+        & $IZQ$ & $0,0$ & $1,1$ \\\cline{3-4}
+    \end{tabular}
+\end{center}
+\begin{flushleft}
+    Durante la simulación se pudo obtener información interesante que ayuda a comprender mejor el comportamiento de los agentes. Aunque a primera vista podría pensarse que, debido a un pago significativamente mayor, la opción de $DER$ sería la elección obvia, esto no resultó ser el caso. El equilibrio de Nash de $IZQ$ demostró ser lo suficientemente fuerte como para influir en la toma de decisiones de los agentes y lograr que la diferencia entre aquellos que eligen $DER$ y aquellos que eligen $IZQ$ se distribuya en una función gaussiana.
+    Es importante destacar que esta distribución evidencia que la capacidad retentiva no está influida por el pago, lo que es una información relevante para el diseño de estrategias a futuro. Por otro lado, se observó que la incapacidad de coordinación entre los agentes lleva a que tengan que adaptarse a posiblemente peores condiciones, como se muestra claramente en la gráfica.
+    \begin{center}\includegraphics[width=0.5\textwidth]{imagenes/diff.png}\end{center}
+    No obstante, algo que se evidenció fue la fuerte relación entre cómo se empezaba y se terminaba la simulación, como se muestra en la siguiente gráfica. Esto también revela la persistencia del equilibrio de Nash en el juego, a pesar de las variaciones iniciales en las elecciones de los agentes.
+    \begin{center}\includegraphics[width=0.5\textwidth]{imagenes/inivsfin.png}\end{center}
+\end{flushleft}
+
+\section{informe de lectura \citet{monsalve2021}: \textit{'Preocupaciones sobre la microeconomía que nos enseñan los libros de texto básicos'}}
+\begin{flushleft}
+    En el artículo se exponen muchas críticas a la forma de enseñanza de la microeconomía, así como a su núcleo mismo, incluyendo las contradicciones y vacíos en la teoría. Además, se cuestiona el método para validar políticas públicas y se sugiere que estas validaciones son en sí mismas una ideología justificada.
+
+    Personalmente, comparto la opinión de que la enseñanza de la microeconomía a menudo carece de sustancia y honestidad. Esto se debe a la realización de ejercicios repetitivos en clase y a un sistema de evaluación que se basa en un sistema de castigo-recompensa, donde se premia la memorización del dogma en lugar de fomentar la búsqueda de posibles problemas más allá de los problemas "tipo" resueltos en clase.
+    
+    Es importante tener en cuenta que, aunque la \textit{teoría neoclásica} tiene hechos falseables en términos de \citet{popper_1959}, no se debe desestimar por completo. Como señaló \citet{kuhn_1971}, se debe considerar su validez en el contexto del paradigma actual, y es posible que necesitemos un cambio de paradigma para avanzar en la comprensión económica, por lo que:
+    \begin{enumerate}
+        \item La disciplina de la economía actualmente no cuenta con un \textit{paradigma} definido, al igual que otras ciencias sociales. Simplemente es una presencia, lo que implica que aunque es pertinente eliminar el falso aura de "paradigma" que tiene la teoría neoclásica, es igualmente importante hacerlo con cualquier otra escuela que crea o pretenda serlo, mientras no se llegue a consensos. Esto es algo \textit{cuasi}-imposible en las disciplinas sociales debido a la inconmensurabilidad de las diferentes teorías.
+        \item Posiblemente la teoría neoclásica logre hacer una revolución dentro de su propia escuela, mediante la creación de modelos que no solo mantengan la capacidad de capturar los hechos actuales, sino que además sean capaces de capturar dinámicas más amplias y de mejor calidad. Como se propone en el texto, esto podría lograrse mediante la teoría de redes o incluso mediante la formulación de modelos que no requieran la suposición de la racionalidad.
+        \item Una mejor comprensión de las \textit{anomalías} de la teoría neoclásica no solo permitiría a los neoclásicos intentar una revolución en su propia escuela, sino que también beneficiaría a otras escuelas al permitirles evitar errores y enriquecer sus campos de estudio.
+        \item Dado que la economía es una ciencia social, sufre de problemas de inconmensurabilidad debido a factores externos, como los sesgos de confirmación que pueden llevar a cada economista a pensar o reafirmar sus ideologías mediante la teoría. Por lo tanto, será imposible declarar de forma objetiva la muerte de una teoría económica, mientras siga siendo la más eficiente para sus seguidores, quienes revalidan sus sesgos a través de ella. La teoría neoclásica ha tenido una ventaja en este aspecto debido a la barrera que representa la demostración matemática.
+    \end{enumerate}
+    Con lo anterior, se resalta la importancia de fomentar un pensamiento crítico en los estudiantes y de ampliar su visión más allá de la teoría neoclásica. Como propone el artículo, se debe enseñar lo que no está presente en el currículo y ofrecer asignaturas completas que aborden temas como el equilibrio general, pero no limitarse a su estudio sin una reflexión crítica sobre sus limitaciones internas. Además, es fundamental incluir la enseñanza de otras escuelas económicas para que el estudiantado sepa que no se encuentra en un paradigma, sino en una disciplina en constante evolución y debate. En definitiva, se trata de fomentar la formación de economistas más conscientes y críticos, capaces de analizar y cuestionar las teorías que se les presentan, en lugar de simplemente aceptarlas sin más.
+\end{flushleft}
+
+\newpage
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskip
+
+\bibliography{references.bib}
+
+\newpage
+
+\end{document}
