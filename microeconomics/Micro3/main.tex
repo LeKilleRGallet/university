@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\usepackage{lipsum}
+\onehalfspacing
+\allowdisplaybreaks[1]
+
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{Parcial 1 Microeconomia 3\\
+    \large Profesor: Salomon Bechara Senior
+}
+
+\author{Augusto Rico\\CC. 1140900470\\
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+
+\setstretch{.8} %% Don't touch
+\maketitle
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Punto 1}
+% --------------------
+\begin{flushleft} 
+    dado que la solucion del monopolista es $MR=MC$ pero como en equilibrio $\epsilon\in(-1,0)$ sabemos entonces que 
+    $MR<0$ no obstane como $MC>0$ entonces $MR$ no podra ser igual a $MC$ por lo que el
+    monopolista debe operar unicamente en la parte donde $MR>0$ y para ello entonces se debe trabajar en la parte elastica de la demanda
+    para que $\epsilon>1$ y de esa forma logre tener solucion de maximizacion de beneficios. 
+\end{flushleft}
+
+\section{Punto 2}
+% --------------------
+\begin{flushleft}    
+    \begin{align*}
+        \pi = (100-Q)Q-\frac{4Q^2}{2} \to 100Q-Q^2-\frac{4Q^2}{2}\\
+        \frac{\partial \pi}{\partial Q} = 0 \to 100-2Q-4Q=0\\ 100-6Q=0 \to Q=\frac{100}{6}=\frac{50}{3}\\
+    \end{align*}
+    habiendo obtenido las cantidades las remplazamos en el precio demandado para obtener el precio de monopolio:
+    \begin{align*}
+        P=100-\frac{50}{3}=\frac{250}{3}\\
+    \end{align*}
+    calculamos los excedentes
+    \begin{align*}
+        CS=\frac{\left(100-\frac{250}{3}\right)\frac{50}{3}}{2}=\frac{277\frac{7}{9}}{2}=138.89\\
+        PS=\int_{0}^{50/3}100-x~dx - \int_{0}^{50/3} 4x ~dx = \frac{8750}{9} = 972.22
+    \end{align*}
+    Calculamos los beneficios del monopolista para las cantidades dadas.
+    \begin{align*}
+        \pi = \frac{250}{3}*\frac{50}{3}-\frac{4\left(\frac{50}{3}\right)^2}{2}=\frac{2500}{3}=833.33
+    \end{align*}
+\end{flushleft}
+\section{Punto 3}
+% --------------------
+\begin{flushleft}
+    si el gobierno regula al monopolio a producir el nivel socialmente eificente implica obligarlos a que $P=MC$, por lo que tendriamos que:
+    \begin{align*}
+        100-Q=10 \to Q=90
+    \end{align*}
+    por lo que el monopolista produciria 90 unidades, y el precio seria $100-90=10$, por lo que el monopolista
+    obtendria un beneficio de $\pi=10*90-(50+10(90))=-50$ por lo que el monopolista deberia incurrir en perdidas, y por
+    ende va a tener incentivos para cerrar la compañia, dado que no producira beneficios.
+    si el gobierno al ver esto quiere regular de tal forma que el monopolio produzca la mayor
+    cantidad de bienes sin incurrir en perdidas entonces debe resolver la siguiente ecuacion:
+    \begin{align*}
+        (100-Q)Q-(50+10Q)=0\\
+        100Q-Q^2-50-10Q=0\\
+        -Q^2+90Q-50=0\\
+        Q=\frac{-90\pm\sqrt{90^2-4(-1)(-50)}}{-2}\\
+        Q=\frac{-90\pm\sqrt{8100-200}}{-2}\\
+        Q=\frac{-90\pm\sqrt{7900}}{-2}\\
+        Q=\frac{-90\pm10\sqrt{79}}{-2}\\
+        Q=\frac{-10(9\pm\sqrt{79})}{-2}\\
+        Q=5(9\pm\sqrt{79})\\
+        Q_1=5(9+\sqrt{79})\\
+        Q_2=5(9-\sqrt{79})\\~\\
+        \text{como } Q_1>Q_2 \text{ entonces } Q=Q_1=5(9+\sqrt{79})\\~\\
+        \text{y el precio sera:}\\~\\
+        P=100-Q \to 100-5(9+\sqrt{79}) \\
+        P=100-45-5\sqrt{79}\\
+        P=55-5\sqrt{79}\\
+    \end{align*}
+\end{flushleft}
+
+
+\section{Punto 4}
+% --------------------
+\begin{flushleft}
+    \begin{itemize}
+        \item Cantidades producidas: En todas las formas de discriminación de precios, la firma puede producir una cantidad distinta a la cantidad que produciría en un mercado de competencia perfecta.
+        Esto se debe a que la firma tiene poder de mercado y por ende puede fijar las cantidades de bienes totales en la economia, normalmente buscando maximizar su beneficio.
+
+        \item Excedentes del consumidor y del productor: La discriminación de precios en cualquiera de sus formas puede aumentar o disminuir el excedente del consumidor y del productor, en comparación con un mercado de competencia perfecta. En general, la discriminación de precios puede aumentar el excedente del productor y disminuir el excedente del consumidor, lo que significa que la firma captura una porción mayor del excedente total, desmejorando el bienestar social.
+        
+        \item Beneficios de la firma: La discriminación de precios puede aumentar los beneficios de la firma en comparación con un mercado de competencia perfecta.
+        
+    \end{itemize}
+\end{flushleft}
+
+\section{Punto 5}
+% --------------------
+\begin{flushleft}
+    sabiendo que $Q_A+Q_B=Q$ podemos tener la siguiente funcion de beneficios para nuestro monopolista $\pi=(P_AQ_A+P_BQ_B)-C(Q_A+Q_B)$,
+    o lo que es igual a 
+    \begin{align*}
+        \pi=100Q_A-Q_A^2+100Q_B-2Q_B^2-\frac{(Q_A+Q_B)^2}{2}
+    \end{align*}
+    ecuacion en la cual podemos obtener las condiciones de primer orden para obtener las cantidades obtimas de cada tipo de consumidor.
+    \begin{align*}
+        \frac{\partial \pi}{\partial Q_A}=0 \to 100-2Q_A-Q_A-Q_B=0\to100-3Q_A=Q_B\\
+        \frac{\partial \pi}{\partial Q_B}=0 \to 100-4Q_B-Q_B-Q_A=0\to100-5Q_B=Q_A\\~\\
+    \end{align*}
+    remplazamos $Q_A$ en la primera ecuacion para resolver el sistema, obteniendo:
+    \begin{align*}
+        100-3(100-5Q_B)=Q_B \to 100-300+15Q_B=Q_B\\~\\
+        200=14Q_B \to Q_B=\frac{200}{14}=\frac{100}{7}\\
+    \end{align*}
+    remplazamos lo obtenido en $Q_B$ para obtener $Q_A$:
+    \begin{align*}
+        Q_A=100-5\left(\frac{100}{7}\right)=28.57\\
+    \end{align*}
+    remplazamos para obtener cada precio de cada tipo de consumidor:
+    \begin{align*}
+        P_A=100-(28.57)=71.43\\
+        P_B=100-2\left(\frac{100}{7}\right)=71.43\\
+    \end{align*}
+    remplazamos para obtener la ganancia del monopolista:
+    \begin{align*}
+        \pi=71.43*28.57+71.43*\frac{100}{7}-\frac{(28.57+\frac{100}{7})^2}{2}=2142.88\\
+    \end{align*}
+    calculamos las elasticidades de cada tipo de consumidor:
+    \begin{align*}
+        \epsilon_A=\frac{P_A}{Q_A}\frac{\partial Q_A}{\partial P_A}=\frac{71.43}{28.57}*-1 =-2.5\\
+        \epsilon_B=\frac{P_B}{Q_B}\frac{\partial Q_B}{\partial P_B}=\frac{71.43}{\frac{100}{7}}*-\frac{1}{2}=-2.5\\
+    \end{align*}
+    por lo que notamos que ambos tipos de consumidor tienen la misma elasticidad.\\~\\
+    si el monopolista no pudiera discriminar entonces: 
+    \begin{align*}
+        Q = 100-p+50-\frac{p}{2}=-\frac{3p}{2}+150
+    \end{align*}
+    y calculando la demanda inversa obtenemos:
+    \begin{align*}
+        p=100-\frac{2q}{3}\\
+    \end{align*}
+    remplazamos en la funcion de beneficios para obtener la funcion de beneficios del monopolista sin discriminacion:
+    \begin{align*}
+        \pi=(-\frac{2q}{3}+100)q-\frac{q^2}{2}\\
+        \frac{\partial \pi}{\partial q} = 0 \to -\frac{4q}{3}+100-q=0\\
+        -\frac{7q}{3}=-100 \to q=\frac{300}{7}\\~\\
+        \text{remplazando en el precio:}\\
+        p=-\frac{2(\frac{300}{7})}{3}+100=\frac{500}{7}=71.43\\~\\
+        \text{calculando el beneficio:}\\
+        \pi = 71.43*\left(\frac{300}{7}\right)-\frac{\left(\frac{300}{7}\right)^2}{2}=2142.86\\
+    \end{align*}
+    notando que el beneficio es identico al obtenido con discriminacion de precios.\\~\\
+\end{flushleft}
+
+
+\section{Puntos antiguos hechos antes de la correccion}
+\subsection{Punto 2 - Antiguo}
+% --------------------
+\begin{align*}
+    \pi = \frac{100}{q}q-\frac{4q^2}{2}\to 100-\frac{4q^2}{2}\\
+    \frac{\partial \pi}{\partial q} = 0 \to -4q=0 \to q=0\\
+\end{align*}
+\begin{flushleft}
+    dado que $p(0)$ no existe es necesario evaluar el \textit{liimite} de la funcion en $0^+$
+\end{flushleft}
+\begin{align*}
+    \lim _{x\to 0^+}\left(p(x)\right) \to \lim _{x\to 0^+}\left(\frac{100}{x}\right) \to \frac{100}{0^+}= \infty\\
+\end{align*}
+\begin{flushleft}
+    por lo que como el monopolista no producira el precio de mercado tendera al infinito.\\
+    dado que $q=0$ los exedentes tanto del productor como del consumidor seran 0, ya que $ \forall x: \int_{0}^{0}x~dx=0$, no obstante el monopolista obtendra una ganancia de $100$,
+    dado que $100-\frac{4(0)^2}{2}=100$.
+\end{flushleft}
+\subsection{Punto 3 -Antiguo}
+% --------------------
+\begin{flushleft}
+    si el gobierno regula al monopolio a producir el nivel socialmente eificente implica obligarlos a que $P=MC$, por lo que tendriamos que:
+    \begin{align*}
+        \frac{100}{q}=10 \to q=\frac{100}{10}=10\\
+    \end{align*}
+    por lo que el monopolista tendria que producir 10 unidades, y el precio de mercado seria $100/10=10$,
+    por lo que el monopolista obtendria una ganancia de $100-(50+10(10))=-50$ por lo que el monopolista deberia incurrir en perdidas, y 
+    por ende va a tener incentivos para cerrar la compañia, dado que no producira beneficios.\\
+    si el gobierno al ver esto quiere regular de tal forma que el monopolio produzca la mayor cantidad de bienes
+    sin incurrir en perdidas entonces debe resolver la siguiente ecuacion: $100-(50+10(q))=0$ obteniendo entonces que $q=5$ y $p=20$.
+\end{flushleft}
+
+\end{document}
