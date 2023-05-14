@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\usepackage{lipsum}
+\onehalfspacing
+
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{Taller-parcial Complementario
+}
+
+\author{Augusto Rico\\
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}}
+
+\date{\today}
+
+\begin{document}
+
+\setstretch{.8} %% Don't touch
+\maketitle
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------
+\section{Punto 1}
+% --------------------
+\subsection{monopolio discriminador de grado 3}
+\begin{flushleft}
+    sabemos que la condicion de maximizacion para un monopolio es:
+    \begin{align*}
+        MR_i = MC \to 
+        A_i-2B_iQ_i = \frac{A_1+A_2}{2}\\
+        2A_i-4B_iQ_i = A_1+A_2\\
+        Q_i=\frac{A_1+A_2-2A_i}{-4B_i}\\
+    \end{align*}
+    para el consumidor tipo $1$:
+    \begin{align*}
+        Q_1^m=\frac{A_1+A_2-2A_1}{-4B_1} \to -\frac{A_2-A_1}{4B_1}\\
+        P^m_1=A_1-B_1\left(-\frac{A_2-A_1}{4B_1}\right)\\
+        P^m_1=A_1+\frac{A_2-A_1}{4} \to \frac{3A_1+A_2}{4}\\
+    \end{align*}
+    para el consumidor tipo $2$:
+    \begin{align*}
+        Q_2^m=\frac{A_1+A_2-2A_2}{-4B_2} \to -\frac{A_1-A_2}{4B_2}\\
+        P^m_2=A_2-B_2\left(-\frac{A_1-A_2}{4B_2}\right)\\
+        P^m_2=A_2+\frac{A_1-A_2}{4} \to \frac{3A_2+A_1}{4}\\
+    \end{align*}
+\end{flushleft}
+\subsection{monopolio sin capacidad de discriminar}
+\begin{flushleft}
+    \begin{align*}
+        P=P_1+P_2 \to A_1-B_1Q_1+A_2-B_2Q_2 \to \underbrace{\sum A_i}_{A}-\underbrace{\sum B_iQ_i}_{BQ} \to P=A-BQ\\
+    \end{align*}
+    con la ecuacion de demanda, aplicamos la derivada a la utilidad del monopolista y obtenemos las cantidades optimas:
+    \begin{align*}
+        MR = MC \to A-2BQ = \frac{A}{2}\\
+        2A-4BQ = A\\
+        Q^m=\frac{A}{4B}\\
+    \end{align*}
+    cantidades que generan un precio:
+    \begin{align*}
+        P^m=A-B\left(\frac{A}{4B}\right)\\
+        P^m=A-\frac{A}{4} \to \frac{3A}{4}\\
+    \end{align*}
+\end{flushleft}
+\section{Punto 2}
+\subsection{monopolio discriminador de grado 3}
+\begin{flushleft}
+    \begin{align*}
+        MR_i = MC \to A_i-2B_iQ_i = \frac{A_1-A_2}{2}\\
+        2A_i-4B_iQ_i = A_1-A_2\\
+        Q_i=\frac{A_1-A_2-2A_i}{-4B_i}\\
+    \end{align*}
+    para el consumidor tipo $1$:
+    \begin{align*}
+        Q_1^m=\frac{A_1-A_2-2A_1}{-4B_1} \to -\frac{-A_1-A_2}{4B_1}\\
+        P^m_1=A_1-B_1\left(-\frac{-A_1-A_2}{4B_1}\right)\\
+        P^m_1=A_1+\frac{-A_1-A_2}{4} \to \frac{3A_1-A_2}{4}\\
+    \end{align*}
+    para el consumidor tipo $2$:
+    \begin{align*}
+        Q_2^m=\frac{A_1-A_2-2A_2}{-4B_2} \to -\frac{A_1-3A_2}{4B_2}\\
+        P^m_2=A_2-B_2\left(-\frac{A_1-3A_2}{4B_2}\right)\\
+        P^m_2=A_2+\frac{A_1-3A_2}{4} \to \frac{5A_1-3A_2}{4}\\
+    \end{align*}
+\end{flushleft}
+\subsection{monopolio sin capacidad de discriminar}
+\begin{flushleft}
+    \begin{align*}
+        P=P_1+P_2 \to A_1-B_1Q_1+A_2-B_2Q_2 \to \underbrace{\sum A_i}_{A}-\underbrace{\sum B_iQ_i}_{BQ} \to P=A-BQ\\
+    \end{align*}
+    con la ecuacion de demanda, aplicamos la derivada a la utilidad del monopolista y obtenemos las cantidades optimas:
+    \begin{align*}
+        &MR = MC \to A-2BQ = \frac{A_1-A_2}{2}\\
+        &2A-4BQ = A_1-A_2\\
+        &Q^m=\frac{A_1-A_2-2A}{-4B} \to \frac{A_1-A_2-2A_1-2A_2}{-4B} \to \frac{A_1+3A_2}{4B}\\
+    \end{align*}
+    cantidades que generan un precio:
+    \begin{align*}
+        &P^m=A-B\left(\frac{A_1+3A_2}{4B}\right)\\
+        &P^m=A-\frac{A_1+3A_2}{4}\\
+        &P^m = \frac{4A-A_1-3A_2}{4} \to \frac{4A_1+4A_2-A_1-3A_2}{4}\\
+        &P^m = \frac{3A_1+A_2}{4}\\
+    \end{align*}
+\end{flushleft}
+\subsection{comparacion}
+\begin{flushleft}
+    dado que en el caso 2 el monopolista tiene menores costos marginales de produccion, sus soluciones se dan por mayor cantidad de cantidades producidad en todos
+    los casos, y por ende, menores precios para los consumidores.
+\end{flushleft}
+\section{Punto 3}
+\begin{flushleft}
+
+\end{flushleft}
+\section{Punto 4}
+\begin{flushleft}
+    el problema que busca resolver un monopolista legal siempre sera el de obtener las cantidades optimas donde logre maximizar su beneficio,
+    para ello, el monopolista entonces debera resolver:
+    \begin{align*}
+        \max_q \pi(q) = p(q)q-c(q)\\
+    \end{align*}
+    no obstante, para que este pueda obtener una solucion derivando se debe satisfacer que, $\pi''(q)<0$,
+    que esto se puede satisfacer si $c(\cdot)$ es convexa y el ingreso marginal tiene pendiente negativa, bajo estas condiciones, y como tenemos demandas lineales
+    podemos derivar e igualar a cero y se deberia obtener un maximo.
+    \begin{align*}
+        \pi'(q) = p'(q)q+p(q)-c'(q) = 0\\
+    \end{align*}
+    despejando obtenemos que:
+    \begin{align*}
+        \underbrace{p'(q)q+p(q)}_{MR} = \underbrace{c'(q)}_{MC}\\
+    \end{align*}
+    factorizando $p(q)$ en la parte derecha podemos obtener que:
+    \begin{align*}
+        p(q)\left[1+\frac{qp'(q)}{p(q)}\right]=c'(q)\\
+    \end{align*}
+    $p'(q)$ puede representarse tambien como $\frac{dp(q)}{dq}$, por lo que podemos reescribir la ecuacion como:
+    \begin{align*}
+        p(q)\left[1+\frac{q}{p(q)}\frac{dp(q)}{dq}\right]=c'(q)\\
+    \end{align*}
+    sabemos que $\epsilon = \frac{p(q)}{q}\frac{dq}{dp(q)}$ por lo que podemos reescribir nuestra ecuacion como:
+    \begin{align*}
+        p(q)\left[1+\frac{1}{\epsilon}\right]=c'(q)\\
+    \end{align*}
+    no obstante, en equilibrio $-1 < \epsilon < 0$ por lo que $MR<0$, y dado que $c(\cdot)$ es convexa, $MC>0$, por lo que no se podria satisfacer la solucion,
+    por esto el monopolista debe trabajar en la parte elastica de la curva de demanda.
+
+\end{flushleft}
+\end{document}

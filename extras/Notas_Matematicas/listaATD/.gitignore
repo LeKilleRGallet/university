@@ -1,0 +1,12 @@
+# Blacklist everything
+*
+# Whitelist all directories
+!*/
+# Whitelist the .tex and .pdf files
+!*.tex
+!*.pdf
+# Whitelist reference and style files
+!references.bib
+!UF_FRED_paper_style.sty
+#Whitelist .gitignore
+!.gitignore
