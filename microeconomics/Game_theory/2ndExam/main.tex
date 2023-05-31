@@ -8,7 +8,10 @@
 \title{Teoria de Juegos - Parcial 2}
 
 \author{Augusto Rico\\
-    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}}
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    \and
+    Duvan Lorenzana\\
+    \href{mailto:dlorenzanae@unal.edu.co}{\texttt{dlorenzanae@unal.edu.co}}}
 
 \date{\today}
 
@@ -298,43 +301,348 @@
 \subsection{Punto 4}
 
 \begin{flushleft}
-    Para esta demostracion se realizara una prueba por contradiccion, asumiendo entonces que
-    $\exists\sigma^w|\sigma^w\in\Gamma^{w}\land\sigma^w\notin\Gamma$ donde $\Gamma \to_{w} \Gamma^{w}$
-    si esto es cierto, entonces debe cumplirse que:
+    Para esta demostración se realizará una prueba por contradicción, asumiendo entonces que
+    $$\exists\sigma^w|\sigma^w\in\Gamma^{w}\land\sigma^w\notin\Gamma$$ donde $\Gamma \to_{w} \Gamma^{w}$.
+    Si esto es cierto, entonces debe cumplirse que:
     \begin{align*}
         \varphi := \left\{\sigma_i'\in\Gamma|u_i(\sigma_i',\sigma_{-i})>u_i(\sigma^w,\sigma_{-i})\right\} \neq \emptyset
     \end{align*} 
-    pero en esta definicion nace un gran problema, y es que al ser la dominancia debil
-    un orden parcial estricticto, por lo que es una relacion irreflesiva y transitiva, y $\varphi$
-    ser un conjunto finito, implica que la strategia $\sigma_i'$ no va a ser debilmente dominada en $\Gamma$
-    por ninguna otra estrategia en $\varphi$, no obstante $\forall\sigma_i'\in\varphi$ es eliminada
-    en la reduccion $\Gamma \to_{w} \Gamma^{w}$, donde tenemos que $\sigma^w$ es un equilibrio
-    de $\Gamma^{w}$. por lo que debe entonces existir una estrategia $\sigma^*_i\in\Gamma$
-    que domina debilmente a $\sigma_i'$ en $\Gamma$, lo que nos lleva entonces a que:
+    Pero en esta definición nace un gran problema, y es que al ser la dominancia débil un orden parcial estricto, por lo que es una relación
+    irreflexiva y transitiva, y al ser $\varphi$ un conjunto finito implica que la estrategia $\sigma_i'$ no va a ser débilmente dominada en $\Gamma$
+    por ninguna otra estrategia en $\varphi$. No obstante, $\forall\sigma_i'\in\varphi$ es eliminada en la reducción $\Gamma \to_{w} \Gamma^{w}$,
+    donde tenemos que $\sigma^w$ es un equilibrio de $\Gamma^{w}$. Por lo tanto, debe existir una estrategia $\sigma^*_i\in\Gamma$ que domina
+    débilmente a $\sigma_i'$ en $\Gamma$, lo que nos lleva entonces a que:
     \begin{align*}
         u_i(\sigma^*_i,\sigma_{-i})\geq u_i(\sigma_i',\sigma_{-i})
     \end{align*}
-    lo que implica entonces que $\sigma^*_i\in\varphi$, lo que es una contradiccion en la
-    eleccion de $\sigma_i'$, lo que nos confirma entonces que $\varphi = \emptyset$, y por lo tanto
-    $\sigma^w\in\Gamma$.
+    Lo que implica entonces que $\sigma^*_i\in\varphi$, lo que es una contradicción en la elección de
+    $\sigma_i'$. Esto nos confirma entonces que $\varphi = \emptyset$, y por lo tanto $\sigma^w\in\Gamma$.
 \end{flushleft}
+
+\subsection{Punto 5}
+
+\begin{enumerate}
+    \item Dominancia estricta iterada \
+    En este método, buscamos estrategias dominadas y las eliminamos iterativamente hasta que no quede ninguna. Comenzamos con la matriz del juego: $S$ \
+    Pasos:
+    \begin{itemize}
+    \item En la fila $X_1$, si $a \geq e$ y $c \geq g$, eliminamos la estrategia $Y_1$.
+    \item En la columna $X_2$, si $b \geq d$ y $f \geq h$, eliminamos la estrategia $Y_2$.
+    \end{itemize}
+    No se pueden eliminar más estrategias dominadas. Por lo tanto, los equilibrios de Nash se encuentran en el conjunto de estrategias restantes: $(X_1, X_2)$.
+    
+    \item Equilibrios de Nash de estrategias puras \
+    En este método, encontramos las combinaciones de estrategias donde ningún jugador puede obtener una ganancia mejor cambiando unilateralmente su estrategia.
+    Los equilibrios de Nash de estrategias puras se encuentran en las combinaciones donde ningún jugador puede cambiar unilateralmente su estrategia y obtener una ganancia mejor.
+    Podemos tener varios equilibrios de Nash puros:
+    \begin{itemize}
+    \item $(X_1, X_2)$ si $a \geq e$ y $b \geq d$
+    \item $(X_1, Y_2)$ si $c \geq g$ y $d \geq b$
+    \item $(Y_1, B_1)$ si $e \geq a$ y $f \geq h$
+    \item $(A_2, B_2)$ si $g \geq c$ y $h \geq f$
+    \end{itemize}
+    Estos son los equilibrios de Nash de estrategias puras.
+    
+    \item Dinámica de mejor respuesta \
+    La dinámica de mejor respuesta implica que los jugadores ajustan sus estrategias para maximizar su propia ganancia, dado el comportamiento del oponente. Iteramos a través de las estrategias y buscamos las mejores respuestas.
+    Para encontrar los equilibrios de Nash mediante la dinámica de mejor respuesta, analizamos las mejores respuestas de cada jugador a las estrategias del oponente.
+    \begin{itemize}
+    \item La mejor respuesta de $X_1$ a $X_2$ es $a$ si $a \geq e$, de lo contrario, es $b$.
+    \item La mejor respuesta de $X_1$ a $Y_2$ es $c$ si $c \geq g$, de lo contrario, es $d$.
+    \item La mejor respuesta de $Y_1$ a $X_2$ es $e$ si $e \geq a$, de lo contrario, es $f$.
+    \item La mejor respuesta de $Y_1$ a $Y_2$ es $g$ si $g \geq c$, de lo contrario, es $h$.
+    \end{itemize}
+    Ahora, buscamos las combinaciones donde ambos jugadores eligen sus mejores respuestas:
+    \begin{itemize}
+    \item $(X_1, X_2)$ si $a \geq e$ y $e \geq a$ (siempre es cierto)
+    \item $(Y_1, Y_2)$ si $c \geq g$ y $g \geq c$ (siempre es cierto)
+    \end{itemize}
+    En este caso, encontramos que ambas combinaciones son equilibrios de Nash de la dinámica de mejor respuesta.
+    Por lo tanto, los equilibrios de Nash para el juego son:
+    \begin{itemize}
+    \item $(X_1, X_1)$
+    \item $(Y_1, Y_2)$
+    \end{itemize}
+    \end{enumerate}
+\subsection{Punto 6}
+
+\begin{flushleft}
+    Esta demostracion sera parecida a la del punto 4, por lo que de igual forma haremos una prueba por contradicción, por lo que asumiremos entonces que tendremos
+    un equilibrio de nash $\sigma^*$ que se elimina en el proceso de eliminacion iterada de estrategias \underline{estrictamente} dominadas. Esto significa entonces que
+    $\exists u_i'(\sigma',\sigma_{-i})>u_i(\sigma^*,\sigma_{-i})$, no obstante aqui se plantea la contradicción, ya que si realmente existe un $u_i'$ que cumpla con esto,
+    por definicion $\sigma^*$ no puede ser un equilibrio de nash, ya que el jugador puede cambiar su decision unilateralmente y obtener una mejor utilidad, lo que es una contradicción,
+    por lo que un equilibrio de nash no puede ser eliminado mediante el proceso de eliminacion iterada de estrategias estrictamente dominadas. 
+\end{flushleft}
+
+\subsection{Punto 7}
+
+\begin{flushleft}
+    dado que el conjunto de equilibrios correlacionados es la interseccion de las $n$ desigualdades de la forma $\sum \mu(c)(u_i(c)-u_i(c_{-i},d_i))\geq0$,
+    por lo que tal como se explica \citep{Boyd_Vandenberghe_2011}, sabemos que se cumple que $\forall y \in \geq$ se puede representar como
+    $y=\sum x_i\theta_i|\sum\theta_i=1$ o mejor dicho como una combinaccion \textit{affin}, por lo que sabemos entonces que el conjunto $\geq$ genera siempre un conjunto convexo,
+    y como $\Delta^c=\bigcap\geq_i$ y tal como se sabe y se muestra en el mismo libro, la interseccion de conjuntos convexos es un conjunto convexo,
+    por lo que $\Delta^c$ es un conjunto convexo para todo juego finito en forma estrategica. 
+\end{flushleft}
+
+\subsection{Punto 8}
+
+
+
+\subsubsection*{a)}
+\begin{enumerate}
+    \item Dominancia débil o estricta:
+    
+    En este caso, no hay ninguna estrategia dominada de forma débil o estricta, ya que no existe una estrategia que siempre sea mejor independientemente de la estrategia elegida por el oponente.
+    
+    \item Dominancia (débil o estricta) iterada:
+    
+    Este método implica eliminar de forma iterada las estrategias dominadas hasta que ya no quede ninguna. Sin embargo, en este juego no existen estrategias dominadas, por lo que no se puede aplicar este método.
+    
+    \item Equilibrios de Nash:
+    
+    Un equilibrio de Nash es una combinación de estrategias en la cual ningún jugador puede obtener un beneficio mayor cambiando unilateralmente su estrategia. Para encontrar los equilibrios de Nash, debemos buscar las combinaciones en las que ninguna estrategia individualmente tiene incentivos para cambiar.
+    
+    En este juego, hay dos equilibrios de Nash:
+    \begin{itemize}
+    \item (B, L): Si el jugador 1 elige B y el jugador 2 elige L, ninguno de los jugadores tiene incentivos para cambiar su estrategia, ya que obtenerían los mismos pagos sin importar lo que haga el otro jugador.
+    \item (T, M): Si el jugador 1 elige T y el jugador 2 elige M, tampoco hay incentivos para cambiar de estrategia.
+    \end{itemize}
+    
+    \item Dinámicas de mejor respuesta:
+    
+    En las dinámicas de mejor respuesta, los jugadores cambian de estrategia en función de la mejor respuesta a la estrategia actual del oponente. Comenzamos asumiendo una estrategia para cada jugador y luego iteramos hasta que ninguna de las estrategias cambie.
+    
+    En este juego, no hay una dinámica de mejor respuesta que nos conduzca a un resultado estable. Podemos observar que la mejor respuesta del jugador 1 depende de la estrategia elegida por el jugador 2, y viceversa. Por lo tanto, no hay una estrategia única que ambos jugadores puedan seguir para alcanzar un equilibrio estable.
+    
+    \item Equilibrios correlacionados:
+    
+    Para encontrar equilibrios correlacionados, necesitamos buscar reglas o señales que determinen las estrategias de los jugadores sin comunicación directa. En este caso, podemos considerar una señal aleatoria que indique a los jugadores qué estrategia elegir.
+    
+    Por ejemplo, podemos asignar una probabilidad de $\frac{1}{3}$ a que el jugador 1 elija T y $\frac{2}{3}$ a que elija B. Para el jugador 2, asignamos una probabilidad de $\frac{1}{3}$ a que elija L y $\frac{2}{3}$ a que elija M. Estas probabilidades pueden representar, por ejemplo, una moneda lanzada al azar para cada jugador.
+    
+    Con esta asignación de probabilidades, los pagos esperados serían:
+    \begin{itemize}
+    \item Jugador 1: $\frac{1}{3} \cdot (0) + \frac{2}{3} \cdot (2) = \frac{4}{3}$
+    \item Jugador 2: $\frac{1}{3} \cdot (5) + \frac{2}{3} \cdot (6) = \frac{17}{3}$
+    \end{itemize}
+    
+    Esta combinación aleatoria de estrategias se convierte en un equilibrio correlacionado si ningún jugador tiene incentivos para cambiar su estrategia unilateralmente sabiendo la señal que recibió.
+    
+\end{enumerate}
+
+
+
+\subsubsection*{b)}
+\begin{enumerate}
+    \item Dominancia débil o estricta:
+    
+    En este caso, no existe dominancia débil o estricta, ya que no hay una estrategia que sea siempre mejor que otra sin importar la estrategia elegida por el oponente.
+    
+    \item Dominancia (débil o estricta) iterada:
+    
+    Este método implica eliminar de forma iterada las estrategias dominadas hasta que ya no quede ninguna. Sin embargo, en este juego no existen estrategias dominadas, por lo que no se puede aplicar este método.
+    
+    \item Equilibrios de Nash:
+    
+    Un equilibrio de Nash es una combinación de estrategias en la cual ningún jugador puede obtener un beneficio mayor cambiando unilateralmente su estrategia. Para encontrar los equilibrios de Nash, debemos buscar las combinaciones en las que ninguna estrategia individualmente tiene incentivos para cambiar.
+    
+    En este juego, hay dos equilibrios de Nash:
+    \begin{itemize}
+    \item (T, M): Si ambos jugadores eligen T y M, ninguno de los jugadores tiene incentivos para cambiar su estrategia, ya que ambos obtendrían un pago de 0.
+    \item (B, L): Si ambos jugadores eligen B y L, tampoco hay incentivos para cambiar de estrategia, ya que ambos obtendrían un pago de 0.
+    \end{itemize}
+    
+    \item Dinámicas de mejor respuesta:
+    
+    En las dinámicas de mejor respuesta, los jugadores cambian de estrategia en función de la mejor respuesta a la estrategia actual del oponente. Comenzamos asumiendo una estrategia para cada jugador y luego iteramos hasta que ninguna de las estrategias cambie.
+    
+    En este juego, no hay una dinámica de mejor respuesta que nos conduzca a un resultado estable. Observamos que, independientemente de la estrategia elegida por un jugador, el otro jugador siempre puede obtener un mejor pago cambiando su estrategia.
+    
+    \item Equilibrios correlacionados:
+    
+    Para encontrar equilibrios correlacionados, necesitamos buscar reglas o señales que determinen las estrategias de los jugadores sin comunicación directa. En este caso, podríamos considerar asignar una probabilidad a cada combinación de estrategias y verificar si se convierten en un equilibrio correlacionado.
+    
+    Por ejemplo, podríamos asignar una probabilidad de $\frac{1}{2}$ a que ambos jugadores elijan T y L, y una probabilidad de $\frac{1}{2}$ a que ambos elijan B y M. Con esta asignación de probabilidades, los pagos esperados serían:
+    \begin{itemize}
+    \item Jugador 1: $\frac{1}{2} \cdot (0) + \frac{1}{2} \cdot (3) = \frac{3}{2}$
+    \item Jugador 2: $\frac{1}{2} \cdot (0) + \frac{1}{2} \cdot (4) = 2$
+    \end{itemize}
+    
+    Esta combinación aleatoria de estrategias se convierte en un equilibrio correlacionado si ningún jugador tiene incentivos para cambiar su estrategia unilateralmente sabiendo la señal que recibió.
+    
+\end{enumerate}
+
+\subsubsection*{c)}
+\begin{enumerate}
+    \item Dominancia débil o estricta:
+    
+    En este caso, no existe dominancia débil o estricta, ya que no hay una estrategia que sea siempre mejor que otra sin importar la estrategia elegida por el oponente.
+    
+    \item Dominancia (débil o estricta) iterada:
+    
+    Este método implica eliminar de forma iterada las estrategias dominadas hasta que ya no quede ninguna. Sin embargo, en este juego no existen estrategias dominadas, por lo que no se puede aplicar este método.
+    
+    \item Equilibrios de Nash:
+    
+    Un equilibrio de Nash es una combinación de estrategias en la cual ningún jugador puede obtener un beneficio mayor cambiando unilateralmente su estrategia. Para encontrar los equilibrios de Nash, debemos buscar las combinaciones en las que ninguna estrategia individualmente tiene incentivos para cambiar.
+    
+    En este juego, hay dos equilibrios de Nash:
+    \begin{itemize}
+    \item (T, L): Si ambos jugadores eligen T y L, ninguno de los jugadores tiene incentivos para cambiar su estrategia, ya que ambos obtendrían un pago de 0.
+    \item (B, M): Si ambos jugadores eligen B y M, tampoco hay incentivos para cambiar de estrategia, ya que ambos obtendrían un pago de 0.
+    \end{itemize}
+    
+    \item Dinámicas de mejor respuesta:
+    
+    En las dinámicas de mejor respuesta, los jugadores cambian de estrategia en función de la mejor respuesta a la estrategia actual del oponente. Comenzamos asumiendo una estrategia para cada jugador y luego iteramos hasta que ninguna de las estrategias cambie.
+    
+    En este juego, no hay una dinámica de mejor respuesta que nos conduzca a un resultado estable. Independientemente de la estrategia elegida por un jugador, el otro jugador siempre puede obtener un mejor pago cambiando su estrategia.
+    
+    \item Equilibrios correlacionados:
+    
+    Los equilibrios correlacionados son combinaciones de señales o reglas que determinan las estrategias de los jugadores sin comunicación directa. En este juego, podemos considerar la posibilidad de asignar probabilidades a las diferentes estrategias para crear un equilibrio correlacionado.
+    
+    Por ejemplo, podríamos asignar una probabilidad de $\frac{2}{3}$ a que el jugador 1 elija T y $\frac{1}{3}$ a que elija B. Para el jugador 2, asignamos una probabilidad de $\frac{1}{3}$ a que elija L y $\frac{2}{3}$ a que elija M. Estas probabilidades pueden representar, por ejemplo, el resultado de lanzar una moneda al aire para cada jugador.
+    
+    Con esta asignación de probabilidades, los pagos esperados serían:
+    \begin{itemize}
+    \item Jugador 1: $\frac{2}{3} \cdot (1) + \frac{1}{3} \cdot (0) = \frac{2}{3}$
+    \item Jugador 2: $\frac{1}{3} \cdot (2) + \frac{2}{3} \cdot (0) = \frac{2}{3}$
+    \end{itemize}
+    
+\end{enumerate}
+
+
+\subsection{Punto 9}
+
+% \begin{flushleft}
+%     \begin{align*}
+%         \begin{cases}
+%             X(1-0)+Y(c-(1+a))&\geq0\\
+%             Z(0-1)+W(1+a-c)&\geq0\\
+%             X(0-(1+d))+Z(1-b)&\geq0\\
+%             W(1+d-0)+Y(b-1)&\geq0\\
+%             X,Y,Z,W&\geq0\\
+%             X+Y+Z+W&=1
+%         \end{cases}\\
+%         \begin{cases}
+%             X&\geq -Y(c-a-1))\\
+%             W&\geq Z/(1+a-c)\\
+%             X&\leq Z(1-b)/(d+1)\\
+%             W&\geq -Y(b-1)/(d+1)\\
+%             X,Y,Z,W&\geq0\\
+%             X+Y+Z+W&=1
+%         \end{cases}
+%     \end{align*}
+% \end{flushleft}
+
+\subsection{Punto 10}
+
+\begin{flushleft}
+    el juego es escencial ya que si se tiene $u_i+x|x\in(-\varepsilon,\varepsilon),\varepsilon>0$ para cualquier $u_i$
+    no tendros cambios en los equilibrios $(B,L),(T,M)$ quienes continuaran siendo los unicos equilibrios puros, por lo que
+    estos equilibrios seran robustos, y como todos sus equilibrios son robustos este sera un juego escencial.
+\end{flushleft}
+
+\subsection{Punto 11}
 
 \section{Segundo grupo de ejercicios para el Parcial \#2}
 % --------------------
+\subsection{Punto 1}
 \begin{flushleft}
-    
+    % \begin{align*}
+    %     \pi_1 &= \frac{4(x_1+x_2)+2x_1x_2}{2}-x_1^2\\
+    %     \pi_1 &= 2x_1+2x_2+x_1x_2-x_1^2\\
+    %     \frac{\partial \pi}{\partial x_1} &= 2+x_2-2x_1=0\\
+    %     x_1 &= \frac{2+x_2}{2}\\
+    %     \text{por simetria} &\text{ podemos saber que}\\
+    %     x_2 &= \frac{2+x_1}{2}\\
+    %     \text{reemplazando }& x_2 \text{ en }x_1\\
+    %     x_1 &= \frac{2+\frac{2+x_1}{2}}{2}\\
+    %     x_1 &= \frac{x_1}{4}+\frac{3}{2}\\
+    %     4x_1 &=x_1+6 \to x_1=2\\
+    %     \text{reemplazando }& x_1 \text{ en }x_2\\
+    %     x_2 &= \frac{2+2}{2}\\
+    %     x_2 &= 2
+    % \end{align*}
+    % por dominancia estricta iterada:
+    % \begin{align*}
+    %     x_1^* = \frac{2+}{2}
+    % \end{align*}
+\end{flushleft}
+
+\subsection{Punto 6}
+
+\begin{flushleft}
+    un famoso ejemplo de la tragedia de los comunes es la tragedia de los pescadores, que se puede representar con la siguiente bimatriz:
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{JUGADOR $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$6h$}  & \multicolumn{1}{c}{$8h$} \\\cline{3-4}
+            \multirow{2}*{JUGADOR $1$}  & $6h$ & $1,1$ & $0,1+\alpha$ \\\cline{3-4}
+            & $8h$ & $1+\alpha,0$ & $\varepsilon,\varepsilon$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    juego q se asemeja a un dilema del prisionero, por lo que el unico equilibrio sera $(8h,8h)$, equilibrio donde ambos jugadores pierden,
+    este juego se puede representar de forma infinita de la forma siguiente:
+    $$
+    u_i(h_i,h_{-i})=\begin{cases}
+        &h_i/h_{-i}-12/(h_i+h_{-i}) \text{si } h_i=h_{-i}\\
+        &h_i/h_{-i} \text{si } h_i > h_{-i}\\
+        &0 \text{si } h_i<h_{-i}
+    \end{cases}
+    $$
+    donde de igualforma el equilibrio esta caracterizado por una cantidad de horas de pesca cada vez mas grande.
 \end{flushleft}
 
 \section{Dispersión de precios}
 % --------------------
 \begin{flushleft}
+    En base a la lectura, podemos entender que la existencia de una ley de precio único es poco probable y no se utiliza actualmente debido a la naturaleza cambiante de los mercados en la economía actual. Por lo tanto, se vuelve relevante la búsqueda y dispersión de precios. Podemos interpretar esto de la siguiente manera:
+
+    En la actualidad, es importante distinguir entre dos tipos de compradores o clientes: los clientes leales y los clientes ocasionales. Siempre preferimos retener a los clientes leales, por lo que les ofrecemos un precio máximo a pagar, representado como $p$. Suponiendo que hay un total de $n$ tiendas y una proporción de clientes ocasionales $s$, cada tienda obtendría una fracción de clientes dada por: $\frac{{1-s}}{n}$.
+
+    En cuanto a la búsqueda de precios, no existe un equilibrio de Nash en el que todos los participantes fijen el mismo precio (Ley de precio único). Esto se debe a la siguiente situación: si consideramos que el precio más bajo que una empresa puede cobrar es $p$, igual a su costo marginal $e$, la empresa no obtendría beneficios. Sería mejor aumentar este precio a $p_t$ para vender solo a clientes leales. $p_t$ sería el precio más bajo que las empresas cobrarían. Si todas las empresas cobraran el mismo $p$, sería ventajoso romper esta igualdad y ofrecer un precio ligeramente menor a $p$ para capturar a todos los compradores. Esto significa que nunca llegarán a un acuerdo y, por lo tanto, no hay un equilibrio de Nash.
+
+    Sin embargo, esto llevaría a las empresas a reducir sus precios por debajo de $p_t$, mientras que otras podrían aumentarlos para no perder beneficios. Es por eso que las empresas optan por aleatorizar sus precios.
+
+    Para seleccionar estos precios aleatoriamente, se utiliza una distribución continua $F$, donde $F(x)$ representa la probabilidad de que una empresa cobre menos que $z$. Si una empresa cobra un precio $p \leq z$, siempre venderá a sus clientes y capturará una fracción $pm$. Además, venderá a los compradores si las otras empresas tienen precios más altos, lo cual ocurre con una probabilidad de $(1 - F(p))^{(n-1)}$.
+
+    La función de ganancias se puede expresar de la siguiente manera:
+
+    $$\pi(p)=(p-c)\left(\frac{1-s}{n}+s(1-F(p))^{n-1} \right)$$
+
+    Dado que ninguna empresa superará $p_t$, las ganancias deben ser iguales al nivel de cobrar $p_t$, lo cual se calcula de la siguiente manera:
     
+    $$\pi=(p-c)\left(\frac{1-s}{n}+s(1-F(p))^{n-1} \right)=\frac{(p_l-c)(1-s)}{n}$$
+
+    Esto se resuelve para encontrar la distribución $F$:
+    $$F(p)=\left(1-\frac{(p_l-p)(1-s)}{s(p-c)n}\right)^{\frac{1}{n-1}}$$
+
+    El límite inferior de los precios surge en un punto $L$, definido de la siguiente manera:
+
+    $$L=c+\frac{(p_l-c)(1-s)}{1+(n-1)s}$$
+
+    De esta forma, encontramos un intervalo $(L, p_t)$ en el cual las empresas están dispuestas a aleatorizar sus precios. Esto rompe el supuesto del precio único y observamos cómo las empresas aleatorizan sus precios. Este equilibrio implica una estrategia mixta. Como análisis adicional, podemos concluir acerca de los clientes. A medida que $p_t$ aumenta, los clientes leales podrían enfrentar un mayor costo en comparación con los clientes ocasionales. Esto podría empeorar la situación de los clientes ocasionales.
 \end{flushleft}
 
 \section{NASH EQUILIBRIUM AND THE HISTORY OF ECONOMIC THEORY - Roger B. Myerson}
 % --------------------
 \begin{flushleft}
-    
+    La lectura \textit{Equilibrio de Nash y la historia de la teoría económica} discute el contexto histórico y la importancia de la teoría de juegos no cooperativos de John Nash, centrándose en el concepto de equilibrio de Nash. El autor Roger Myerson argumenta que el trabajo de Nash marcó un punto de inflexión significativo en la historia del pensamiento económico y tuvo un impacto fundamental en la economía y las ciencias sociales. También se aborda la importancia del análisis de elección racional en la economía y la ambigüedad en la definición misma de la economía. Myerson examina a los precursores de Nash, mencionando a Augustin Cournot, Emile Borel y John Von Neumann, y sus contribuciones a la teoría de juegos.
+
+    En la primera parte de la lectura se discute la importancia de la teoría de juegos no cooperativos y la suposición de racionalidad perfecta en la economía y el análisis de las instituciones sociales. Myerson argumenta que aunque la suposición de racionalidad perfecta no describe con precisión el comportamiento humano real, resulta útil para analizar las instituciones sociales y evaluar propuestas de reforma institucional.
+
+    Posteriormente, el artículo menciona a los precursores de Nash en la teoría de juegos, como Cournot, Borel y von Neumann. Cournot, en su libro de 1838, desarrolló modelos de competencia oligopólica que incluían tanto monopolios como competidores perfectos como extremos límite, y analizó estos modelos utilizando la metodología del equilibrio de Nash. Borel, en 1921, reconoció que la existencia de soluciones minimax para juegos de suma cero de dos jugadores no podía ser probada sin admitir estrategias aleatorias. Von Neumann, en su trabajo de 1928, formuló una teoría general de juegos extensos que permitía a los jugadores moverse secuencialmente en el tiempo con información imperfecta sobre los movimientos previos de los demás jugadores. Von Neumann también definió el concepto de estrategia para cada jugador como un plan completo que especifica un movimiento para el jugador en cada etapa en la que está activo, como una función de su información en esa etapa. Estos precursores sentaron las bases para el trabajo de Nash en la teoría de juegos y el concepto de equilibrio de Nash.
+
+    Después de mencionar las contribuciones de los precursores, Myerson aborda las contribuciones de John Nash a la investigación en teoría de juegos. Menciona que Nash introdujo el concepto de equilibrio no cooperativo, lo cual cambió la forma en que los científicos sociales abordan el conflicto y la cooperación. Además, Nash construyó sobre la teoría de la utilidad de Von Neumann y Morgenstern, pero introdujo nuevas ideas como el argumento de normalización y el uso del teorema del punto fijo de Kakutani. También se destaca que el trabajo de Nash permitió el estudio de la economía de la información y la toma de decisiones individuales en las negociaciones.
+
+    El desarrollo de la teoría de juegos no cooperativos enfrentó problemas técnicos que necesitaban más estudio antes de que pudiera aplicarse como una metodología analítica general. La forma normal fue inicialmente la pregunta central, pero se hicieron evidentes limitaciones, lo que llevó al desarrollo de la forma extensiva. La introducción de estrategias conductuales y la reformulación general de la forma extensiva ayudaron a resolver el problema de encontrar condiciones necesarias y suficientes más fuertes para el comportamiento racional en juegos extensivos. La construcción de modelos de juegos bayesianos de información incompleta de John Harsanyi ayudó a evitar la dificultad de modelar situaciones en las que los jugadores tienen diferencias de información de larga data, y la interpretación de los equilibrios de estrategia aleatoria cambió fundamentalmente con la introducción de juegos bayesianos. La definición de equilibrio correlacionado de Robert Aumann ayudó a modelar la comunicación entre jugadores. El concepto del efecto de punto focal de Thomas Schelling abordó la pregunta crucial de cómo interpretar una multiplicidad de equilibrios en un juego.
+
+    En la lectura también se menciona una parte de la vida y obra de John Nash, un matemático estadounidense que realizó importantes contribuciones a la teoría de juegos y la economía. El artículo describe brevemente la vida de Nash, incluyendo su educación y su lucha contra la esquizofrenia. También se discuten sus contribuciones a la teoría de juegos, incluyendo el concepto de equilibrio de Nash, que ha sido fundamental en la economía y otras disciplinas.
+
+    Para finalizar, Myerson habla sobre cómo la formulación de la teoría de juegos no cooperativos por parte de John Nash ha sido un punto de inflexión en la economía, ya que permite un enfoque más amplio y analítico de la competencia racional en cualquier institución de la sociedad. Además, esta metodología ha liberado el análisis económico de restricciones metodológicas y ha permitido un enfoque en las interconexiones entre las instituciones económicas, sociales y políticas en el desarrollo económico. Concluye que la teoría de juegos no cooperativos fue un avance crítico en la extensión del alcance del análisis de elección racional a situaciones competitivas generales, con el objetivo de construir un marco de referencia de modelos de juegos que se puedan utilizar para comprender las sutilezas de las fuerzas competitivas en una amplia variedad de situaciones sociales reales. Además, se presenta una lista de referencias relacionadas con la teoría de juegos, incluyendo obras de economistas influyentes como John Nash, Oskar Morgenstern y John Von Neumann.
 \end{flushleft}
 
 \newpage
