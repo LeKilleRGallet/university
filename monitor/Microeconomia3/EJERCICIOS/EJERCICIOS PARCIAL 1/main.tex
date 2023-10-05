@@ -1,0 +1,264 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{\text{Microeconomia III - Preparacion Primer Parcial}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flushleft}
+    Conjunto de ejercicios adicionales para preparar el primer parcial de la asignatura Microeconomía III que se llevará a cabo el viernes 29 de septiembre.\\
+    Estos ejercicios \underline{\textbf{NO}} deben entregarse.\\
+    los libros citados en las referencias pueden ayudar a obtener solucion a los ejercicios planteados aquí.
+\end{flushleft}
+
+\section{Optimizacion}
+
+\begin{flushleft}
+    Para los siguientes ejercicios, \underline{demuestre} analíticamente cuál es la solución que maximiza o minimiza (dependiendo el caso) y muestre cómo se llega a ella de la forma más detallada posible.
+
+
+\begin{enumerate}[label=\Alph*)]
+    \item considere la siguiente ecuacion:\\~\\
+    \begin{minipage}{0.3\textwidth}
+        \begin{align*}
+            \text{Maximizar} \quad & f(x_1, x_2) \\
+            \text{Sujeto a} \quad & 2x_1 + x_2 \leq 10 \\
+            & x_1 + 3x_2 \leq 10 \\
+            & x_{1,2} \geq 0
+        \end{align*}
+    \end{minipage}%
+    \begin{minipage}{0.7\textwidth}
+        Obtener la solución si la hubiere cuando:
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item $f(x_1, x_2) = x_1 + x_2$
+                \item $f(x_1, x_2) = x_1x_2$
+                \item $f(x_1, x_2) = \sqrt{x_1x_2}$
+                \item $f(x_1, x_2) = \sqrt{x_1+x_2}$
+            \end{itemize}
+        \columnbreak
+            \begin{itemize}
+                \item $f(x_1, x_2) = ln(x_1)+\sqrt{x_2}$
+                \item $f(x_1, x_2) = x_1^2 + 9x_2^2$
+                \item $f(x_1, x_2) = \max\{x_1, x_2\}$
+                \item $f(x_1, x_2) = \min\{x_1, x_2\}$
+            \end{itemize}
+        \end{multicols}
+    \end{minipage}
+    \item Usted es un alto cargo de la CIA encargado de los suministros para el ejército ucraniano y se le ordena diseñar una dieta que cumpla con los estándares nutricionales al menor costo posible. Por lo tanto, solicita a los nutricionistas de la entidad una tabla con alimentos, sus valores nutricionales y sus precios, y le proporcionan la siguiente:
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c||c|}
+            \hline
+            & $A_1$ & $A_2$ & $A_3$ & $A_4$ & $A_5$ & $A_6$ & $A_7$ & $\min$ \\
+            \hline
+            $N_1$ & 25 & 20 & 30 & 15 & 10 & 3 & 8 & 4000 \\
+            \hline
+            $N_2$ & 0.05 & 0.02 & 0.06 & 0.03 & 0.1 & 0.1 & 0.04 & 70 \\
+            \hline
+            $N_3$ & 0.1 & 0.08 & 0.12 & 0.04 & 0.02 & 0.2 & 0.18 & 400 \\
+            \hline
+            $N_4$ & 0 & 0 & 0 & 0.1 & 0 & 1 & 0.2 & 110 \\
+            \hline
+            P & 2.50 & 3.00 & 4.00 & 1.50 & 1.00 & 0.75 & 1.25 & (?)\\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    Con la tabla proporcionada, plantee la ecuación objetivo, calcule la canasta a comprar y su precio.
+\end{enumerate}
+
+\section{Monopolio}
+
+\begin{enumerate}[label=\Alph*)]
+    \item Determine el nivel óptimo de producción, precios y beneficios totales, así como la pérdida de bienestar total en la economía de los siguientes mercados monopolicos:
+    \begin{enumerate}[label=\roman*)]
+        \item $p=20-3q;~~~c(q)=7+\frac{2q}{5}$
+        \item $p=15-q/2;~~~c(q)=2+5Q$
+        \item $p=200-q/3;~~~c(q)=q^2$
+        \item $p=11-2q;~~~c(q)=\sqrt{q}$
+    \end{enumerate}
+    \item Considerar las siguientes economías con un monopolista discriminador de tercer grado. Calcular el nivel óptimo de producción, precios y utilidades totales, así como la pérdida de bienestar total en la economía. Además, calcular qué ocurriría si este monopolista dejara de tener la capacidad de discriminar. ¿En cuánto variarían sus beneficios totales?
+    \begin{enumerate}[label=\roman*)]
+        \item $p_1=20-3q_1;~~~p_2=10-2q_2;~~~c(Q)=3+\frac{(q_1+q_2)^2}{7}$
+        \item $p_1=200-q_1/3;~~~p_2=150-q_2/2;~~~c(Q)=5(q_1+q_2)$
+        \item $p_1=50-q_1^2;~~~p_2=12-q_2/7;~~~c(Q)=2(q_1+q_2)^2$
+    \end{enumerate}
+\end{enumerate}
+
+\section{Duopolio de Cournot}
+
+\begin{flushleft}
+    Obtener los equilibrios de Cournot de las siguientes economias:
+    \begin{enumerate}[label=\roman*)]
+        \item $p_1=12-q_1-q_2;~~~c_1(q)=3q_i=c_2(q)$
+        \item $p_1=200-q_1-q_2;~~~c_1(q)=10q_i=c_2(q)$
+    \end{enumerate}
+\end{flushleft}
+
+\section{Juegos de suma cero}
+
+\begin{flushleft}
+    Obtenga los equilibrios de los siguientes juegos de suma cero:
+    \begin{enumerate}[label=\roman*)]
+        \item ~\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$B_1$}  & \multicolumn{1}{c}{$B_2$} \\\cline{3-4}
+                \multirow{2}*{J $1$}  & $A_1$ & $2$ & $-3$ \\\cline{3-4}
+                & $A_2$ & $0$ & $3$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \item ~\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$B_1$}  & \multicolumn{1}{c}{$B_2$} \\\cline{3-4}
+                \multirow{2}*{J $1$}  & $A_1$ & $2$ & $-3$ \\\cline{3-4}
+                & $A_2$ & $0$ & $2$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \item lanzar la moneda\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$B_1$}  & \multicolumn{1}{c}{$B_2$} \\\cline{3-4}
+                \multirow{2}*{J $1$}  & $A_1$ & $c$ & $-c$ \\\cline{3-4}
+                & $A_2$ & $-c$ & $c$ \\\cline{3-4}
+            \end{tabular}
+        \end{center}
+        \item Piedra, Papel o Tijera\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$R$}  & \multicolumn{1}{c}{$P$} & \multicolumn{1}{c}{$S$} \\\cline{3-5}
+                & $R$ & $0$ & $-1$ & $1$ \\\cline{3-5}
+                {J $1$} & $P$ & $1$ & $0$ & $-1$ \\\cline{3-5}
+                & $S$ & $-1$ & $1$ & $0$ \\\cline{3-5}
+            \end{tabular}
+        \end{center}
+        \item ~\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$B_1$}  & \multicolumn{1}{c}{$B_2$} & \multicolumn{1}{c}{$B_3$} \\\cline{3-5}
+                & $A_1$ & $1$ & $0$ & $0$ \\\cline{3-5}
+                {J $1$} & $A_2$ & $0$ & $1$ & $0$ \\\cline{3-5}
+                & $A_3$ & $0$ & $0$ & $1$ \\\cline{3-5}
+            \end{tabular}
+        \end{center}
+        \item ~\\
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{J $2$}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$B_1$}  & \multicolumn{1}{c}{$B_2$} & \multicolumn{1}{c}{$B_3$} \\\cline{3-5}
+                & $A_1$ & $8$ & $-3$ & $10$ \\\cline{3-5}
+                {J $1$} & $A_2$ & $-7$ & $-10$ & $-8$ \\\cline{3-5}
+                & $A_3$ & $10$ & $-9$ & $9$ \\\cline{3-5}
+            \end{tabular}
+        \end{center}
+        \item \textit{Air Strike}\\
+        tenga en cuenta que $v_1>v_2>v_3>0$
+        \begin{center}    
+            \setlength{\extrarowheight}{0pt}
+            \begin{tabular}{cc|c|c|c|}
+                & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Defensor}\\
+                & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$D_1$}  & \multicolumn{1}{c}{$D_2$} & \multicolumn{1}{c}{$D_3$} \\\cline{3-5}
+                & $A_1$ & $0$ & $v_1$ & $v_1$ \\\cline{3-5}
+                {Atacante} & $A_2$ & $v_2$ & $0$ & $v_2$ \\\cline{3-5}
+                & $A_3$ & $v_3$ & $v_3$ & $0$ \\\cline{3-5}
+            \end{tabular}
+    \end{center}
+    \end{enumerate}
+\end{flushleft}
+
+\section{Juegos no cooperativos generales en forma estrategica}
+\begin{flushleft}
+    Resuelva los siguientes juegos utilizando dominancia iterada, equilibrios de Nash puros y dinámica de mejor respuesta. Además, encuentre todos los equilibrios de Nash puros y mixtos de cada juego, evidencie los optimos de pareto de cada juego y grafique las correspondencias de mejor respuesta de cada juego, evidenciando en esta todos los equilibrios posibles
+\end{flushleft}
+\begin{enumerate}[label=\roman*)]
+    \item Juego de la \textit{mano invisible}\\
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$M$}  & \multicolumn{1}{c}{$T$} \\\cline{3-4}
+            & $M$ & $2,4$ & $4,3$ \\\cline{3-4}
+            & $T$ & $5,5$ & $3,2$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \item \textit{Stag Hunt}\\
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$C$}  & \multicolumn{1}{c}{$L$} \\\cline{3-4}
+            & $C$ & $5,5$ & $0,3$ \\\cline{3-4}
+            & $L$ & $3,0$ & $3,3$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+    \item ~\\
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$D$}  & \multicolumn{1}{c}{$I$} \\\cline{3-4}
+            & $D$ & $3,4$ & $2,2$ \\\cline{3-4}
+            & $I$ & $1,1$ & $2,1$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+
+\section{Juegos en forma extensiva}
+
+\begin{enumerate}[label=\Alph*)]
+    \item Represente los juegos anteriores (P4 y P5) en forma extensiva, asumiendo ahora que son juegos de informacion perfecta. Luego, encuentre sus equilibrios de Nash perfectos en subjuegos. ¿Al representar el juego con informacion perfecta cambia algo?\\
+    \item \begin{flushleft}
+    Represente los siguientes juegos en forma extensiva, encuentre los equilibrios de Nash perfectos en subjuegos, luego represente el juego en forma estratégica y muestre todos los equilibrios que tiene. Entre estos equilibrios, ¿cuál es el más probable que se alcance? ¿Por qué?
+\end{flushleft}
+
+\begin{enumerate}[label=\roman*)]
+    \item \textit{Fair cake-cutting}: Dos niños acaban de comprar un único pastel y deben decidir cómo repartirlo. Uno de los niños propone que el pastel sea cortado por uno de los dos niños. Posteriormente, el niño que no cortó el pastel elige primero cuál de las dos partes seleccionar, y por ende, se le asigna la otra parte al niño que cortó el pastel inicialmente.\\
+    Por facilidad, podemos asumir que únicamente pueden existir los repartos $(\frac{1}{2},\frac{1}{2})$, $(\frac{2}{3},\frac{1}{3})$, $(\frac{3}{4},\frac{1}{4})$, y viceversa. Aunque si se prefiere, también se puede considerar que el pastel puede ser cortado de forma continua.
+    \item \textit{Oligopolio Stackelberg}: Asuma una economía de competencia monopolística donde existen dos firmas que producen de tal forma que una firma primero determina y anuncia las cantidades a producir y posteriormente la otra firma con esta información determina entonces cuántas cantidades va a producir al mercado. Asuma que los consumidores de esta economía tienen una demanda de $p=100-q_1-q_2$ y que la función de costo de ambas compañías es $c_i(q_i)=7q_i$. ¿Qué cantidades se producen en total en la economía? ¿Qué tanto produce cada compañía? ¿Cuál es la utilidad de cada compañía? ¿Alguna compañía obtiene un mayor nivel de utilidad? En caso de que se dé, ¿cuál es la razón por la cual se da este fenómeno? Explique detalladamente.
+\end{enumerate}
+\end{enumerate}
+
+\end{flushleft}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}

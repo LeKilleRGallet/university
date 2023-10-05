@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\newcommand{\R}{\mathbb{R}}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{babel}
+\usetikzlibrary{shapes}
+\usetikzlibrary{tikzmark}
+\usepackage[rmargin=2.54cm,lmargin=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}
+
+\title{}
+\author{Augusto Rico}
+
+\begin{document}
+
+\maketitle
+
+\begin{flushleft}
+    En el caso de un monopolista con costo marginal constante $c$, encuentre (si existen) valores de $a$ y $b$ tales que las curvas de demanda $p_1 = a - q_1$, $p_2 = b - q_2$, no incentiven al productor a discriminar (en tercer grado), entre estos dos tipos de consumidores.
+    $$p_1=a-q_1;~~~p_2=b-q_2;~~~c(Q)=cQ|Q=q_1+q_2$$
+    Para demostrar esto, debemos verificar si es posible que $\pi^m \geq \pi^d$. Para determinar los valores en los cuales esto puede ser posible, primero formulamos la ecuación de beneficios del monopolista cuando puede discriminar en tercer grado.
+    $$\pi^d = (a-q_1)q_1+(b-q_2)q_2-c(q_1+q_2)$$
+    Derivamos e igualamos a cero para obtener las cantidades óptimas a producir para este monopolista.
+    \begin{align*}
+        \pi^d_1=& a-2q_1-c=0\to& q_1^d=(a-c)/2\\
+        \pi^d_2=& b-2q_2-c=0\to& q_2^d=(b-c)/2
+    \end{align*}
+    Reemplazamos las cantidades obtenidas en la función de beneficios.
+    $$\pi^d = (a-((a-c)/2))((a-c)/2)+(b-((b-c)/2))((b-c)/2)-c(((a-c)/2)+((b-c)/2))$$
+    Simplificamos.
+    $$\pi^d=\frac{a^2-2c^2+b^2}{4}-\frac{c(-2c+a+b)}{2}$$\\
+    Teniendo el beneficio que tendrá el monopolista con capacidad de discriminar, procedemos a calcular el beneficio si este no discriminara. Para ello, primero debemos calcular la demanda del mercado.
+    \begin{align*}
+        Q=&q_1+q_2\\
+        Q=&a-p+b-p=a+b-2p
+    \end{align*}
+    Remplazamos la función de demanda en la función de beneficios, obteniendo.
+    $$\pi^m=p(a+b-2p)-c(a+b-2p)$$
+    Derivamos e igualamos a cero para obtener el precio óptimo.
+    $$\pi^m_p=a+b-4p+2c=0 ~~~\to~~~ p^*=\frac{a+b+2c}{4}$$
+    Remplazamos el precio obtenido en la función de beneficios, obteniendo.
+    $$\pi^m=\left(\frac{a+b+2c}{4}\right)\left(a+b-2(\frac{a+b+2c}{4})\right)-c\left(a+b-2\left(\frac{a+b+2c}{4}\right)\right)$$\\~\\~\\
+    Simplificamos.
+    $$\pi^m=\frac{(a+b+2c)(a+b-2c)}{8}-ca-cb+\frac{c(a+b+2c)}{2}$$
+    Habiendo obtenido los valores de $\pi^d$ y $\pi^m$, podemos entonces analizar las condiciones de $a, b, c$ para que este monopolista no tenga incentivos de discriminar. Procedemos a reemplazar los valores obtenidos en la desigualdad $\pi^m \geq \pi^d$, obteniendo entonces.
+    $$~\frac{(a+b+2c)(a+b-2c)}{8}-ca-cb+\frac{c(a+b+2c)}{2}~\geq~\frac{a^2-2c^2+b^2}{4}-\frac{c(-2c+a+b)}{2}~$$
+    Simplificamos.
+    \begin{align*}
+        \frac{(a+b+2c)(a+b-2c)}{8}\cancel{-ca-cb+\frac{c(a+b+2c)}{2}}~~\geq&~~\frac{a^2-2c^2+b^2}{4}\cancel{-\frac{c(-2c+a+b)}{2}}\\~\\
+        \frac{(a+b+2c)(a+b-2c)}{8}~~\geq&~~\frac{a^2-2c^2+b^2}{4}\\~\\
+        \cancel{a^{2}}+2ab+\cancel{b^{2}}\cancel{-4c^{2}}~~\geq&~\cancel{2}a^2\cancel{-4c^{2}}+\cancel{2}b^2\\
+        2ab~~\geq&~~a^2+b^2
+    \end{align*}
+
+    Habiendo obtenido que para que $\pi^m \geq \pi^d$ se debe cumplir que $2ab \geq a^2 + b^2$, podemos proceder a analizar por casos cuándo es posible que $2ab = a^2 + b^2$ y cuándo $2ab > a^2 + b^2$, para finalmente obtener las condiciones de $a, b$ para que el monopolista no tenga incentivos a discriminar.\\~\\
+    
+    Iniciamos por el caso de igualdad, $2ab = a^2 + b^2$, lo cual es equivalente a $a^2 - 2ab + b^2 = 0$. Esta expresión se puede factorizar como $(a - b)^2 = 0$, y despejando podemos obtener que $a = b$. Esto significa que $2ab = a^2 + b^2$ es posible si y solo si $a = b$. En nuestro problema de monopolista, esto implicaría que el monopolista no tiene incentivos para discriminar cuando ambas demandas son iguales entre ellas.\\~\\
+
+    Ahora, veremos las condiciones para que se pueda dar que $2ab > a^2 + b^2$, o lo que es equivalente y más sencillo, examinar los casos en los cuales $2ab \leq a^2 + b^2$ es cierto. Por ende, estos son los casos en los cuales no se cumple que $2ab > a^2 + b^2$. Como demostramos anteriormente que $2ab = a^2 + b^2$ es posible si y solo si $a = b$, podemos analizar los casos en los cuales $a \neq b$, lo cual es equivalente a observar los casos en los cuales $b = a + k|k \in \R^{+}$ debido a la simetría. Al examinar esto, también consideraremos los casos en los cuales $a = b + k|k \in \R^{+}$.
+
+    \begin{align*}
+        2a(a+k) ~\leq&~ a^2+(a+k)^2\\
+        2a^2+2ak~\leq&~ a^2+a^2+2ak+k^2\\
+        2a^2+2ak~\leq&~ 2a^2+2ak+k^2
+    \end{align*}
+    Por lo tanto, vemos claramente que para cualquier valor en el que $k \in \R^{+}$, se cumplirá la desigualdad anterior. En consecuencia, podemos concluir que, para cualquier valor en el que $a \neq b$, tendremos que $2ab \ngtr a^2 + b^2$. Esto nos lleva a la conclusión de que cuando las demandas son distintas, el monopolista siempre tendrá incentivos para discriminar. Por lo tanto, y como se evidenció anteriormente, el monopolista únicamente no tendrá incentivos para discriminar cuando se dé el caso de que $a = b$.
+
+\begin{flushright}
+    \textit{Q.E.D.}
+\end{flushright}
+\end{flushleft}
+\end{document}

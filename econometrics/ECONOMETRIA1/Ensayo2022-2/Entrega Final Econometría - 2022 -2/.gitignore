@@ -1,0 +1,19 @@
+# Blacklist all files
+*
+
+# Whitelist all directories
+!*/
+!Notebook/*
+!Imagenes/*
+# Whitelist the .tex and .pdf files
+!*.tex
+!*.pdf
+!*.png
+!*.jpeg
+
+# Whitelist reference and style files
+!*.bib
+!*.sty
+
+# Whitelist gitignore
+!.gitignore
