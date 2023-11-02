@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{\text{Microeconomia III - $5^a$ Monitoria}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Mecanismos de subasta y el \textit{Teorema Myerson-Satterthwaite}}
+
+\begin{flushleft}
+
+    El \textit{Teorema Myerson-Satterthwaite} señala un problema importante para la teoría económica. Evidencia la imposibilidad de diseñar un mecanismo eficiente, individualmente racional y no manipulable en situaciones con información privada. Consideremos una negociación bilateral con un comprador y un vendedor. El comprador conoce la valoración correcta del bien ($v$), pero no la valoración del vendedor ($c$). ¿Es posible que esta negociación sea eficiente? Para analizarlo, resolvamos la siguiente ecuación:
+
+    \begin{align*}
+        \int_{0}^{1}&\int_{0}^{v} (v-c) \,dc\,dv\\
+        \int_{0}^{1}&\left(vc-\frac{c^2}{2}\right)\,dv\Big|_0^v\\
+        \int_{0}^{1}&\left(vv-\frac{v^2}{2}\right)\,dv-\int_{0}^{1}\left(v0-\frac{0^2}{2}\right)\,dv\\
+        \int_{0}^{1}&\frac{v^2}{2}\,dv\\
+        &\frac{v^3}{6}\Big|_0^1\\
+        &\frac{1^3}{6}-\frac{0^3}{6}=1/6
+    \end{align*}
+
+    entonces vemos que un mercado eficiente tendria una ganancia promedio de $1/6$, no obstante aqui estamos asumiendo que tanto comprador y vendedor revelan sus valoraciones privadas, no obstante esto no debe porque ser asi, entonces podemos considerar que el comprador aunque tenga una valoracion ($v$), este va a reportar una valoracion falsa ($r$), entonces este comprador va a tener una funcion de utilidad de la forma $u(r,v)=vr-E_cp(r,c)$, con esto vemos que el caso en el cual el comprador elige ser honesto es cuando $v=r$, entonces:
+
+    \begin{align*}
+        \frac{du(v,v)}{dv}=\underbrace{u_1(v,v)}_{0}+\underbrace{u_2(v,v)}_{r}=r\Big|_{r=v}=v
+    \end{align*}
+
+    integramos entonces $u(v,v)$ para obtener la ganancia total de este consumidor:
+
+    \begin{align*}
+        \int&_{0}^{1} u(v,v)\,dv\\
+        \int&_{0}^{1} (1-v)\frac{du(v,v)}{dv}dv\\
+        \int&_{0}^{1} (1-v)v\,dv\\
+        \int&_{0}^{1} v-v^2\,dv\\
+        &\frac{v^2}{2}-\frac{v^3}{3}\Big|^1_0=\frac{1}{6}
+    \end{align*}
+
+    entonces notamos que para que el comprador tenga incentivos para revelar la verdad sobre sus preferencias, este debe darsele todas las ganancias.
+\end{flushleft}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}

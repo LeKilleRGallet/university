@@ -1,0 +1,252 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+\allowdisplaybreaks
+
+\title{\text{Microeconomia III - $7^a$ Monitoria}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Modelo espacial de Hotelling}
+\begin{flushleft}
+    El Modelo de Hoteling se desarrollo como una extension de los modelos conocidos hasta el momento, pero agregando la dimension espacial en la toma de decisiones de las empresas, esto dado que  en el mundo real, la ubicación geográfica de las empresas y la preferencia de los consumidores por la proximidad pueden desempeñar un papel importante en la competencia.\\~\\
+    
+    El modelo de Hotelling asume que las empresas compiten en un mercado lineal y unidimensional, como una calle, donde los consumidores eligen productos en función de su ubicación. Cada empresa elige su ubicación en la línea, y los consumidores eligen comprar el producto más cercano. Esto da lugar a una competencia en precios y ubicación, ya que las empresas ajustan sus precios y ubicaciones para maximizar sus beneficios.\\~\\
+
+    Entonces supongamos un modelo con dos firmas que producen un mismo bien homogeneo a un precio comun $P$, que se encuentran en una calle de largo $L$ y todos los consumidores estan distribuidos de forma uniforme, notemos entonces que si la empresa $1$ se encuentra en un punto $x\in(0,L)$ y de la misma forma la empresa $2$ se encuentra en un punto $y\in(0,L)$, tal que $x<y$, y dado que los consumidores van a comprar en la empresa que se encuentre mas cercana a ellos, vamos a tener claramente que los consumidores que compraran en la empresa $1$ seran los que se encuentren entre $0$ y $\frac{x+y}{2}$, y los que compraran en la empresa $2$ seran los que se encuentren entre $\frac{x+y}{2}$ y $L$, por lo que notamos que en caso de que $x$ e $y$ no se encuentren adjacentes, las firmas van a tener incentivos para acercarse cada vez mas hasta que ambas firmas se encuentren en el punto $L/2$ donde ninguna de las firmas tendra incentivos para cambiar de posicion y por ende sera un equilibrio.\\~\\
+
+    \begin{center}
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            
+            %EJE X 
+            \draw[line width=1pt]    (100,50) -- (600,50) ;
+
+            %% X->EQ
+            \draw[>=latex,->,line width=1.5pt] (200,40) -- (335,40);
+            %% Y->EQ
+            \draw[>=latex,->,line width=1.5pt] (500,40) -- (365,40) ;
+
+            %%%EQ
+            \draw (350,37) node [inner sep=0.75pt]    {$\frac{x+y}{2}$};
+
+            \draw[blue, line width=2pt, dash pattern=on 10pt off 3pt] (100,50) -- (350,50);
+            \draw[red, line width=2pt, dash pattern=on 10pt off 3pt] (350,50) -- (600,50);
+
+            %% x
+            \draw (200,50) node [inner sep=0.75pt] {$\bullet$};
+            \draw (200,60) node {$x$};
+            
+            %% y
+            \draw (500,50) node [inner sep=0.75pt] {$\bullet$};
+            \draw (500,60) node {$y$};
+        \end{tikzpicture}
+    \end{center}
+        
+
+    No obstante a este modelo tan sencillo se le puede adicionar costos de transportes para ver el grado de sustitucion entre el mismo bien pero en espacialidades distintas.
+
+    \begin{example}
+        Asumamos dos firmas que producen un mismo bien homogeneo pero ubicadas en espacialidades distintas, cada empresa elige un precio al que vender a unos consumidores ubicados encierto segmento de recta, teniendo en cuenta que en este caso los consumidores van a comprar sin importar el precio y su unica decision es definir a cual firma comprarle, considerando que este consumidor debe pagar un costo de transporte $\tau$ que sera la distancia entre el consumidor y la firma a la cual le comprara.\\~\\
+        
+        entonces tendremos un segmento de recta de tamaño $L=a+d_x+d_y+b$, donde cada unidad del segmento de recta representa un consumo de una unidad, por lo que $q_x+q_y=L$.
+        
+        \begin{center}
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                
+                %EJE X 
+                \draw[line width=1pt]    (100,50) -- (600,50) ;
+    
+                %% X->EQ
+                \draw[>=latex,<-,line width=1.5pt] (200,40) -- (335,40);
+                \draw (267,30) node {$p_x+\tau d_x$};
+                %% Y->EQ
+                \draw[>=latex,<-,line width=1.5pt] (500,40) -- (365,40);
+                \draw (432,30) node {$p_y+\tau d_y$};
+    
+                %% x
+                \draw (200,50) node [inner sep=0.75pt] {$\bullet$};
+                \draw (200,60) node {$x$};
+                
+                %% y
+                \draw (500,50) node [inner sep=0.75pt] {$\bullet$};
+                \draw (500,60) node {$y$};
+
+                %% J
+                \draw (350,50) node [inner sep=0.75pt] {$\bullet$};
+                \draw (350,40) node {$J$};
+
+                % Corchetes
+                \draw[decorate,decoration={brace,amplitude=10pt,mirror},line width=1pt] (100,50) -- (200,50);
+                \draw (150,70) node {$a$};
+
+                \draw[decorate,decoration={brace,amplitude=10pt,mirror},line width=1pt] (200,50) -- (350,50);
+                \draw (275,75) node {$d_x$};
+
+                \draw[decorate,decoration={brace,amplitude=10pt,mirror},line width=1pt] (350,50) -- (500,50);
+                \draw (425,75) node {$d_y$};
+
+                \draw[decorate,decoration={brace,amplitude=10pt,mirror},line width=1pt] (500,50) -- (600,50);
+                \draw (550,70) node {$b$};
+            \end{tikzpicture}
+        \end{center}
+
+        supongamos un consumidor $J$ que se encuentra ubicado en cualquier punto entre $x$ e $y$, para el cual consumir una unidad en la firma $x$ lo supondra un costo de $p_x+\tau d_x$ y de la misma forma si comprara en la firma $y$ le supondria un costo de $p_y+\tau d_y$, si asumimos que el consumidor $J$ es el consumidor para el cual se cumple que $p_x+\tau d_x=p_y+\tau d_y$ sabemos que todos los consumidores a la izquiera de este consumidor van a consumir en la firma $y$ y por el contrario los ubicados a la derecha van a consumir en la firma $x$, por lo que vamos a satisfacer:
+
+        $$p_x+\tau d_x=p_y+\tau d_y;~~~~~L=a+d_x+d_y+b$$
+
+        por lo que podemos despejar para obtener los valores de $d_x$ y $d_y$:
+
+        \begin{align*}
+            \tau(d_x-d_y)&=p_y-p_x&L-a-b-d_y=d_x\\
+            \tau((L-a-b-d_y)-d_y)&=p_y-p_x\\
+            L-a-b-2d_y&=\frac{p_y-p_x}{\tau}\\
+            d_y&=\frac{1}{2}\left( L-a-b-\frac{p_y-p_x}{\tau} \right)\\
+            \text{por simetria sabemos que:}\\
+            d_x&=\frac{1}{2}\left( L-a-b-\frac{p_x-p_y}{\tau} \right)
+        \end{align*}
+
+        como sabemos que $q_x=a+d_x$ y $q_y=b+d_y$ y asumiendo que las firmas producen a coste cero, tenemos que las funciones de beneficio de las firmas seran:
+
+        \begin{align*}
+            \pi_x &= p_xq_x\\
+            \pi_x &= p_x(a+d_x)\\
+            \pi_x &= p_x\left(a+\frac{1}{2}\left( L-a-b-\frac{p_x-p_y}{\tau}\right)\right)\\
+            \pi_x &= \frac{p_x}{2}\left( L+a-b-\frac{p_x-p_y}{\tau}\right)\\
+            \pi_x &= \frac{p_x}{2}\left( L+a-b\right)-\frac{p_x^2-p_xp_y}{2\tau}\\
+            \text{por simetria sabemos que:}\\
+            \pi_y &= \frac{p_y}{2}\left( L-a+b\right)-\frac{p_y^2-p_xp_y}{2\tau}\\
+        \end{align*}
+
+        dado que no consideramos posible que una unica firma tome todo el mercado, los precios en equilibrio de nash van a ser la solucines simultaneas tales que $\partial\pi_i/\partial p_i=0$ las cuales pasaremos a calcular:
+
+        \begin{align*}
+            \frac{\partial\pi_x}{\partial p_x} =& \frac{1}{2}\left( L+a-b\right)-\frac{p_x}{\tau}+\frac{p_y}{2\tau}=0\to p_x=&\frac{\tau}{2}\left( L+a-b\right)+\frac{p_y}{2}\\
+            \text{por simetria sabemos que:}\\
+            \frac{\partial\pi_y}{\partial p_y} =& \frac{1}{2}\left( L-a+b\right)-\frac{p_y}{\tau}+\frac{p_x}{2\tau}=0\\
+            \text{remplazando obtenemos:}\\
+            \frac{1}{2}\left( L-a+b\right)&-\frac{p_y}{\tau}+\frac{\frac{\tau}{2}\left( L+a-b\right)+\frac{p_y}{2}}{2\tau}=0\\
+            \frac{1}{2}\left( L-a+b\right)&-\frac{p_y}{\tau}+\frac{L+a-b}{4}+\frac{p_y}{4\tau}=0\\
+            -\frac{p_y}{\tau}+\frac{p_y}{4\tau}=&-\frac{L-a+b}{2}-\frac{L+a-b}{4}\\
+            -\frac{3p_y}{4\tau}=&\frac{-3L+a-b}{4}\\
+            p_y=&\tau\left( L - \frac{a-b}{3} \right)\\
+            \text{por simetria sabemos que:}\\
+            p_x=&\tau\left( L - \frac{b-a}{3} \right)
+        \end{align*}
+        
+        entonces, las cantidades a producir seran:
+
+        \begin{align*}
+            q_x=&a+d_x\\
+            q_x=&a+\frac{1}{2}\left( L-a-b-\frac{p_x-p_y}{\tau} \right)\\
+            q_x=&a+\frac{1}{2}\left( L-a-b-\frac{\left( \tau\left( L - \frac{b-a}{3} \right) \right)-\left( \tau\left( L - \frac{a-b}{3} \right) \right)}{\tau} \right)\\
+            q_x=&a+\frac{1}{2}\left( L-a-b+\frac{2b-2a}{3}\right)\\
+            q_x=&a+\frac{3L-5a-b}{6}\\
+            q_x=&\frac{a+3L-b}{6}\\
+            q_x=&\frac{L}{2}+\frac{a-b}{6}\\
+            q_x^*=&\frac{1}{2}\left( L + \frac{a-b}{3}\right)\\
+            \text{por simetria sabemos que:}\\
+            q_y^*=&\frac{1}{2}\left( L + \frac{b-a}{3}\right)
+        \end{align*}
+    \end{example}
+\end{flushleft}
+
+\section{Modelo de Chamberlin}
+
+\begin{flushleft}
+    Ahora pensemos en un mercado donde en el corto plazo existe un unico productor, pero a medida que otros competidores vean que este mercado genera ganancias van a comenzar a entrar hasta llegar a situaciones donde el beneficio de la empresa inicial a cero.\\~\\
+
+    \begin{example}
+        Supongamos un monopolio que inicialmente enfrenta una demanda de $p=a-q$ con una funcion de costo de $c(q)=cq^2+F$, notemos que en este caso al ser aun un unico productor este va a resolver este problema igualando $I_{mg}=C_{mg}$ de la siguiente forma:
+
+        \begin{align*}
+            \pi(q)&=p(q)q-c(q)\\
+            \pi(q)&=(a-q)q-cq^2-F\\
+            \pi^\partial_q(q)&=a-2q-2cq=0\\
+            q(-2-2c)&=-a\\
+            q^m&=\frac{a}{2+2c}\\
+            \text{entonces:}\\
+            p^m&=a-\frac{a}{2+2c}=\frac{a+2ac}{2+2c}\\
+            \text{por ende:}\\
+            \pi^m&=\frac{a+2ac}{2+2c}\frac{a}{2+2c}-c\left(\frac{a}{2+2c}\right)^2-F\\
+            \pi^m&=\frac{a^2+2ca^2}{(2+2c)^{2}}-\frac{ca^{2}}{(2+2c)^{2}}-F\\
+            \pi^m&=\frac{a^2+ca^2}{(2+2c)^{2}}-F=\frac{a^2+ca^2}{4+8c+4c^2}-F=\frac{a^2(c+1)}{4(c^2+2c+1)}-F=\frac{a^2\cancel{(c+1)}}{4(c+1)\cancel{^2}}-F\\
+            \pi^m&=\frac{a^2}{4(c+1)}-F>0
+        \end{align*}
+
+        ahora veamos que pasa en el largo plazo, cuando ingresan nuevos competidores, para esto debemos encontrar el punto donde la tangente de la curva de demanda con nuevos competidores se iguada a la tangente de la curva de costo medio\\
+        
+        \begin{align*}
+            p&=a-nq,~~~~&c_{me}=cq+F/q\\
+            p^\partial_q&=-n,~~~~&{c_{me}}^\partial_q=c-F/q^2\\
+            p^\partial_q&={c_{me}}^\partial_q\\
+            c-F/q^2&=-n\\
+            \text{despejando obtenemos }&\text{que el equilibrio de largo plazo es:}\\
+            q^*&=\sqrt{\frac{F}{n+c}}\\
+        \end{align*}
+        
+        dado que con la entrada de nuevos competidores cambiola curva de demanda, debemos volver a calcular el ingreso marginal y con ello las nuevas cantidades:
+
+        \begin{align*}
+            \pi(q)&=(a-nq)q-cq^2-F\\
+            \pi^\partial_q(q)&=a-2nq-2cq=0\\
+            q(-2n-2c)&=-a\\
+            q^*&=\frac{a}{2n+2c}\\
+        \end{align*}
+        
+        igualamos ambas cantidades obtenidas para obtener la cantidad de empresas que entrarian en el mercado:
+
+        \begin{align*}
+            \sqrt{\frac{F}{n+c}}&=\frac{a}{2n+2c}\\
+            \frac{F}{n+c}&=\frac{a^2}{4(n+c)^2}\\\
+            F&=\frac{a^2}{4(n+c)}\\
+            Fn+Fc&=\frac{a^2}{4}\\
+            \text{entonces la cantidad }&\text{de empresas que entrarian seria:}\\
+            n&=\frac{a^2}{4F}-c\\
+            \text{y las cantidades}&\text{ producidas serian:}\\
+            q&=\frac{a}{2\left(\frac{a^2}{4F}-c\right)+2c}\\
+            q&=\frac{a}{\frac{a^2}{2F}}\\
+            q&=\frac{2Fa}{a^2}\\
+            q&=\frac{2F}{a}\\
+        \end{align*}
+
+        por lo que ahora podemos confirmar los beneficios de largo plazo de la empresa inicial cuando entran nuevos competidores:
+
+        \begin{align*}
+            \pi^l &= (a-nq)q-cq^2-F\\
+            \pi^l &= \left(a-\left(\frac{a^2}{4F}-c\right)\frac{2F}{a}\right)\frac{2F}{a}-c\left(\frac{2F}{a}\right)^2-F\\
+            \pi^l &= \left(a-\frac{-4cF+a^{2}}{2a}\right)\frac{2F}{a}-\frac{4cF^{2}}{a^{2}}-F\\
+            \pi^l &= \frac{a^{2}F+\cancel{4cF^2}}{a^{2}}-\frac{\cancel{4cF^{2}}}{a^{2}}-F\\
+            \pi^l &= \frac{\cancel{a^{2}}F+\cancel{4cF^2-4cF^{2}}}{\cancel{a^{2}}}-F=F-F=0
+        \end{align*}
+    \end{example}
+\end{flushleft}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}

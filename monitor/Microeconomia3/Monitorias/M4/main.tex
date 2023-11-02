@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{\text{Microeconomia III - $4^a$ Monitoria}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Juegos Repetidos}
+
+\begin{flushleft}
+    Hasta este punto, nuestro enfoque se centró en el análisis de situaciones en las que los jugadores no se reencuentran después de interactuar, lo cual no abarca todas las posibles interacciones sociales, especialmente las más comunes que implican encuentros recurrentes.\\~\\
+
+    Por lo tanto, a partir de ahora, nos dedicaremos a comprender lo que sucede cuando dos jugadores interactúan y, en lugar de concluir, repiten el mismo juego.\\~\\
+    
+    Frecuentemente, en estas interacciones, los jugadores no tienen certeza sobre si habrá algún desenlace definitivo, por lo que podremos ver qué condiciones se deben dar para que un juego donde, tal como hemos visto hasta el momento, prima el egoísmo, pueda llegar a soluciones cooperativas si estos jugadores saben que deben continuar interactuando en el futuro.\\~\\
+
+    Podemos ejemplificar esto utilizando el \textit{dilema del prisionero}, el cual se repetirá infinitamente. Así, tendremos dos jugadores que jugarán una y otra vez este juego estratégico durante una cantidad de tiempo infinita.\\~\\
+
+    Para estos juegos, debemos tener dos consideraciones:
+    
+    \begin{enumerate}
+        \item Los jugadores no toleran la traición; por lo tanto, cooperarán siempre y cuando el otro jugador haya cooperado en el juego anterior. En caso de que alguno de los dos jugadores elija una estrategia no cooperativa, el otro jugador también optará por una estrategia no cooperativa en el próximo juego.
+        \item Los jugadores prefieren los pagos actuales sobre los futuros y utilizan la fórmula de valor presente, $\frac{1}{1+r>0}$, que denotamos como $\delta\in(0,1)$, para calcular la utilidad esperada en términos de valor actual.
+    \end{enumerate}
+
+    Dado esto, podemos analizar en qué rangos de valores de $\delta$ la estrategia cooperativa $(C, C)$ es un \textbf{ENPS}. Para ello, consideremos dos posibles casos:
+
+    \begin{enumerate}[label=\textbf{Caso \arabic*.}]
+        \item Ambos jugadores comienzan cooperando y continúan haciéndolo durante todo el juego, lo que resulta en un pago de $-1$ en cada iteración.
+        \item En este caso, uno de los jugadores comienza cooperando, pero el otro jugador decide no cooperar en el primer juego. Después de esta decisión, el jugador que inicialmente cooperó dejará de cooperar y ambos jugadores seguirán sin cooperar durante el resto del juego. Esto resultará en un pago de $0$ en el juego inicial para el jugador que decidió no cooperar inicialmente, y a partir de ese punto, ambos jugadores recibirán un pago de $-4$ en cada iteración subsiguiente hasta el final del juego.
+    \end{enumerate}
+    esto lo podemos representar matematicamente como:
+    \begin{enumerate}[label=\textbf{Caso \arabic*.}]
+        \item $-1\delta^0-1\delta^1\dots-1\delta^\infty$ que podemos factorizar como $-1\delta^0-1\delta(\delta^0+\delta^1\dots+\delta^\infty)$ y notamos de inmediato que esto puede representarse también como $-1\delta^0-1\delta\left(\lim_{n\to\infty} \sum_{i=0}^n \delta^i\right)$ dado que esta sumatoria es una serie infinita nos interesa ver si esta serie es convergente, por lo que podemos representar la serie en su forma de suma parcial $S_n=1+\delta+\delta^2+\dots+\delta^n$ y como sabemos que la razón de nuestra serie es $\delta$, podemos entonces multiplicar la ecuación por nuestra razón y obtenemos que $\delta S_n = \delta+\delta^2+\delta^3\dots+\delta^{n+1}$ si evaluamos entonces la diferencia entre estas dos ecuaciones vamos a obtener que:
+        \begin{minipage}{0.5\textwidth}
+            \begin{align*}
+            S_n-\delta S_n &= 1+\delta+\dots+\delta^n\\
+            &-\delta-\dots-\delta^n-\delta^{n+1}\\
+            &\text{simplificamos}\\
+            S_n(1-\delta)&=1-\delta^{n+1}\\
+            &\text{despejamos}\\
+            S_n&=\frac{1-\delta^{n+1}}{1-\delta}
+        \end{align*}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            habiendo obtenido entonces que $\sum \delta^i$ es equivalente a $1-\delta^{n+1}/1-\delta$. Podemos aplicar ahora el límite al infinito para ver si esta serie converge a algún valor en particular, obteniendo entonces que $1-\delta^\infty/1-\delta$. Como sabemos que $\delta\in(0,1)$ y sabemos que $\lim_{x\to1^-} 1^\infty=0$, entonces obtendremos que esta serie converge definitivamente a $1/(1-\delta)$.
+        \end{minipage}
+         Por lo tanto, vamos a tener que el pago esperado para este caso va a ser $-1-\frac{\delta}{1-\delta}$.\\
+
+        
+
+        \item $0\delta^0-4\delta^1\dots-4\delta^\infty$ que podemos factorizar como $0\delta^0-4\delta(\delta^0+\delta^1\dots+\delta^\infty)$ y notamos de inmediato que esto puede representarse también como $0\delta^0-4\delta\left(\lim_{n\to\infty} \sum_{i=0}^n \delta^i\right)$ y tal como mostramos anteriormente esta serie convergera a $1/(1-\delta)$ por lo que el pago esperado en este caso sera $-\frac{4\delta}{1-\delta}$
+    \end{enumerate}
+
+    Teniendo ambos pagos esperados, podemos ver entonces qué condiciones se deben dar para que el pago esperado del \textit{Caso 1} sea superior al pago esperado del \textit{Caso 2}, lo que significaría que únicamente en estas condiciones ambos jugadores tendrían incentivos para cooperar durante todo el juego.
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{align*}
+            C_1 &\geq C_2\\
+            -1-\frac{\delta}{1-\delta} &\geq -\frac{4\delta}{1-\delta}\\
+            (1-\delta)\left(-1-\frac{\delta}{1-\delta}\right) &\geq -4\delta\\
+            -1 &\geq -4\delta\\
+            \delta &\geq 1/4
+        \end{align*}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        Por lo tanto, podemos concluir que para que ambos jugadores tengan incentivos para cooperar en este juego, es necesario que $\delta$ sea mayor o igual a $1/4$; de lo contrario, ambos jugadores tendrán incentivos para no cooperar.
+    \end{minipage}
+    
+
+    
+\end{flushleft}
+
+\subsection{El \textit{Teorema} Popular}
+
+\begin{flushleft}
+    Este teorema es una generalización de lo demostrado anteriormente. Además, evidencia cómo los jugadores, utilizando estrategias mixtas, pueden lograr algún tipo de comunicación y, de esta forma, lograr una cooperación sostenible a largo plazo. Para ello, cada jugador aplicará una técnica de \textit{"gatillo"} de la forma:
+
+    \[
+    \min_{\alpha_{-i}} \max_{\alpha_i} g_i(\alpha_i,\alpha_{-i})
+    \]
+    
+    Esta técnica se aplicará en caso de que el otro jugador no coopere. Lo que esto nos muestra es que siempre que un jugador sea paciente, no tendrá incentivos para desviarse de la estrategia previamente acordada Si lo hiciera, en el futuro, solo recibiría el pago \(\textit{minimax}\). Por lo tanto, podemos deducir fácilmente que, para que una estrategia pueda ser un ENPS, ningún jugador debe ser capaz de ganar cambiando de estrategia.
+\end{flushleft}
+\begin{example}
+    \begin{flushleft}
+        Representemos un ejemplo del teorema popular con el siguiente juego:\\
+        \begin{minipage}{0.4\textwidth}
+            ~\\En este juego sabemos que $a, b >> 0$ y que $a > b$, entonces comenzamos graficando el conjunto de todos los pagos posibles:\\
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{c|c|c|}
+                    \multicolumn{1}{c}{} & \multicolumn{1}{c}{$A_2$}  & \multicolumn{1}{c}{$B_2$} \\\cline{2-3}
+                    $A_1$ & $a,b$ & $-1,-1$ \\\cline{2-3}
+                    $B_1$ & $-1,-1$ & $b,a$ \\\cline{2-3}
+                \end{tabular}
+            \end{center}
+        \end{minipage}
+        
+    \begin{minipage}{0.5\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}[
+                        xmin=-0.2, xmax=1.1,
+                        ymin=-0.2, ymax=1.1,
+                        xticklabels={0},
+                        yticklabels={0},
+                        axis lines=middle,
+                        enlargelimits=true,
+                        clip=false,
+                        width=8cm,
+                        height=6cm,
+                        every x tick/.style={opacity=0},
+                        every y tick/.style={opacity=0}
+                        ]
+                        
+                        % Recta de -1->a grados
+                        \draw(-0.2,-0.2) -- (0.4,0.9);
+                        % Recta de -1->b grados
+                        \draw(-0.2,-0.2) -- (0.9,0.4);
+                        % Recta de a->b grados
+                        \draw(0.4,0.9) -- (0.9,0.4);
+    
+                        \addplot[mark=*, nodes near coords={$(-1, -1)$}] coordinates {(-0.2, -0.2)};
+                        \addplot[mark=*, nodes near coords={\hspace{4mm}$(a, b)$}] coordinates {(0.9,0.4)};
+                        \addplot[mark=*, nodes near coords={$(b, a)$}] coordinates {(0.4,0.9)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+            habiendo graficado el conjunto de todos los pagos posibles entonces procedemos a obtener el conjunto de pagos alcanzables e individualmente racionales, para lo cual calculamos los $\min\max$:
+    \end{minipage}
+
+    ~\\~\\entonces el $\min\max$ del jugador 1 sera:
+    \begin{align*}
+        u_{A_1}&=(q)(a)+(1-q)(-1) = aq-1+q\\
+        u_{B_1}&=(q)(-1)+(1-q)(b) = -q+b-qb\\
+        \text{interceptamos}\\
+        aq-1+q&=-q+b-qb\\
+        2q+aq++qb&=b+1\to q(2+a+b)=b+1 \to q = \frac{b+1}{2+a+b}
+    \end{align*}
+    evaluamos entonces el valor obtenido en ambas funciones de utilidad:
+    \begin{align*}
+        u_{A_1}&= a\left(\frac{b+1}{2+a+b}\right)-1+\left(\frac{b+1}{2+a+b}\right)&=\frac{ab+a+b+1}{2+a+b}-1\\
+        u_{B_1}&= -\left(\frac{b+1}{2+a+b}\right)+b-\left(\frac{b+1}{2+a+b}\right)b&=\frac{-b^{2}-2b-1}{2+a+b}+b
+    \end{align*}
+    analizamos entonces si ambos valores son equivalentes:
+    \begin{align*}
+        \frac{ab+a+b+1}{2+a+b}-1&=\frac{-b^{2}-2b-1}{2+a+b}+b\\
+        \frac{ab+a+b+1}{2+a+b}&=\frac{-b^{2}-2b-1}{2+a+b}+b+1\\
+        ab+a+b+1&=\left(\frac{-b^{2}-2b-1}{2+a+b}+b+1\right)(2+a+b)\\
+        ab+a+b+1&=\cancel{-b^{2}}\cancel{-2b}-1+\cancel{2b}+ab\cancel{+b^{2}}+2+a+b\\
+        ab+a+b+1&=b+ab+a+1
+    \end{align*}
+    por lo que confirmamos que ambas funciones de utilidad tienen un valor equivalente y por ende este sera el valor $\min\max$ del jugador 1, y dado que el juego es simetrico sera tambien el $\min\max$ del jugador 2, por conveniencia representaremos el $\min\max$ de cada jugador como $M_i$ y procedemos entonces a graficar el conjunto de pagos alcanzables e individualmente racionales en el juego asi como señalar el $\beta$-núcleo.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+                xmin=-0.2, xmax=1.1,
+                ymin=-0.2, ymax=1.1,
+                xticklabels={0},
+                yticklabels={0},
+                axis lines=middle,
+                enlargelimits=true,
+                clip=false,
+                width=8cm,
+                height=6cm,
+                every x tick/.style={opacity=0},
+                every y tick/.style={opacity=0}
+                ]
+                
+                % Recta de -1->a grados
+                \draw(-0.2,-0.2) -- (0.4,0.9);
+                % Recta de -1->b grados
+                \draw(-0.2,-0.2) -- (0.9,0.4);
+                % Recta de a->b grados
+                \draw[red,line width=1mm](0.4,0.9) -- (0.9,0.4);
+
+                \addplot[mark=*, nodes near coords={$(-1, -1)$}] coordinates {(-0.2, -0.2)};
+                \addplot[mark=*, nodes near coords={\hspace{10mm}$(a, b)$}] coordinates {(0.9,0.4)};
+                \addplot[mark=*, nodes near coords={$(b, a)$}] coordinates {(0.4,0.9)};
+                \addplot[mark=*, nodes near coords={\hspace{16mm}$(M_1, M_2)$}] coordinates {(0.2,0.2)};
+
+                % Recta de m_i->recta grados
+                \draw[dashed] (0.2,0.2) -- (0.2,0.54);
+                \draw[dashed] (0.2,0.2) -- (0.54,0.2);
+
+                % Relleno del área
+                \fill[blue!30] (0.2,0.2) -- (0.2,0.54) -- (0.4,0.9)  -- (0.9,0.4) -- (0.54,0.2)-- cycle;
+
+                % Llave
+                \draw [red!100,decorate,decoration={brace,amplitude=10pt},xshift=0pt,yshift=0pt] (0.4,0.9) -- (0.9,0.4) node[midway,xshift=20pt,yshift=15pt] {\(\beta\)-núcleo};
+        \end{axis}
+    \end{tikzpicture}
+    \end{flushleft}
+\end{example}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}

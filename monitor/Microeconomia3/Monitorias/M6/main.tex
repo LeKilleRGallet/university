@@ -1,0 +1,230 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{\text{Microeconomia III - $6^a$ Monitoria}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flushleft}
+\section{Oligopolio y competencia monopolistica}
+
+El oligopolio y la competencia monopolística son dos estructuras de mercado cruciales en la economía. Estudiar estas formas de mercado es esencial para comprender la dinámica económica más allá de la competencia perfecta dado que reflejan situaciones de la vida real en las que la competencia perfecta rara vez (o nunca) se encuentra. Comprender cómo funcionan estas estructuras de mercado y sus implicaciones es crucial para los formuladores de políticas y las empresas, ya que ayuda a analizar la eficiencia, la equidad y las dinámicas de precios en un mundo donde la competencia no es perfecta.
+
+\subsection{Oligopolio de Cournot}
+
+    El modelo del oligopolio de Cournot representa un mercado con un número fijo de empresas que producen un mismo bien homogéneo a un costo marginal que puede ser conocido por todas las firmas.
+    
+    En este modelo, cada empresa se considera a sí misma una "seguidora". Esto implica que asume un rol de importancia en función de la producción de su competidor. Bajo esta perspectiva, la empresa seguidora supone que su competidor mantendrá constante su nivel de producción, en este contexto, las empresas seguidoras desarrollan estrategias para tomar decisiones que maximicen sus beneficios.
+    
+\subsubsection{Oligopolio de Cournot con Informacion simetrica}
+
+    Uno de los modelos mas comunes de Cournot es el Duopolio de Cournot con informacion simetrica y costo marginal constante para ambas firmas, este modelo presenta un mercado donde existen dos empresas que producen un mismo bien homogeneo a un costo marginal costante $c_i>0$ y enfrentan una demanda conocida por ambas de la forma $p=a-q_i-q_{-i}$, por lo que la funcion de beneficios de cada firma sera $\Pi_i = (a-q_i-q_{-i})q_i-c_iq_i$ la cual derivando obtenemos que:
+
+    $$\Pi^\partial_{q_i} = a-2q_i-q_{-i}-c_i=0$$
+    
+    Despejando obtenemos entonces que:
+    
+    $$q_i=\frac{a-c_i-q_{-i}}{2}~~~~~~(\text{Curva de Mejor respuesta de la firma }i)$$
+    
+    Como notamos y tal como se explico, aqui la maximizacion de beneficios depende tambien de cuantas unidades colocara la otra empresa, por lo que cada empresa va a considerar tambien la mejor respuesta de la otra empresa en sus calculos, por lo que obtendremos entonces que:
+
+    \begin{minipage}{0.5\textwidth}
+        
+        
+        ~\\~$$q_i=\frac{a-c_i-\left( \frac{a-c_{-i}-q_{i}}{2} \right)}{2}$$
+        
+        simplificando obtenemos que:
+        
+        $$q_i=\frac{a-2c_i+c_{-i}}{3}$$
+        
+        remplazando en el precio:
+        
+        $$p=a-\frac{a-2c_i+c_{-i}}{3}-\frac{a-2c_{-i}+c_{i}}{3}=\frac{a+c_i+c_{-i}}{2}$$
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}[
+                    xlabel={$q_{-i}$},
+                    ylabel={$q_{i}$},
+                    xmin=0, xmax=1.1,
+                    ymin=0, ymax=1.1,
+                    xtick={0,1},
+                    ytick={0,1},
+                    xticklabels={0, $a-2c_i-c_{-i}$},
+                    yticklabels={0, $a-2c_{-i}-c_{i}$},
+                    axis lines=middle,
+                    enlargelimits=true,
+                    clip=false,
+                    width=8cm,
+                    height=6cm,
+                    every x tick/.style={opacity=0},
+                    every y tick/.style={opacity=0}
+                    ]
+                    
+                    % Recta de 45 grados
+                    \draw[dashed] (0,0) -- (0.7,0.7);
+                    
+                    % Recta 1
+                    \draw (0,1) -- (0.3,0);
+                    
+                    % Recta 2
+                    \draw (1,0) -- (0,0.3);
+
+                     \node[anchor=north] (source) at (axis cs:0.4,1.1){\footnotesize \begin{tabular}{c}Eq de Cournot-Nash\end{tabular}};
+                    \node (destination) at (axis cs:0.23, 0.23){};
+                    \draw[->](source)--(destination);
+                    \addplot[mark=*] coordinates {(0.23, 0.23)};
+        \end{axis}
+    \end{tikzpicture}
+    \end{minipage}
+
+\subsubsection{Oligopolio de Cournot con Informacion asimetrica}
+
+    Ahora veremos qué ocurre si, en lugar de ambas firmas teniendo conocimiento común sobre los costos de la otra firma participante, se da un caso en el que una firma no tiene certeza acerca de los costos de la otra firma, mientras que la firma de la cual se desconoce el costo sí conoce los costos de la otra firma.
+
+    Aqui tendremos entonces un mercado donde ambas firmas se enfrente a una demanda de la forma $p = a-q_1-q_2$ y los costos de la firma $1$ es $c_aq_1$ con probabilidad $p$ y  $c_bq_1$ con probabilidad $1-p$ tal que $c_a>c_b$ y la empresa $2$ produce con costo $c_2q_2$
+
+    calculamos primeramente las funciones de mejor respuesta de la empresa $1$ la cual conoce sus propios costos, por lo que ella debe maximizar si su costo es alto o si es bajo de la siguiente forma:
+
+    \begin{align*}
+        \max \Pi^{c_a} = (a-q_1-q_2)q_1-c_aq_1\\
+        \max \Pi^{c_b} = (a-q_1-q_2)q_1-c_bq_1
+    \end{align*}
+
+    como ambas funciones son analogas en los costos podemos resolver unicamente una funcion y obtendremos ambas mejores respuesta de la firma $1$, haciendolo entones de la siguiente forma:
+
+    $$\Pi^\partial_{q_1} = a-2q_1-q_2-c_{2}=0$$
+
+    despejamos respecto a $q_1$ obteniendo las funciones de reaccion:
+
+    $$q_1=\frac{a-q_2-c_{2}}{2} \to \begin{cases}
+                                       q_1(c_a)=\frac{a-q_2-c_{a}}{2} \\
+                                       q_1(c_b)=\frac{a-q_2-c_{b}}{2}
+                                    \end{cases}$$
+
+    ahora debemos obtener la mejor respuesta de la firma $2$, no obstante esta no conoce el costo real de la firma $1$, por lo que para saber su utilidad debe calcular su utilidad esperada, obteniendo entonces:
+
+    $$E(\Pi) = p((a-q_1(c_a)-q_2)q_2-c_2q_2)+(1-p)((a-q_1(c_b)-q_2)q_2-c_2q_2)$$
+
+    obtenemos la condicion de primer orden:
+
+    $$E(\Pi)^\partial_{q_2}=p(a-q_1(c_a)-2q_2-c_2)+(1-p)(a-q_1(c_b)-2q_2-c_2)=0$$
+
+    despejando respecto a $q_2$ para obtener las funciones de reaccion de esta firma obtenemos:
+
+    $$q_2=\frac{p(a-q_1(c_a)-c_2)+(1-p)(a-q_1(c_b)-c_2)}{2}$$
+
+    remplazamos las funciones de reaccion de la firma $1$ en la funciones de reaccion de la firma $2$ para obtener los equilibrios de Nash-Bayes:
+
+    \begin{align*}
+        q_2&=\frac{p(a-\left(\frac{a-q_2-c_{a}}{2}\right)-c_2)+(1-p)(a-\left(\frac{a-q_2-c_{b}}{2}\right)-c_2)}{2}\\
+        q_2&=\frac{\frac{\cancel{pa+pq_2}+pc_a-\cancel{2pc_2}}{2}-\frac{\cancel{pa+pq_2}+pc_b-\cancel{2pc_2}}{2}+\frac{a+q_2+c_b-2c_2}{2}}{2}\\
+        q_2&=\frac{pc_a-pc_b+a+q_2+c_b-2c_2}{4}\\
+        4q_2-q_2&=a+pc_a+(1-p)c_b-2c_2\\
+        q_2^*&=\frac{a+pc_a+(1-p)c_b-2c_2}{3}
+    \end{align*}
+
+    habiendo obtenido el equilibrio para la firma $2$ remplazamos este valor en las funciones de reaccion de la firma $1$ para obtener sus equilibrios:
+
+    \begin{align*}
+        q_1(c_a)&=\frac{a-\left(\frac{a+pc_a+(1-p)c_b-2c_2}{3}\right)-c_{a}}{2}\\
+        q_1(c_a)&=\frac{2a-c_b+pc_b-pc_a-3c_a+2c_2}{6}\\
+        q_1(c_a)&=\frac{2a-c_b+pc_b-pc_a-4c_a+c_a+2c_2}{6}\\
+        q_1(c_a)&=\frac{2a-4c_a+2c_2}{6}+\frac{-c_b+pc_b-pc_a+c_a}{6}\\
+        q_1^*(c_a)&=\frac{a-2c_a+c_2}{3}+\frac{(1-p)(c_a-c_b)}{6}
+    \end{align*}
+
+    \begin{align*}
+        q_1(c_b)&=\frac{a-\left(\frac{a+pc_a+(1-p)c_b-2c_2}{3}\right)-c_{b}}{2}\\
+        q_1(c_b)&=\frac{2a-4c_b+2c_2+pc_b-pc_a}{6}\\
+        q_1^*(c_b)&=\frac{a-2c_b+c_2}{3}-\frac{p(c_a-c_b)}{6}
+    \end{align*}
+
+\subsubsection{oligopolio de Cournot: colusión}
+
+    Hasta el momento hemos visto como pueden competir dos firmas monopolicas, no obstante una practica comun en mercados concentrados es coludir para obtener mayores beneficios totales repartiendo las cantidades de monopolio en partes iguales, entonces la funcion de beneficios en este caso sera:
+
+    $$\Pi^m=pq-cq|c=c_1+c_2,q=q_1+q_2$$
+    $$\Pi^m=(a-q)q-cq$$
+
+    mediante las condiciones de primer orden obtenemos entonces que:
+
+    $$q^m=\frac{a-c}{2}$$
+
+    las cuales se repartiran en partes iguales entre ambas firmas, obteniendo entonces que el beneficio de cada firma en colusion sera:
+
+    \begin{align*}
+        \Pi^m_i&=\left(a-\frac{a-c}{2}\right)\frac{a-c}{4}-c\left(\frac{a-c}{4}\right)\\
+        \Pi^m_i&=\left(\frac{a+c}{2}\right)\frac{a-c}{4}-c\left(\frac{a-c}{4}\right)\\
+        \Pi^m_i&=\left(\frac{a+c}{2}-c\right)\frac{a-c}{4}\\
+        \Pi^m_i&=\frac{a-c}{2}\frac{a-c}{4}=\frac{(a-c)^2}{8}
+    \end{align*}
+
+    con esto podemos construir una bimatriz para ver si es posible en un juego estatico que se llegue a un cartel, esta bimatriz la vamos a construir utilizando la funcion de beneficio: $\Pi_i=(a-q_i-q_{-i})q_i-c_iq_i$. Por facilidad aqui asumiremos que ambas firmas tienen mismo costo marginal.
+
+    \begin{center}    
+        \setlength{\extrarowheight}{0pt}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{FIRMA $2$}\\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$COMPETIR$}  & \multicolumn{1}{c}{$COLUDIR$} \\\cline{3-4}
+            \multirow{2}*{FIRMA $1$}  & $COMPETIR$ & $\frac{(a-c)^2}{9},\frac{(a-c)^2}{9}$ & $\frac{5(a-c)^2}{36},\frac{5(a-c)^2}{48}$ \\\cline{3-4}
+            & $COLUDIR$ & $\frac{5(a-c)^2}{48},\frac{5(a-c)^2}{36}$ & $\frac{(a-c)^2}{8},\frac{(a-c)^2}{8}$ \\\cline{3-4}
+        \end{tabular}
+    \end{center}
+
+    como notamos esta  bimatriz tiene una estructura de dilema del prisionero, por lo que sabemos que el optimo de pareto donde ambas firmas forman un cartel no va a ser alcanzado en este modelo estatico, dado que ambas tienen incentivos para traicionar el pacto y de esta forma terminar compitiendo, no obstante como hemos visto anteriormente si repetimos este juego de forma infinita y utilizamos un metodo de gatillo este cartes si va a poder formarse siempre y cuando se cumplan ciertas condiciones.
+
+\subsection{Oligopolio \textit{von Stackelberg}}
+
+    Tal como explicamos, en la competencia tipo Cournot, todas las empresas son seguidoras de las demas empresas al mismo tiempo, ahora podemos ver que sucederia si ahora tenemos un mercado donde existe una empresa que es la lider y coloca primero unas cantidades en el mercado y posteriormente una empresa seguidora de esta primera va a colocar unas cantidades en respuesta de esas cantidades que ha colocado la empresa lider, por facilidad podemos asumir un modelo simple de Cournot donde ambas firmas tienen iguales costos marginales.
+
+    En este caso, como hay informacion perfecta y simetrica la solucion se obtendra mediante induccion hacia atras, dado que la firma lider sabe que la firma seguidora se ajustara a las cantidades que ya esten en el mercado puede tomar la funcion de beneficios de esta segunda empresa y obteniendo su funcion de reaccion de la siguiente forma:
+    \begin{align*}
+        \Pi^s&=(a-q_l-q_s)q_s-cq_s\\
+        \Pi^\partial_{q_s}&=a-q_l-2q_s-c=0\\
+        q_s&=\frac{a-q_l-c}{2}
+    \end{align*}
+    Habiendo obtenido la funcion de reaccion de la firma seguidora la firma lider y dado que esta utilizando induccion hacia atras puede incorporar estas cantidades directamente en su funcion de beneficios para posteriormente obtener su produccion optima de la siguiente forma:
+    \begin{align*}
+        \Pi^l&=(a-q_l-q_s)q_l-cq_l\\
+        \Pi^l&=\left(a-q_l-\frac{a-q_l-c}{2}\right)q_l-cq_l\\
+        \Pi^l&=\frac{aq_l-q_l^2-cq_l}{2}\\
+        \Pi^\partial_{q_l}&=\frac{a-2q_l-c}{2}=0\to\frac{a-c}{2}-q_l=0\\
+        q^*_l&=\frac{a-c}{2}
+    \end{align*}
+    
+    habiendo encontrado las cantidades que colocara en el mercado la firma lider podemos remplazar este valor y obtener las cantidades optimas de la firma seguidora, obteniendo:
+    $$q_s=\frac{a-\frac{a-c}{2}-c}{2}\to\frac{a-c}{4}$$
+    
+\end{flushleft}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}
