@@ -1,0 +1,19 @@
+crear un script donde se juegue al hangman,
+
+la pantalla se debe limpiar al iniciar el juego para que unicamente se vea lo relativo al juego
+
+en el juego me va a colocar con guiones (--------) la cantidad de letras que tiene la palabra
+
+me va a pedir que ingrese una letra, evitar que se pueda ingresar algo distinto a una unica letra
+
+cada q se coloque una letra q pertenece a la palabra la letra se debera colocar en su lugar relativo arriba de los guiones
+
+incorporar comprenhensions, manejo de errorey y manejo de arichos, utilizar el archivo data.txt para las palabras
+
+investigar funcion enumerate
+investigar metodo get
+
+os.system("cls")-win
+os.system("clear")-win
+
+bonus, decorarlo, mejorar interfaz y añadir un sistema de puntos
