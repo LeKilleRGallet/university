@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage[rmargin=2.54cm,lmargin=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}   
+
+\begin{document}
+
+\begin{center}
+    \huge \textbf{P3 Parcial 4 Calculo}
+    \end{center}
+    \begin{center}
+\end{center}
+
+\begin{flushleft}
+
+    Un terreno rectangular se encuentra en la orilla de un rio y se desea delimitar de modo que no se utilice cerca a lo largo de la orilla.
+    si el material para la cerca de los lados cuesta $\$12$ por metro colocado y $\$18$ por metro colocado para el lad paralelo al rio, 
+    determine las dimensiones de terreno de mayor area posible que pueda limitarse con $\$5400$ de presupuesto.
+\\~\\
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \begin{flushright}
+            \begin{tikzpicture}
+                \draw (0,3) node[left]  -- (0,0) node[midway,left] {$x$} -- (3,0) node[midway,below] {$y$};
+                \draw (0,3) node[left]  -- (3,3) node[midway,above] {rio} -- (3,0) node[midway,right] {$x$};
+            \end{tikzpicture}
+        
+        \end{flushright}
+    \end{minipage}
+    \begin{minipage}{0.65\textwidth}
+        \begin{equation*}
+            \begin{aligned}
+                \max_{A} & \quad A = xy \\
+                \text{s.a.} & \quad 12x+12x+18y \leq 5400 \\
+            \end{aligned}
+        \end{equation*}
+    \end{minipage}
+\\~\\
+    vamos a despejar $y$ para dejar la maximizacion en terminos de $x$, 
+    como sabemos que para maximizar es ilogico tener presupuesto sin utilizar
+    podemos dejar la restriccion como una igualdad
+    \begin{equation*}
+        \begin{aligned}
+            \\
+            24x+18y = 5400 \to 18y = 5400-24x \to y = \frac{5400-24x}{18} \to y = 300 - \frac{12}{9}x \\
+        \end{aligned}
+    \end{equation*}
+    ahora sustituimos $y$ en el area, teniendo que nuestro problema de maximizacion sea:
+    \begin{equation*}
+        \begin{aligned}
+            \max_{A} & \quad A = x*\left( 300 - \frac{12}{9}x \right) \to ~~ \max_{A} &  A = 300x-\frac{12}{9}x^2 \\
+        \end{aligned}
+    \end{equation*}
+    con la funcion en una unica variable podemos derivar el area con respecto a $x$ e igualar a cero para encontrar el $x$ con el que se maximiza el area
+    \begin{equation*}
+        \begin{aligned}
+            \frac{dA}{dx} = 300 - 2*\frac{12}{9}x = 0 \to 300 - \frac{8}{3}x = 0 \to x = \frac{300*3}{8} \to x = 112.5 \\
+        \end{aligned}
+    \end{equation*}
+    ya que tenemos el valor de $x$ podemos sustituirlo en la ecuacion de $y$ para encontrar su valor
+    \begin{equation*}
+        \begin{aligned}
+            y = 300 - \frac{12}{9}(112.5) \to y = 150  \\
+        \end{aligned}
+    \end{equation*}
+    ahora que tenemos los valores de $x$ y $y$ podemos sustituirlos en el area para encontrar el area maxima a este presupuesto y costes.
+    \begin{equation*}
+        \begin{aligned}
+            A_{\max} = 112.5*150 \to A_{\max} = 16875 \\
+        \end{aligned}
+    \end{equation*}
+    
+
+\end{flushleft}
+
+
+\end{document}
