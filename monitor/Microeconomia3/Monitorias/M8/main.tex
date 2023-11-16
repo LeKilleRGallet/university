@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage{UF_FRED_paper_style}
+\onehalfspacing
+\setlength{\droptitle}{-5em} %% Don't touch
+
+\title{\text{Microeconomia III - $8^a$ Monitoria}
+}
+
+\author{Augusto Rico\\% Name author
+    \href{mailto:arico@unal.edu.co}{\texttt{arico@unal.edu.co}}
+    }
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY OF THE DOCUMENT
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Juegos bayesianos}
+
+\begin{flushleft}
+    Hasta ahora, hemos trabajado bajo la suposición de que los jugadores poseen pleno conocimiento mutuo, incluyendo las ganancias asociadas a diferentes resultados del juego, en lo que se conoce como juegos de información completa. Sin embargo, esta premisa resulta ser demasiado fuerte en numerosas situaciones. ¿Cómo podrían dos empresas conocer los costos de la otra o una empresa comprender la desutilidad que experimentarán los miembros de un sindicato durante una huelga? La respuesta evidente es que, en muchos casos, los jugadores enfrentan lo que se llama información incompleta.\\~\\
+
+    La preocupación por la información asimétrica, o privada, ha sido central en la economía durante décadas. Desde el desarrollo del modelo neowalrasiano Arrow-Debreu en 1954, se reconoció que la información asimétrica podía afectar la optimalidad paretiana del \textit{equilibrio general competitivo}. Esta problemática se extendió a diversas áreas económicas, desde la organización industrial hasta políticas y subastas. La solución a estos problemas, en muchos casos, involucra el análisis de juegos con información asimétrica, destacando el equilibrio de Nash bayesiano y sus refinamientos como herramientas clave. Un juego estrategico $\Gamma=\{N,C_i,u_i\}$ se considera con información asimétrica si los jugadores no tienen igual conocimiento sobre $\Gamma$.\\~\\
+
+    Esta situación requiere considerar las creencias de los jugadores sobre las preferencias de los demás, creencias sobre las creencias, y así sucesivamente. Para abordar esto, se utiliza el enfoque de juegos bayesianos, propuesto por \citet{harsanyi1967games}. En este enfoque, se imagina que las preferencias de cada jugador están determinadas por la realización de una variable aleatoria. Aunque la realización real de la variable aleatoria solo es observada por el jugador, se asume que su distribución de probabilidad ex ante es conocida por todos los jugadores. A través de esta formulación, la situación de información incompleta se reinterpretaría como un juego de información imperfecta: la Naturaleza realiza un movimiento, eligiendo realizaciones de las variables aleatorias que determinan el tipo de preferencia de cada jugador, y cada jugador observa la realización de solo su propia variable aleatoria. Un juego de este tipo se conoce como un juego bayesiano.\\~\\
+
+    Los juegos bayesianos abordan la complejidad de la información incompleta en la teoría de juegos, permitiendo modelar la incertidumbre y las creencias cambiantes de los jugadores a lo largo del juego. La introducción de la naturaleza como un jugador aleatorio es fundamental en este enfoque, llevando a un análisis probabilístico que refleja la realidad de la información imperfecta en situaciones económicas diversas.
+
+    \begin{example}
+        \begin{flushleft}
+            Imaginemos dos individuos, un Jugador $1$ que es un \textit{bully} que le interesa unicamente buscar peleas con personas cobardes y claramente tiene aversión a pelear con alguien valiente, este jugador considera pelear con el Jugador $2$ pero este no esta completamente seguro si este jugador es del tipo \textit{cobarde} o del tipo \textit{valiente}, pero dadas sus caracteristicas fisicas y conductuales el estima de forma perfecta que el jugador tiene un 60\% de ser del tipo \textit{cobarde} y por ende tiene un 40\% de ser del tipo \textit{valiente} y tendria los siguientes pagos en este juego \textit{bayesiano}:\\
+        
+            \begin{minipage}{0.4\textwidth}
+                \begin{center}    
+                    \setlength{\extrarowheight}{0pt}
+                    \begin{tabular}{cc|c|c|}
+                        & \multicolumn{1}{c}{} & \multicolumn{2}{c}{\textit{cobarde}}\\
+                        & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$pelear$}  & \multicolumn{1}{c}{$ceder$} \\\cline{3-4}
+                        \multirow{2}*{\textit{bully}}  & $pelear$ & $2,-1$ & $4,~0$ \\\cline{3-4}
+                        & $ceder$ & $3,~~~2$ & $2,~0$ \\\cline{3-4}
+                    \end{tabular}
+                \end{center}
+            \end{minipage}
+            \begin{minipage}{0.4\textwidth}
+                \begin{center}    
+                    \setlength{\extrarowheight}{0pt}
+                    \begin{tabular}{cc|c|c|}
+                        & \multicolumn{1}{c}{} & \multicolumn{2}{c}{\textit{valiente}}\\
+                        & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$pelear$}  & \multicolumn{1}{c}{$ceder$} \\\cline{3-4}
+                        \multirow{2}*{\textit{bully}}  & $pelear$ & $-1,1$ & $1,0$ \\\cline{3-4}
+                        & $ceder$ & $~~~0,1$ & $0,0$ \\\cline{3-4}
+                    \end{tabular}
+                \end{center}
+            \end{minipage}\\~\\
+            
+            aqui tenemos entonces que el conjunto de acciones es: $ C_1 = \{pelear,ceder\} $ para el Jugador $1$ y $ C_2 = \{pelear,ceder\} $ para el jugador $2$, ademas en este juego tenemos que el unico con informacion privada (sabe si el juego que se jugara sera el de la tabla 1  o 2) es el Jugador $2$, entonces nuestros conjuntos de tipo sera $T_1 = \{t_{1i} = bully\}$ para el jugador $1$, y $T_2=\{ t_{21}=cobarde, t_{22}=valiente \}$ para el jugador $2$, y entonces tendremos un estado de la naturaleza $P_n(t_1,t_{21}) = 0.6$ y $P_n(t_1,t_{22}) = 0.4$.\\~\\
+
+            Por lo anterior tendremos que el conjunto de acciones seran $S_1 = \{pelar, ceder\}$ para el jugador $1$ y $S_2=\{(pelear, pelear), (pelear, ceder), (ceder, pelear), (ceder, ceder)\}$ para el jugador $2$ donde entendemos que por ejemplo $(pelear, ceder)$ significa que el jugador $2$ jugara $pelear$ si es del tipo $cobarde$ y jugara $ceder$ si es del tipo $valiente$, no obstante debemos notar que el jugador $2$ que tiene informacion privada tiene una estrategia dominada, dado que $u_{2}^v (pelear,S_1) > u_{2}^v (ceder,S_1)$, por lo que sabemos que en el caso de el jugador ser del tipo $valiente$ nunca jugara la estrategia $ceder$ por lo que entonces nuestro conjunto de acciones para este jugador sera unicamente $S_2=\{(pelear, pelear), (ceder, pelear)\}$, por lo que entonces podemos hacer ahora una unica bimatriz $S_1 \times S_2$ donde cada utilidad no sera mas que la utilidad esperada es por ejemplo $$u_1(pelar, (pelear,pelear))=u_1(pelear,pelear|t_{21})P_n(t_1,t_{21})+u_1(pelear,pelear|t_{22})P_n(t_1,t_{22})$$ obteniendo entonces que nuestra bimatriz es:\\~\\
+            
+            \begin{center}    
+                \setlength{\extrarowheight}{0pt}
+                \begin{tabular}{cc|c|c|}
+                    & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Jugador$2$}\\
+                    & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$(pelear,pelear)$}  & \multicolumn{1}{c}{$(ceder,pelear)$} \\\cline{3-4}
+                    \multirow{2}*{Jugador$1$}  & $pelear$ & $0.8,-0.2$ & $2,0.4$ \\\cline{3-4}
+                    & $ceder$ & $1.8,1.6$ & $1.2,0.4$ \\\cline{3-4}
+                \end{tabular}
+            \end{center}
+
+            podemos notar facilmente que esta bimatriz va a tener dos equilibrios puros, los equilibrios: $pelear, (ceder, pelear)$ y $ceder, (pelear,pelear)$, que dado que este es un juego bayesiano, estos los llamaremos equilibrios nash-bayes puros, pero ademas y tal como hemos visto anteriormente, al existir mas de un equilibrio puro, es probable que exista algun equilibrio mixto, por lo que nos dispondremos a calcularlo:
+
+            \begin{minipage}{0.35\textwidth}
+                \begin{align*}
+                    &u_1^p = 0.8q+2(1-q) = 2-1.2q\\
+                    &u_1^c = 1.8q+1.2(1-q) = 1.2+0.6q\\
+                    &\text{interceptamos}\\
+                    &2-1.2q = 1.2+0.6q\\
+                    &0.8=1.8q\\
+                    &q=\frac{0.8}{1.8}=\frac{4}{9}
+                \end{align*}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{0.35\textwidth}
+                \begin{align*}
+                    &u_2^{pp} = -0.2p+1.6(1-p) = 1.6-1.8p\\
+                    &u_2^{pc} = 0.4p+0.4(1-p) = 0.4\\
+                    &\text{interceptamos}\\
+                    &1.6-1.8p = 0.4\\
+                    &1.2=1.8p\\
+                    &p=\frac{1.2}{1.8}=\frac{2}{3}
+                \end{align*}
+            \end{minipage}\\~\\~\\
+
+            obteniendo entonces que adicional a los dos equilibrios puros \textit{nash-bayes} obtenidos anteriormente, tambien tendremos un equilibrio \textbf{mixto} \textit{nash-bayes} que sera: $(2/3pelear+1/3ceder,4/9(pelear,pelear)+5/9(ceder,pelear))$.
+        \end{flushleft}
+    \end{example}
+
+\end{flushleft}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES SECTION
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\medskip
+
+\nocite{*}
+\bibliography{references.bib} 
+
+\newpage
+
+\end{document}
