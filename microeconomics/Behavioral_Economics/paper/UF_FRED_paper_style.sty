@@ -13,6 +13,10 @@
 \usepackage[a4paper, total={6in, 9.5in}]{geometry}
 \usepackage[english]{babel}
 \usepackage{epigraph}
+\usepackage{mdframed} % Add easy frames to paragraphs
+\usepackage{xcolor}
+\usepackage{xparse} % Add support for \NewDocumentEnvironment
+\definecolor{graylight}{cmyk}{.30,0,0,.67} % define color using xcolor syntax
 
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
@@ -26,3 +30,16 @@
 \addbibresource{references.bib}
 \usepackage{csquotes}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newmdenv[ % Define mdframe settings and store as leftrule
+  linecolor=graylight,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{leftrule}
+
+\NewDocumentEnvironment{snippet}{O{\textbf{snippet:}}} % Define example environment
+{\begin{leftrule}\noindent\textcolor{red}{#1}\par}
+{\end{leftrule}}
